@@ -1,4 +1,5 @@
 import React from 'react'
+import ActivityListItem from '../ActivityListItem/index'
 
 function InterestAntivities() {
   return (

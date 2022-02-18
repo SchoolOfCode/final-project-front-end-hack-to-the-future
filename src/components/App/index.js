@@ -1,4 +1,7 @@
 import Show from "../Show";
+import Header from '../Header/index'
+import Main from '../Main/index'
+
 
 import logo from "./logo.svg";
 import "./App.css";
