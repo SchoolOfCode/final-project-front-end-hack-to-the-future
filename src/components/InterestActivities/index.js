@@ -1,10 +1,10 @@
 import React from 'react'
 import ActivityListItem from '../ActivityListItem/index'
 
-function InterestAntivities() {
+function InterestActivities() {
   return (
-    <div>InterestAntivities</div>
+    <div>InterestActivities</div>
   )
 }
 
-export default InterestAntivities
+export default InterestActivities
