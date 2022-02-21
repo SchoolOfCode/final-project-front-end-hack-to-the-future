@@ -33,15 +33,7 @@ export default function DropdownMenu() {
       >
         <MenuIcon />
       </IconButton>
-      {/* <Button
-        id="basic-button"
-        aria-controls={open ? "basic-menu" : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? "true" : undefined}
-        onClick={handleClick}
-      >
-        Dashboard
-      </Button> */}
+
       <Menu
         id="basic-menu"
         anchorEl={anchorEl}
