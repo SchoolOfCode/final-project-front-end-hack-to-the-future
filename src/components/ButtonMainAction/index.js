@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
-function ButtonMainAction() {
+function ButtonMainAction({ text, path, imagePath }) {
   return (
-    <div>ButtonMainAction</div>
-  )
+    <section style={{ display: "inline-block", margin: "1rem" }}>
+      <Link to={path}>
+        <img src={imagePath} alt={text} />
+        <p style={{ textDecoration: "none" }}>{text}</p>
+      </Link>
+    </section>
+  );
 }
 
-export default ButtonMainAction
+export default ButtonMainAction;
