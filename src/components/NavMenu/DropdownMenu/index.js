@@ -5,6 +5,8 @@ import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 
+import { Link } from "react-router-dom";
+
 export default function DropdownMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -49,12 +51,23 @@ export default function DropdownMenu() {
           "aria-labelledby": "menu-button",
         }}
       >
-        <MenuItem onClick={handleClose}>Home</MenuItem>
-        <MenuItem onClick={handleClose}>View Activities</MenuItem>
-        <MenuItem onClick={handleClose}>Create an Activity</MenuItem>
-        <MenuItem onClick={handleClose}>Interest List</MenuItem>
-        <MenuItem onClick={handleClose}>Activity Calendar</MenuItem>
-        <MenuItem onClick={handleClose}>Log out</MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link to="/">Home</Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link to="/view-activities">View Activities</Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link to="/create-activity">Create an Activity</Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link to="/interest-activities">Interest List</Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link to="/activity-calendar">Activity Calendar</Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>Log out</MenuItem>{" "}
+        {/*Add log out route */}
       </Menu>
     </div>
   );
