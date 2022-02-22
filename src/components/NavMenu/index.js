@@ -10,14 +10,9 @@ import logo from "../../logo-removebg-preview.png";
 
 export default function NavMenu() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1,  }}>
       <AppBar
         position="static"
-        sx={{
-          "& .MuiPaper-root-MuiAppBar-root": {
-            backgroundColor: "red",
-          },
-        }}
       >
         <Toolbar>
           <Button color="inherit">
