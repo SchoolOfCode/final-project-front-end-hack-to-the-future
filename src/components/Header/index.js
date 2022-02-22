@@ -1,11 +1,14 @@
-import React from 'react'
-import Button from '../Button/index'
-import NavMenu from '../NavMenu/index'
+import React from "react";
+import Button from "../Button/index";
+import NavMenu from "../NavMenu/index";
 
 function Header() {
   return (
-    <div>Header</div>
-  )
+    <div>
+      <NavMenu />
+      <p>header</p>
+    </div>
+  );
 }
 
-export default Header
+export default Header;
