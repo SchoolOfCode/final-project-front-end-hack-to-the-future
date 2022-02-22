@@ -1,20 +1,25 @@
 import React from 'react';
 import ActivityCard from '../ActivityCard/index';
 import TinderCard from 'react-tinder-card';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles.css';
+import axios from 'axios';
 
-const arr = [0, 1, 2, 3, 4, 5];
-
-function ViewActivities() {
-    const [activities, setActivity] = useState(arr);
+export default function ViewActivities() {
+    const [activities, setActivity] = useState();
     const [favActivities, setFavActivities] = useState([]);
 
-    console.log(favActivities);
+    useEffect(() => {
+        axios
+            .get('https://activity-app-backend.herokuapp.com/activities')
+            .then((res) => setActivity(res.data));
+    }, []);
+    console.log(activities);
 
     const Swiped = (direction, activity) => {
         if (direction === 'right') {
             setFavActivities([...favActivities, activity]);
+            // console.log(activities);
         }
     };
 
@@ -33,5 +38,3 @@ function ViewActivities() {
         </div>
     );
 }
-
-export default ViewActivities;
