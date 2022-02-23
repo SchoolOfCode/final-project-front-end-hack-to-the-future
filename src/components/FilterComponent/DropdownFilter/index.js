@@ -5,6 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
+
 export default function DropdownFilter() {
   const [type, setType] = React.useState("");
 
@@ -13,7 +14,7 @@ export default function DropdownFilter() {
   };
 
   return (
-    <Box sx={{ maxWidth: 120 }}>
+    <Box sx={{ maxWidth: 500 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Activity Type</InputLabel>
         <Select
