@@ -3,6 +3,7 @@ import TextField from '@mui/material/TextField';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DatePicker from '@mui/lab/DatePicker';
+// import '../styles.css'
 
 export default function DateSelector() {
     const [value, setValue] = React.useState(null);
@@ -10,15 +11,19 @@ export default function DateSelector() {
     return (
         <LocalizationProvider dateAdapter={AdapterDateFns}>
             <DatePicker
-                sx={{
-                  maxWidth: 500
-                }}
-                label='Basic example'
+                label='Date Picker'
                 value={value}
                 onChange={(newValue) => {
                     setValue(newValue);
                 }}
-                renderInput={(params) => <TextField {...params} />}
+                renderInput={(params) => (
+                    <TextField
+                        sx={{
+                            maxWidth: 500,
+                        }}
+                        {...params}
+                    />
+                )}
             />
         </LocalizationProvider>
     );
