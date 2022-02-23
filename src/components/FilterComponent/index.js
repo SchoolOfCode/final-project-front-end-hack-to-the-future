@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+
+import DropdownFilter from "./DropdownFilter";
 
 function FilterComponent() {
   return (
-    <div>FilterComponent</div>
-  )
+    <div>
+      <DropdownFilter />
+    </div>
+  );
 }
 
-export default FilterComponent
+export default FilterComponent;
