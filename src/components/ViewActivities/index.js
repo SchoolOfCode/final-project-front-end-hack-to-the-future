@@ -4,6 +4,7 @@ import TinderCard from "react-tinder-card";
 import { useState, useEffect } from "react";
 import "./styles.css";
 import axios from "axios";
+import FilterComponent from "../FilterComponent";
 
 export default function ViewActivities() {
   const [activities, setActivity] = useState([]);
@@ -57,7 +58,6 @@ export default function ViewActivities() {
 
   return (
     <div>
-
       <FilterComponent />
       {activities.map((activity, index) => (
         <TinderCard
