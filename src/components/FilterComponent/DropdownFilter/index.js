@@ -14,8 +14,8 @@ export default function DropdownFilter() {
   };
 
   return (
-    <Box sx={{ maxWidth: 500 }}>
-      <FormControl fullWidth>
+    <Box>
+      <FormControl fullWidth sx={{ width: 400 }}>
         <InputLabel id="demo-simple-select-label">Activity Type</InputLabel>
         <Select
           labelId="demo-simple-select-label"

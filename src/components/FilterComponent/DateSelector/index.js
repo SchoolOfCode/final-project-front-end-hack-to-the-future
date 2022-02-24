@@ -3,12 +3,14 @@ import TextField from '@mui/material/TextField';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DatePicker from '@mui/lab/DatePicker';
-// import '../styles.css'
+import theme from '../../../theme'
+import { ThemeProvider } from '@mui/material/styles'
 
 export default function DateSelector() {
     const [value, setValue] = React.useState(null);
 
     return (
+        <ThemeProvider theme={theme}>
         <LocalizationProvider dateAdapter={AdapterDateFns}>
             <DatePicker
                 label='Date Picker'
@@ -19,12 +21,13 @@ export default function DateSelector() {
                 renderInput={(params) => (
                     <TextField
                         sx={{
-                            maxWidth: 500,
+                            width: 400,
                         }}
                         {...params}
                     />
                 )}
             />
         </LocalizationProvider>
+        </ThemeProvider>
     );
 }
