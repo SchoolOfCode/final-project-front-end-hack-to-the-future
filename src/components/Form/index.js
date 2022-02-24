@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import Button from "../Button/index";
 import DateSelector from "../FilterComponent/DateSelector";
 import { FormControl, FormHelperText, TextField } from "@mui/material";
-// import cancel from '../../theme'
-// import create from '../../theme'
 import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
@@ -55,10 +54,30 @@ function DateAndTimePicker() {
 
 // Form card
 export default function Form() {
+  // useState to check if submit button has been pressed and trigger request
+  const [submittedValues, setSubmittedValues] = useState();
+  const [dateTimeValue, setDateTimeValue] = useState();
+
+  function handleDateChange(e) {
+    console.log(e);
+    setDateTimeValue(e);
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(e);
+    console.log(dateTimeValue);
+    setSubmittedValues({
+      location_id: e.target.location.value,
+      max_attendees: e.target.activityMaxAttendees.value,
+      // date_time: dateTimeValue,
+      description: e.target.activityDescription.value,
+      type: e.target.activityType.value,
+    });
   }
+  useEffect(() => {
+    console.log(JSON.stringify(submittedValues), dateTimeValue);
+  }, [submittedValues, dateTimeValue]);
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -68,16 +87,26 @@ export default function Form() {
               width: 400,
             }}
             id="location"
+            name="location"
             label="Location"
             variant="outlined"
             required
           />
-          <DateAndTimePicker required />
+          <DateAndTimePicker
+            value={dateTimeValue}
+            onChange={(newDateValue) => setDateTimeValue(newDateValue)}
+            id="dateTime"
+            name="dateTime"
+            label="Date Time"
+            variant="outlined"
+            required
+          />
           <TextField
             sx={{
               width: 400,
             }}
-            id="activity-type"
+            id="activityType"
+            name="activityType"
             label="Activity Type"
             variant="outlined"
             required
@@ -86,7 +115,8 @@ export default function Form() {
             sx={{
               width: 400,
             }}
-            id="activity-description"
+            id="activityDescription"
+            name="activityDescription"
             label="Description"
             variant="outlined"
             required
@@ -97,7 +127,8 @@ export default function Form() {
             sx={{
               width: 400,
             }}
-            id="activity-max-attendees"
+            id="activityMaxAttendees"
+            name="activityMaxAttendees"
             label="Maximum Attendees"
             variant="outlined"
             required
