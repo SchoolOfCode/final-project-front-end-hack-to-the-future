@@ -27,6 +27,7 @@ export default function DropdownFilter() {
           <MenuItem value={"walk"}>walk</MenuItem>
           <MenuItem value={"film"}>film</MenuItem>
           <MenuItem value={"cafe"}>cafe</MenuItem>
+          <MenuItem value={"catting"}>catting</MenuItem>
         </Select>
       </FormControl>
     </Box>

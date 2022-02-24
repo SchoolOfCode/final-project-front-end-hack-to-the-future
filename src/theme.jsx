@@ -14,4 +14,20 @@ let theme = createTheme({
     },
 });
 
+export let cancel = createTheme({
+    palette: {
+        primary: {
+            main: '#006D77',
+        }
+    }
+});
+
+export let create = createTheme({
+    palette: {
+        primary: {
+            main: '#E29578',
+        }
+    }
+});
+
 export default theme;

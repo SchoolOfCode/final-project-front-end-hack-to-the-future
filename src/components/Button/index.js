@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { Button } from '@mui/material';
 
-function Button() {
-  return (
-    <div>Button</div>
-  )
+export default function CardButton({button, theme}) {
+    return (
+        <div>
+            <Button variant='contained'>{button}{theme}</Button>
+        </div>
+    );
 }
-
-export default Button
