@@ -7,12 +7,11 @@ import axios from "axios";
 
 export default function ViewActivities() {
   const [activities, setActivity] = useState([]);
-  const [favActivities, setFavActivities] = useState([]);
-  const [activityId, setActivityId] = useState();
-  console.log(activityId);
-  const [swipeDirection, setSwipeDirection] = useState("");
-  //let swipeDirection = '';
-  // swipe cards direction
+  const [currentSwipedCard, setCurrentSwipedCard] = useState({
+    direction: null,
+    activityId: null,
+  });
+
   useEffect(() => {
     axios
       .get("https://activity-app-backend.herokuapp.com/activities")
@@ -20,23 +19,11 @@ export default function ViewActivities() {
   }, []);
 
   const Swiped = (direction, activity) => {
-      console.log(activity);
-      setActivityId(activity.activity_id);
-
-    if (direction === "right") {
-      setFavActivities((favActivities) => {
-        return [...favActivities, activity];
-      });
-      setSwipeDirection("right");
-      // console.log(activities);
-    } else {
-      setSwipeDirection("left");
-    }
-
-    console.log(activity);
+    setCurrentSwipedCard({
+      direction: direction,
+      activityId: activity.activity_id,
+    });
   };
-
-  console.log(favActivities);
 
   // update favActivities
   useEffect(() => {
@@ -47,8 +34,11 @@ export default function ViewActivities() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           userId: "2",
-          activityId: activityId,
-          role: swipeDirection === "right" ? "interested" : "uninterested",
+          activityId: currentSwipedCard.activityId,
+          role:
+            currentSwipedCard.direction === "right"
+              ? "interested"
+              : "uninterested",
         }),
       };
       const response = await fetch(
@@ -57,15 +47,13 @@ export default function ViewActivities() {
         requestActivity
       );
       const data = await response.json();
-      setActivityId(data.id);
-      setSwipeDirection("");
+      console.log(data);
     };
 
-    if (swipeDirection !== "") {
+    if (currentSwipedCard.activityId) {
       updateFavActivities();
     }
-    console.log(swipeDirection);
-  }, [swipeDirection, activityId]);
+  }, [currentSwipedCard]);
 
   return (
     <div>
