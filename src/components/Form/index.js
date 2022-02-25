@@ -48,7 +48,27 @@ export default function Form() {
     });
   }
   useEffect(() => {
-    console.log(JSON.stringify(submittedValues));
+    const createActivity = async () => {
+      const requestBody = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          organiser_id: "3",
+          ...submittedValues,
+        }),
+      };
+      const response = await fetch(
+        // link to be changed
+        "https://activity-app-backend.herokuapp.com/activities",
+        requestBody
+      );
+      const data = await response.json();
+      console.log(data);
+    };
+
+    if (submittedValues) {
+      createActivity();
+    }
   }, [submittedValues]);
 
   return (
