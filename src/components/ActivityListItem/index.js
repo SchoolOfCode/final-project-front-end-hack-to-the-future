@@ -17,11 +17,11 @@ function ActivityListItem({activity}) {
     <li>
       <h2>{activity.type}</h2>
       <h3>{activity.date_time}</h3>
-      <Button button="Expand" onClick={toggleIfExpanded} />
+      <Button className={ifExpanded ? "collapsed" : "expanded"} button="Expand" onClick={toggleIfExpanded} />
       <div className={ifExpanded ? "expanded" : "collapsed"}>
         <ActivityCard activity={activity} />
-        <Button button="Collapse" onClick={toggleIfExpanded} />
-        <Button button="Attend" />
+        <Button button="Collapse" onClick={toggleIfExpanded} className={ifExpanded ? "expanded" : "collapsed"}/>
+        <Button button="Attend" className={ifExpanded ? "expanded" : "collapsed"} />
       </div>
     </li>
   );
