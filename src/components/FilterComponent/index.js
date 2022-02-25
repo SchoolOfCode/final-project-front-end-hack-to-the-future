@@ -6,7 +6,6 @@ import DateSelector from './DateSelector';
 function FilterComponent() {
     return (
         <div
-            className='filter-component'
             style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(3, 1fr)',

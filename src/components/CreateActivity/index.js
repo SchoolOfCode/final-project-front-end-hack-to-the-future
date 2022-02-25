@@ -3,7 +3,9 @@ import Form from '../Form/index'
 
 function CreateActivity() {
   return (
-    <div>CreateActivity</div>
+    <div>
+      <Form />
+    </div>
   )
 }
 
