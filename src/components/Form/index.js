@@ -32,51 +32,24 @@ let create = createTheme({
   },
 });
 
-// Date & Time Picker component
-function DateAndTimePicker() {
-  const [value, setValue] = React.useState(new Date("2014-08-18T21:11:54"));
-
-  const handleChange = (newValue) => {
-    setValue(newValue);
-  };
-
-  return (
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <DateTimePicker
-        label="Date and Time picker"
-        value={value}
-        onChange={handleChange}
-        renderInput={(params) => <TextField {...params} />}
-      />
-    </LocalizationProvider>
-  );
-}
-
 // Form card
 export default function Form() {
   // useState to check if submit button has been pressed and trigger request
   const [submittedValues, setSubmittedValues] = useState();
-  const [dateTimeValue, setDateTimeValue] = useState();
-
-  function handleDateChange(e) {
-    console.log(e);
-    setDateTimeValue(e);
-  }
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(dateTimeValue);
     setSubmittedValues({
-      location_id: e.target.location.value,
+      location_name: e.target.location.value,
       max_attendees: e.target.activityMaxAttendees.value,
-      // date_time: dateTimeValue,
+      date_time: e.target.activityTime.value,
       description: e.target.activityDescription.value,
       type: e.target.activityType.value,
     });
   }
   useEffect(() => {
-    console.log(JSON.stringify(submittedValues), dateTimeValue);
-  }, [submittedValues, dateTimeValue]);
+    console.log(JSON.stringify(submittedValues));
+  }, [submittedValues]);
 
   return (
     <div>
@@ -92,7 +65,7 @@ export default function Form() {
             variant="outlined"
             required
           />
-          <DateAndTimePicker
+          {/* <DateAndTimePicker
             value={dateTimeValue}
             onChange={(newDateValue) => setDateTimeValue(newDateValue)}
             id="dateTime"
@@ -100,7 +73,14 @@ export default function Form() {
             label="Date Time"
             variant="outlined"
             required
-          />
+          /> */}
+
+          <input
+            type="datetime-local"
+            id="activityTime"
+            name="activityTime"
+            required
+          ></input>
           <TextField
             sx={{
               width: 400,
