@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import Button from "../Button/index";
-import DateSelector from "../FilterComponent/DateSelector";
+//import DateSelector from "../FilterComponent/DateSelector";
 import { FormControl, FormHelperText, TextField } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import DateTimePicker from "@mui/lab/DateTimePicker";
+import {Link} from "react-router-dom";
+//import AdapterDateFns from "@mui/lab/AdapterDateFns";
+//import LocalizationProvider from "@mui/lab/LocalizationProvider";
+//import DateTimePicker from "@mui/lab/DateTimePicker";
 
 // Material UI variables to customize the Create & Cancel Buttons
 let cancel = createTheme({
@@ -36,7 +37,7 @@ let create = createTheme({
 export default function Form() {
   // useState to check if submit button has been pressed and trigger request
   const [submittedValues, setSubmittedValues] = useState();
-
+  console.log(submittedValues);
   function handleSubmit(e) {
     e.preventDefault();
     setSubmittedValues({
@@ -149,7 +150,9 @@ export default function Form() {
           />
 
           <ThemeProvider theme={cancel}>
-            <Button button={"Cancel"} />
+            <Link to="/">
+              <Button button={"Cancel"} />
+            </Link>
           </ThemeProvider>
           <ThemeProvider theme={create}>
             <Button type="submit" button={"Create"} />
