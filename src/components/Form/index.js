@@ -37,7 +37,8 @@ let create = createTheme({
 export default function Form() {
   // useState to check if submit button has been pressed and trigger request
   const [submittedValues, setSubmittedValues] = useState();
-  console.log(submittedValues);
+  
+
   function handleSubmit(e) {
     e.preventDefault();
     setSubmittedValues({
@@ -47,6 +48,7 @@ export default function Form() {
       description: e.target.activityDescription.value,
       type: e.target.activityType.value,
     });
+    e.target.reset();
   }
   useEffect(() => {
     const createActivity = async () => {
@@ -65,6 +67,8 @@ export default function Form() {
       );
       const data = await response.json();
       console.log(data);
+      alert(data.success ? "Activity created" : "Sorry there was an error"); 
+      setSubmittedValues(null);
     };
 
     if (submittedValues) {
