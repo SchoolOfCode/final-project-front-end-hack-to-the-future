@@ -101,7 +101,21 @@ export default function Form() {
             name="activityTime"
             required
           ></input>
-          <TextField
+          <select
+            id="activityType"
+            name="activityType"
+            defaultValue="defaultValue"
+            required
+          >
+            <option value="defaultValue" disabled>
+              --Please choose an activity type--
+            </option>
+            <option value="walk">Walk</option>
+            <option value="swim">Swim</option>
+            <option value="tennis">Tennis</option>
+          </select>
+
+          {/* <TextField
             sx={{
               width: 400,
             }}
@@ -110,7 +124,7 @@ export default function Form() {
             label="Activity Type"
             variant="outlined"
             required
-          />
+          /> */}
           <TextField
             sx={{
               width: 400,
