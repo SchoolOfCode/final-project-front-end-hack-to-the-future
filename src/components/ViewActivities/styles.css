@@ -6,8 +6,12 @@
 }
 .card {
   position: relative;
-  background-color: #fff;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #EDF6F9;
+  height: 80vh;
   width: 350px;
   max-width: 100vh;
   padding: 30px;

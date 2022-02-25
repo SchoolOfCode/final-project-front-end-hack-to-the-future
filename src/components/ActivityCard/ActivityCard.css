@@ -1,0 +1,22 @@
+
+.imageFrame {
+  width: 80%;
+  border: solid 2px black;
+  border-radius: 1rem;
+  box-shadow: 0.3rem 0.3rem 0.6rem grey;
+}
+
+.spanned {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+img {
+  border-radius: 0.8rem;
+  width: 100%;
+  height: 100%;
+}
