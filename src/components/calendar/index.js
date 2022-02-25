@@ -1,10 +1,8 @@
-import React from 'react'
-import ActivityListItem from '../ActivityListItem/index'
+import React from "react";
+import ActivityListItem from "../ActivityListItem/index";
 
 function Calendar() {
-  return (
-    <div>Calendar</div>
-  )
+  return <div>This is where the My Activities Calendar component will be!</div>;
 }
 
-export default Calendar
+export default Calendar;

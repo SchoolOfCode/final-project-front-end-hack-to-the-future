@@ -1,10 +1,12 @@
-import React from 'react'
-import Calendar from '../Calendar/index'
+import React from "react";
+import Calendar from "../Calendar/index";
 
 function ActivityCalendar() {
   return (
-    <div>ActivityCalendar</div>
-  )
+    <div>
+      <Calendar />
+    </div>
+  );
 }
 
-export default ActivityCalendar
+export default ActivityCalendar;
