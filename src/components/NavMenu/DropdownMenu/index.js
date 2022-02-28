@@ -4,6 +4,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import LogoutButton from "../../LoginPage/LogoutButton";
 
 import { Link } from "react-router-dom";
 
@@ -58,7 +59,9 @@ export default function DropdownMenu() {
         <MenuItem onClick={handleClose}>
           <Link to="/activity-calendar">Activity Calendar</Link>
         </MenuItem>
-        <MenuItem onClick={handleClose}>Log out</MenuItem>{" "}
+        <MenuItem onClick={handleClose}>
+          <LogoutButton />
+        </MenuItem>{" "}
         {/*Add log out route */}
       </Menu>
     </div>
