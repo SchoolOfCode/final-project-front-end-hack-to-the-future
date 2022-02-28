@@ -8,7 +8,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import LoginPage from "../LoginPage";
 
 function App() {
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const {isAuthenticated } = useAuth0();
   return (
     <React.StrictMode>
       <div className="App">
