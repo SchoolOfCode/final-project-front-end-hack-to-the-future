@@ -1,10 +1,12 @@
+import IntroductionMain from "../IntroductionMain";
 import LoginButton from "./LoginButton";
 import Profile from "./Profile";
 
 function LoginPage() {
   return (
     <div>
-      <LoginButton />
+      <IntroductionMain />
+      {/* <LoginButton /> */}
       <Profile />
     </div>
   );
