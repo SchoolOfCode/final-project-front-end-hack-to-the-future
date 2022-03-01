@@ -14,7 +14,7 @@ import theatreImg from "../../images/Activities/theatre.jpg";
 import walkImg from "../../images/Activities/walk.jpg";
 import museumImg from "../../images/Activities/museum.jpg";
 
-import "./ActivityCard.css";
+import css from "./ActivityCard.module.css";
 
 function ActivityCard({ activity }) {
   const [date, time] = activity.date_time.split("T");
@@ -61,14 +61,14 @@ function ActivityCard({ activity }) {
     // do nothing
   }
   return (
-    <div className="card">
-      <div className="imageFrame">
+    <div className={css.card}>
+      <div className={css.imageFrame}>
         <img src={image} alt="activity representation" />
         {/* <img src={activityImage} alt="activity representation" /> */}
       </div>
       <h3>{activity.type}</h3>
       <p>{activity.description}</p>
-      <div className="spanned">
+      <div className={css.spanned}>
         <span>
           <b>Location: </b>
           {activity.location}
@@ -79,7 +79,7 @@ function ActivityCard({ activity }) {
           {activity.max_attendees}
         </span>
       </div>
-      <div className="spanned">
+      <div className={css.spanned}>
         <span>
           <b>Date: </b>
           {date}

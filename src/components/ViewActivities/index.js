@@ -2,8 +2,9 @@ import React from "react";
 import ActivityCard from "../ActivityCard/index";
 import TinderCard from "react-tinder-card";
 import { useState, useEffect } from "react";
-import "./styles.css";
+import css from "./ViewActivities.module.css";
 import FilterComponent from "../FilterComponent";
+//import { css } from "@emotion/react";
 
 export default function ViewActivities({ user_id }) {
   const [activities, setActivity] = useState([]);
@@ -70,11 +71,11 @@ export default function ViewActivities({ user_id }) {
   }, [currentSwipedCard, user_id]);
 
   return (
-    <div>
+    <div className={css.viewActivitiesContainer}>
       <FilterComponent />
       {activities.map((activity, index) => (
         <TinderCard
-          className="swipe"
+          className={css.swipe}
           key={index}
           preventSwipe={["up", "down"]}
           onSwipe={(dir) => Swiped(dir, activity)}
