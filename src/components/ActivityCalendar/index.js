@@ -2,31 +2,31 @@ import React, { useState, useEffect } from "react";
 import Calendar from "../Calendar/index";
 import "./ActivityCalendar.css";
 
-function ActivityCalendar() {
+function ActivityCalendar({ user_id }) {
   const [interestedActivities, setInterestedActivities] = useState([]);
   console.log(interestedActivities);
 
   useEffect(() => {
     const getParticipants = async () => {
       const requestParticipants = {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          user_id: "2",
-          participant_role: "interested",
-        }),
+        method: "GET",
+        headers: { "Content-Type": "application/json", Authorization: user_id },
       };
 
       const response = await fetch(
-        "https://activity-app-backend.herokuapp.com/participants",
+        "https://activity-app-backend.herokuapp.com/participants/attending",
         requestParticipants
       );
       const data = await response.json();
       console.log(data);
-      setInterestedActivities(data.payload.map(activity => convertActivitiesToEvents(activity)));
+      setInterestedActivities(
+        data.payload.map((activity) => convertActivitiesToEvents(activity))
+      );
     };
-    getParticipants();
-  }, []);
+    if (user_id) {
+      getParticipants();
+    }
+  }, [user_id]);
 
   return (
     <div className="activityCalendar">
@@ -38,19 +38,17 @@ function ActivityCalendar() {
 export default ActivityCalendar;
 
 function convertActivitiesToEvents(activity) {
-
-  
   function Add2hours() {
-  // first to get the hours character
-  // convert those character to number
-  // if are 22 or 23 ( return 00 or 01)
-  // if not add 2 to the that number
-  // replace it back into the string
+    // first to get the hours character
+    // convert those character to number
+    // if are 22 or 23 ( return 00 or 01)
+    // if not add 2 to the that number
+    // replace it back into the string
 
     const timeString = activity.date_time;
     let newTime;
-    const startTime = Number(timeString.slice(11,13));
-    
+    const startTime = Number(timeString.slice(11, 13));
+
     switch (startTime) {
       case 22:
         newTime = "00";
@@ -61,7 +59,6 @@ function convertActivitiesToEvents(activity) {
       default:
         newTime = startTime + 2;
     }
-    
 
     return timeString.slice(0, 11) + newTime.toString() + timeString.slice(13);
   }
