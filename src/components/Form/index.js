@@ -34,7 +34,7 @@ let create = createTheme({
 });
 
 // Form card
-export default function Form() {
+export default function Form({ user_id }) {
   // useState to check if submit button has been pressed and trigger request
   const [submittedValues, setSubmittedValues] = useState();
 
@@ -53,11 +53,11 @@ export default function Form() {
     const createActivity = async () => {
       const requestBody = {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          organiser_id: "3",
-          ...submittedValues,
-        }),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: user_id,
+        },
+        body: JSON.stringify(submittedValues),
       };
       const response = await fetch(
         // link to be changed
@@ -70,10 +70,10 @@ export default function Form() {
       setSubmittedValues(null);
     };
 
-    if (submittedValues) {
+    if (submittedValues && user_id) {
       createActivity();
     }
-  }, [submittedValues]);
+  }, [submittedValues, user_id]);
 
   return (
     <div>

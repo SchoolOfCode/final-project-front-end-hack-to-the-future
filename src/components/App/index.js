@@ -46,7 +46,7 @@ function App() {
           {isAuthenticated ? (
             <>
               <Header />
-              <Main />
+              <Main user_id={user.sub} />
             </>
           ) : (
             <>
