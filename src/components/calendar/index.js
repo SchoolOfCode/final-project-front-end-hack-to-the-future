@@ -1,29 +1,56 @@
-import React from "react";
-import ActivityListItem from "../ActivityListItem/index";
+import React, { useState } from "react";
+import ActivityCard from "../ActivityCard";
 import Kalend, { CalendarView } from "kalend"; // import component
 import "kalend/dist/styles/index.css"; // import styles
+import Button from "../Button";
+import "./Calendar.css";
 
-function Calendar() {
+function Calendar({ activityEvents }) {
+
+  const [activityCard, setActivityCard] = useState();
+
+
+
+  function onEventClick(data){
+
+    function convertData(activity) {
+     return {
+       activity_id: activity.id,
+       organiser_id: activity.organiser_idganiser_id,
+       max_attendees: activity.max_attendees,
+       date_time: activity.startAt,
+       location_name: activity.location_name,
+       type: activity.type,
+       description: activity.summary,
+       user_name: activity.user_name,
+       email: activity.email,
+       user_id: activity.user_id,
+     };
+    }
+
+    setActivityCard(convertData(data));
+  }
+
+
   return (
-    <div>
+    <div className="calendar">
       This is where the My Activities Calendar component will be!
       <Kalend
-        // initialView={CalendarView.MONTH}
-        //   onEventClick={onEventClick}
+        // kalendRef={props.kalendRef}
         // onNewEventClick={onNewEventClick}
-        events={[]}
-        initialDate={new Date().toISOString()}
-        hourHeight={60}
         initialView={CalendarView.MONTH}
-        // disabledViews={[CalendarView.DAY]}
-        // onSelectView={onSelectView}
-        // selectedView={selectedView}
-        // onPageChange={onPageChange}
-        timeFormat={"24"}
-        weekDayStart={"Monday"}
-        calendarIDsHidden={["work"]}
-        language={"en"}
+        //disabledViews={activityEvents}
+        onEventClick={onEventClick}
+        events={activityEvents}
+        initialDate={new Date().toISOString()}
+        hourHeight={20}
+        timezone={"Europe/Berlin"}
+        // onEventDragFinish={onEventDragFinish}
+        // onStateChange={props.onStateChange}
+        // selectedView={props.selectedView}
       />
+      {activityCard && <ActivityCard activity={activityCard} />}
+
     </div>
   );
 }
