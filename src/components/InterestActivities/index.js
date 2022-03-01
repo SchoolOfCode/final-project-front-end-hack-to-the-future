@@ -1,32 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import ActivityListItem from '../ActivityListItem/index';
-import axios from 'axios';
 
-function InterestActivities() {
+function InterestActivities({ user_id }) {
     const [interestedActivities, setInterestedActivities] = useState([]);
     console.log(interestedActivities);
-
 
     useEffect(() => {
         const getParticipants = async () => {
             const requestParticipants = {
-                method: 'PATCH',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    user_id: '4',
-                    participant_role: 'interested',
-                }),
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: user_id,
+                },
             };
 
             const response = await fetch(
-                'https://activity-app-backend.herokuapp.com/participants',
+                'https://activity-app-backend.herokuapp.com/participants/interested',
                 requestParticipants
             );
             const data = await response.json();
             setInterestedActivities(data.payload);
         };
-        getParticipants();
-    }, []);
+
+        if (user_id) {
+            getParticipants();
+        }
+    }, [user_id]);
 
     return (
         <ul>
