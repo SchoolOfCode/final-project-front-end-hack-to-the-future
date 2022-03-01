@@ -5,7 +5,7 @@ import Button from "../Button/index";
 import { FormControl, FormHelperText, TextField } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 //import AdapterDateFns from "@mui/lab/AdapterDateFns";
 //import LocalizationProvider from "@mui/lab/LocalizationProvider";
 //import DateTimePicker from "@mui/lab/DateTimePicker";
@@ -37,7 +37,6 @@ let create = createTheme({
 export default function Form() {
   // useState to check if submit button has been pressed and trigger request
   const [submittedValues, setSubmittedValues] = useState();
-  
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -67,7 +66,7 @@ export default function Form() {
       );
       const data = await response.json();
       console.log(data);
-      alert(data.success ? "Activity created" : "Sorry there was an error"); 
+      alert(data.success ? "Activity created" : "Sorry there was an error");
       setSubmittedValues(null);
     };
 
@@ -115,10 +114,33 @@ export default function Form() {
             <option value="defaultValue" disabled>
               --Please choose an activity type--
             </option>
-            <option value="walk">Walk</option>
+            <option value="arts/crafts">Arts/Crafts</option>
+            <option value="cafe">Cafe</option>
+            <option value="cinema">Cinema</option>
+            <option value="cycle">Cycle</option>
+            <option value="gallery">Gallery</option>
+            <option value="museum">Museum</option>
+            <option value="restaurant">Restaurant</option>
+            <option value="run">Run</option>
             <option value="swim">Swim</option>
             <option value="tennis">Tennis</option>
+            <option value="walk">Walk</option>
+            <option value="other">Other</option>
           </select>
+
+          {/* Arts and crafts
+Run
+Walk
+Cycle
+Cinema
+Theatre
+Cafe
+Tennis
+Other sport
+Craft
+Gallery/Museum
+Restaurant
+Swim */}
 
           {/* <TextField
             sx={{

@@ -5,7 +5,6 @@ import "./ActivityCard.css";
 function ActivityCard({ activity }) {
   const [date, time] = activity.date_time.split("T");
   const hourstime = time.slice(0, 5);
-
   return (
     <div className="card">
       <div className="imageFrame">
