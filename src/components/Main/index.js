@@ -6,6 +6,7 @@ import ViewActivities from "../ViewActivities/index";
 import CreateActivity from "../CreateActivity/index";
 import InterestActivities from "../InterestActivities/index";
 import ActivityCalendar from "../ActivityCalendar/index";
+import TsAndCs from "../TsAndCs";
 
 function Main() {
   return (
@@ -16,10 +17,10 @@ function Main() {
         <Route path="/create-activity" element={<CreateActivity />} />
         <Route path="/interest-activities" element={<InterestActivities />} />
         <Route path="/activity-calendar" element={<ActivityCalendar />} />
+        <Route path="/terms-and-conditions" element={<TsAndCs />} />
       </Routes>
     </main>
   );
 }
 
 export default Main;
-
