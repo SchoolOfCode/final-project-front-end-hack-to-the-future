@@ -60,6 +60,9 @@ export default function DropdownMenu() {
           <Link to="/activity-calendar">Activity Calendar</Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>
+          <Link to="/terms-and-conditions">Terms and Conditions</Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
           <LogoutButton />
         </MenuItem>{" "}
         {/*Add log out route */}
