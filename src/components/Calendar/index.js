@@ -9,8 +9,6 @@ function Calendar({ activityEvents }) {
 
   const [activityCard, setActivityCard] = useState();
 
-
-
   function onEventClick(data){
 
     function convertData(activity) {
@@ -26,11 +24,11 @@ function Calendar({ activityEvents }) {
        email: activity.email,
        user_id: activity.user_id,
      };
+
     }
 
     setActivityCard(convertData(data));
   }
-
 
   return (
     <div className="calendar">
@@ -50,7 +48,6 @@ function Calendar({ activityEvents }) {
         // selectedView={props.selectedView}
       />
       {activityCard && <ActivityCard activity={activityCard} />}
-
     </div>
   );
 }
