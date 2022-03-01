@@ -6,6 +6,7 @@ import ViewActivities from "../ViewActivities/index";
 import CreateActivity from "../CreateActivity/index";
 import InterestActivities from "../InterestActivities/index";
 import ActivityCalendar from "../ActivityCalendar/index";
+import TsAndCs from "../TsAndCs";
 
 function Main({ user_id }) {
   return (

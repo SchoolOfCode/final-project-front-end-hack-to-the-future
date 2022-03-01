@@ -1,10 +1,10 @@
-import LoginButton from "./LoginButton";
+import IntroductionMain from "../IntroductionMain";
 import Profile from "./Profile";
 
 function LoginPage() {
   return (
     <div>
-      <LoginButton />
+      <IntroductionMain />
       <Profile />
     </div>
   );
