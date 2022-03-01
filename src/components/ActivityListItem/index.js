@@ -3,7 +3,7 @@ import ActivityCard from '../ActivityCard/index';
 import Button from '../Button/index';
 import './ActivityListItem.css';
 
-function ActivityListItem({ activity }) {
+function ActivityListItem({ activity, user_id }) {
     const [ifExpanded, setIfExpanded] = useState(false);
     console.log(ifExpanded);
     const [attendBtnClicked, setAttendBtnClicked] = useState(false);
@@ -20,11 +20,13 @@ function ActivityListItem({ activity }) {
         const updateParticipants = async () => {
             const requestActivity = {
                 method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: user_id,
+                },
                 body: JSON.stringify({
-                    userId: '4',
-                    activityId: activity.activity_id,
-                    role: 'attending',
+                    activity_id: activity.activity_id,
+                    participant_role: 'attending',
                 }),
             };
             const response = await fetch(
@@ -35,8 +37,11 @@ function ActivityListItem({ activity }) {
             const data = await response.json();
             console.log(data.payload);
         };
-        updateParticipants();
-    }, [attendBtnClicked]);
+
+        if (user_id) {
+            updateParticipants();
+        }
+    }, [attendBtnClicked, user_id]);
 
     return (
         <li>
