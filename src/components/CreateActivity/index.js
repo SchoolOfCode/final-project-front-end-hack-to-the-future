@@ -1,10 +1,10 @@
 import React from 'react'
 import Form from '../Form/index'
 
-function CreateActivity() {
+function CreateActivity({user_id}) {
   return (
     <div>
-      <Form />
+      <Form user_id={user_id}/>
     </div>
   )
 }
