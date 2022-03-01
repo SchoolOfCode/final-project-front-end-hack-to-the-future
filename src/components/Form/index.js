@@ -114,10 +114,33 @@ export default function Form({ user_id }) {
             <option value="defaultValue" disabled>
               --Please choose an activity type--
             </option>
-            <option value="walk">Walk</option>
+            <option value="arts/crafts">Arts/Crafts</option>
+            <option value="cafe">Cafe</option>
+            <option value="cinema">Cinema</option>
+            <option value="cycle">Cycle</option>
+            <option value="gallery">Gallery</option>
+            <option value="museum">Museum</option>
+            <option value="restaurant">Restaurant</option>
+            <option value="run">Run</option>
             <option value="swim">Swim</option>
             <option value="tennis">Tennis</option>
+            <option value="walk">Walk</option>
+            <option value="other">Other</option>
           </select>
+
+          {/* Arts and crafts
+Run
+Walk
+Cycle
+Cinema
+Theatre
+Cafe
+Tennis
+Other sport
+Craft
+Gallery/Museum
+Restaurant
+Swim */}
 
           {/* <TextField
             sx={{
