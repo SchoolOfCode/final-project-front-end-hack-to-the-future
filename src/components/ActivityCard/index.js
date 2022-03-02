@@ -16,7 +16,7 @@ import museumImg from "../../images/Activities/museum.jpg";
 import Button from "../Button";
 import { converDateTime } from "../../HelperFunctions";
 
-import "./ActivityCard.css";
+import css from "./ActivityCard.module.css";
 
 function ActivityCard({ activity, leftButton, rightButton }) {
 
@@ -64,14 +64,14 @@ function ActivityCard({ activity, leftButton, rightButton }) {
     // do nothing
   }
   return (
-    <div className="card">
-      <div className="imageFrame">
+    <div className={css.card}>
+      <div className={css.imageFrame}>
         <img src={image} alt="activity representation" />
         {/* <img src={activityImage} alt="activity representation" /> */}
       </div>
       <h3>{activity.type}</h3>
       <p>{activity.description}</p>
-      <div className="spanned">
+      <div className={css.spanned}>
         <span>
           <b>Location: </b>
           {activity.location}
@@ -82,7 +82,7 @@ function ActivityCard({ activity, leftButton, rightButton }) {
           {activity.max_attendees}
         </span>
       </div>
-      <div className="spanned">
+      <div className={css.spanned}>
         <span>
           <b>Date: </b>
           {date}

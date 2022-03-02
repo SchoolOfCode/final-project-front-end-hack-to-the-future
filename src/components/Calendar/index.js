@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import ActivityCard from "../ActivityCard";
 import Kalend, { CalendarView } from "kalend"; // import component
 import "kalend/dist/styles/index.css"; // import styles
-import Button from "../Button";
 import "./Calendar.css";
 
 function Calendar({ activityEvents, user_id, removeActivity }) {

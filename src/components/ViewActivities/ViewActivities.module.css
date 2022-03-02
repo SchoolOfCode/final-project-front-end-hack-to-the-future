@@ -1,0 +1,13 @@
+
+.viewActivitiesContainer {
+  width: 100%;
+  height: 40rem;
+}
+
+.swipe {
+  position: absolute;
+  left: 25%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
