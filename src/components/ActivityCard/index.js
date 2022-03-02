@@ -13,6 +13,7 @@ import tennisImg from "../../images/Activities/tennis.jpg";
 import theatreImg from "../../images/Activities/theatre.jpg";
 import walkImg from "../../images/Activities/walk.jpg";
 import museumImg from "../../images/Activities/museum.jpg";
+import Button from '../Button';
 
 import "./ActivityCard.css";
 
@@ -89,8 +90,18 @@ function ActivityCard({ activity }) {
           {hourstime} H
         </span>
       </div>
+        {leftButton && (
+                <Button button={leftButton.text} onClick={leftButton.onClick} />
+            )}
+            {rightButton && (
+                <Button
+                    button={rightButton.text}
+                    onClick={rightButton.onClick}
+                />
+            )}
     </div>
   );
+
 }
 
 export default ActivityCard;
