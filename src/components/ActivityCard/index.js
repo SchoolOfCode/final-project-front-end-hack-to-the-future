@@ -13,11 +13,11 @@ import tennisImg from "../../images/Activities/tennis.jpg";
 import theatreImg from "../../images/Activities/theatre.jpg";
 import walkImg from "../../images/Activities/walk.jpg";
 import museumImg from "../../images/Activities/museum.jpg";
-import Button from '../Button';
+import Button from "../Button";
 
 import "./ActivityCard.css";
 
-function ActivityCard({ activity }) {
+function ActivityCard({ activity, leftButton, rightButton }) {
   const [date, time] = activity.date_time.split("T");
   const hourstime = time.slice(0, 5);
   let image;
@@ -90,18 +90,14 @@ function ActivityCard({ activity }) {
           {hourstime} H
         </span>
       </div>
-        {leftButton && (
-                <Button button={leftButton.text} onClick={leftButton.onClick} />
-            )}
-            {rightButton && (
-                <Button
-                    button={rightButton.text}
-                    onClick={rightButton.onClick}
-                />
-            )}
+      {leftButton && (
+        <Button button={leftButton.text} onClick={leftButton.onClick} />
+      )}
+      {rightButton && (
+        <Button button={rightButton.text} onClick={rightButton.onClick} />
+      )}
     </div>
   );
-
 }
 
 export default ActivityCard;

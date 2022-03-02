@@ -10,6 +10,7 @@ function ActivityListItem({ activity, user_id }) {
 
   function toggleIfExpanded() {
     setIfExpanded(!ifExpanded);
+    console.log("clicked");
   }
 
   function handleAttendClick() {
@@ -47,24 +48,17 @@ function ActivityListItem({ activity, user_id }) {
 
   return (
     <li>
-      <h2>{activity.type}</h2>
-      <h3>{activity.date_time}</h3>
-      <Button
-        className={ifExpanded ? "collapsed" : "expanded"}
-        button="Expand"
-        onClick={toggleIfExpanded}
-      />
+      <div className={!ifExpanded ? "expanded" : "collapsed"}>
+        <h2>{activity.type}</h2>
+        <h3>{activity.date_time}</h3>
+        <Button button="Expand" onClick={toggleIfExpanded} />
+      </div>
+
       <div className={ifExpanded ? "expanded" : "collapsed"}>
-        <ActivityCard activity={activity} />
-        <Button
-          button="Collapse"
-          onClick={toggleIfExpanded}
-          className={ifExpanded ? "expanded" : "collapsed"}
-        />
-        <Button
-          button="Attend"
-          onClick={handleAttendClick}
-          className={ifExpanded ? "expanded" : "collapsed"}
+        <ActivityCard
+          activity={activity}
+          leftButton={{ text: "Collapse", onClick: () => toggleIfExpanded() }}
+          rightButton={{ text: "Attend", onClick: () => handleAttendClick() }}
         />
       </div>
     </li>
