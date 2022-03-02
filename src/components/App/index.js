@@ -9,7 +9,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginPage from "../LoginPage";
 import TsAndCs from "../TsAndCs";
-
+//Our app!
 function App() {
   const { isAuthenticated, user } = useAuth0();
 
