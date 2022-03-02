@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ActivityListItem from '../ActivityListItem/index';
+import css from "./InterestActivities.module.css";
 
 function InterestActivities({ user_id }) {
     const [interestedActivities, setInterestedActivities] = useState([]);
@@ -33,7 +34,7 @@ function InterestActivities({ user_id }) {
     }, [user_id]);
 
     return (
-        <ul>
+        <ul className={`${css.itemsContainer} flex-vertical`}>
             {interestedActivities.map((activity, index) => {
                 return (
                     <ActivityListItem
