@@ -7,7 +7,7 @@ import "./Calendar.css";
 
 function Calendar({ activityEvents }) {
 
-  const [activityCard, setActivityCard] = useState();
+  const [activityCard, setActivityCard] = useState(null);
 
   function onEventClick(data){
 
@@ -47,7 +47,13 @@ function Calendar({ activityEvents }) {
         // onStateChange={props.onStateChange}
         // selectedView={props.selectedView}
       />
-      {activityCard && <ActivityCard activity={activityCard} />}
+      {activityCard && (
+        <ActivityCard
+          activity={activityCard}
+          leftButton={{ text: "Collapse", onClick: () => setActivityCard(null) }}
+          rightButton={{ text: "Not Attending", onClick: "" }}
+        />
+      )}
     </div>
   );
 }
