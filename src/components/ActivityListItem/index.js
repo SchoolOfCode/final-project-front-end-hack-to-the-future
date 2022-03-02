@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
 import ActivityCard from "../ActivityCard/index";
 import Button from "../Button/index";
+import { converDateTime } from "../../HelperFunctions";
 import "./ActivityListItem.css";
 
 function ActivityListItem({ activity, user_id }) {
   const [ifExpanded, setIfExpanded] = useState(false);
   console.log(ifExpanded);
   const [attendBtnClicked, setAttendBtnClicked] = useState(false);
+  
+  const [date, time] = converDateTime(activity.date_time);
 
   function toggleIfExpanded() {
     setIfExpanded(!ifExpanded);
+    console.log("clicked");
   }
 
   function handleAttendClick() {
@@ -47,24 +51,17 @@ function ActivityListItem({ activity, user_id }) {
 
   return (
     <li>
-      <h2>{activity.type}</h2>
-      <h3>{activity.date_time}</h3>
-      <Button
-        className={ifExpanded ? "collapsed" : "expanded"}
-        button="Expand"
-        onClick={toggleIfExpanded}
-      />
+      <div className={!ifExpanded ? "expanded" : "collapsed"}>
+        <h2>{activity.type}</h2>
+        <h3>{`Date: ${date} | Time: ${time}` }</h3>
+        <Button button="Expand" onClick={toggleIfExpanded} />
+      </div>
+
       <div className={ifExpanded ? "expanded" : "collapsed"}>
-        <ActivityCard activity={activity} />
-        <Button
-          button="Collapse"
-          onClick={toggleIfExpanded}
-          className={ifExpanded ? "expanded" : "collapsed"}
-        />
-        <Button
-          button="Attend"
-          onClick={handleAttendClick}
-          className={ifExpanded ? "expanded" : "collapsed"}
+        <ActivityCard
+          activity={activity}
+          leftButton={{ text: "Collapse", onClick: () => toggleIfExpanded() }}
+          rightButton={{ text: "Attend", onClick: () => handleAttendClick() }}
         />
       </div>
     </li>
