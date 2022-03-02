@@ -5,22 +5,25 @@ import "kalend/dist/styles/index.css"; // import styles
 import "./Calendar.css";
 
 function Calendar({ activityEvents }) {
+
   const [activityCard, setActivityCard] = useState();
 
-  function onEventClick(data) {
+  function onEventClick(data){
+
     function convertData(activity) {
-      return {
-        activity_id: activity.id,
-        organiser_id: activity.organiser_idganiser_id,
-        max_attendees: activity.max_attendees,
-        date_time: activity.startAt,
-        location_name: activity.location_name,
-        type: activity.type,
-        description: activity.summary,
-        user_name: activity.user_name,
-        email: activity.email,
-        user_id: activity.user_id,
-      };
+     return {
+       activity_id: activity.id,
+       organiser_id: activity.organiser_idganiser_id,
+       max_attendees: activity.max_attendees,
+       date_time: activity.startAt,
+       location_name: activity.location_name,
+       type: activity.type,
+       description: activity.summary,
+       user_name: activity.user_name,
+       email: activity.email,
+       user_id: activity.user_id,
+     };
+
     }
 
     setActivityCard(convertData(data));
