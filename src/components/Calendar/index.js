@@ -36,7 +36,7 @@ function Calendar({ activityEvents, user_id, removeActivity }) {
     if (user_id && buttonClicked) {
       updateParticipants();
     }
-  }, [buttonClicked, user_id]);
+  }, [buttonClicked, user_id, activityCard, removeActivity]);
 
   function onEventClick(data) {
     function convertData(activity) {
