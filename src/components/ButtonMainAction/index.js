@@ -6,7 +6,7 @@ function ButtonMainAction({ text, path, imagePath }) {
   return (
     <section className={css.buttonContainer}>
       <Link to={path}>
-        <img src={imagePath} alt={text} />
+        <img src={imagePath} alt={text} className={css.buttonImage} />
         <p className={css.buttonText}>{text}</p>
       </Link>
     </section>

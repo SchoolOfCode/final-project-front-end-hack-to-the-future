@@ -13,3 +13,12 @@
   font-size: 1.2rem;
   font-weight: bold;
 }
+
+.buttonImage {
+  border-radius: 30px;
+  border: 2px solid black;
+}
+
+.buttonImage:hover {
+  opacity: 0.8;
+}
