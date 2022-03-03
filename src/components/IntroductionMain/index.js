@@ -28,10 +28,7 @@ function IntroductionMain() {
         </p>
         <p>
           I have read the
-          <Link to="/terms-and-conditions" style={{ color: "blue" }}>
-            {" "}
-            T&C's
-          </Link>
+          <span style={{ color: "blue" }}> T&C's</span>
           <input type="checkbox" onClick={handleCheck}></input>
         </p>
 
