@@ -19,7 +19,6 @@ import { converDateTime } from "../../HelperFunctions";
 import css from "./ActivityCard.module.css";
 
 function ActivityCard({ activity, leftButton, rightButton }) {
-
   const [date, time] = converDateTime(activity.date_time);
 
   let image;
@@ -92,12 +91,14 @@ function ActivityCard({ activity, leftButton, rightButton }) {
           {time}
         </span>
       </div>
-      {leftButton && (
-        <Button button={leftButton.text} onClick={leftButton.onClick} />
-      )}
-      {rightButton && (
-        <Button button={rightButton.text} onClick={rightButton.onClick} />
-      )}
+      <div className={`${css.buttonsContainer} flex-horizontal`}>
+        {leftButton && (
+          <Button button={leftButton.text} onClick={leftButton.onClick} />
+        )}
+        {rightButton && (
+          <Button button={rightButton.text} onClick={rightButton.onClick} />
+        )}
+      </div>
     </div>
   );
 }

@@ -1,0 +1,16 @@
+.logoContainer {
+  width: auto;
+  height: 20vw;
+  max-height: 110px;
+  padding: 0.5rem;
+}
+
+.logoContainer:hover {
+  cursor: pointer;
+  background-color: var(--alice-blue);
+}
+
+.logoContainer img {
+  width: auto;
+  height: 100%;
+}

@@ -1,23 +1,26 @@
 .homeContainer {
   width: 100%;
-  height: 40rem;
-  justify-content: flex-start;
+  height: 100vh;
+  justify-content:flex-start;
 }
 
-.logoContainer{
-  width: 50%;
-  height: 6rem;
-  margin: 2rem;
+.logoContainer {
+  width: auto;
+  height: 20vw;
+  max-height: 110px;
+  padding: 0.5rem;
 }
+
 
 .logo img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
 }
 
 .mainButtons {
   width: 100%;
   max-width: 700px;
-  height: 6rem;
-  margin-top: 4rem;
+  height: 45vw;
+  max-height: 320px;
+  margin-top: 8rem;
 }

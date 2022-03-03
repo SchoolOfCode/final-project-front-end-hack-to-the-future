@@ -50,26 +50,17 @@ function ActivityListItem({ activity, user_id }) {
   }, [attendBtnClicked, user_id, activity.activity_id]);
 
   return (
-    <li className={css.activityItemContainer}>
-      <div
-        className={
-          !ifExpanded
-            ? `${css.expanded}`
-            : `${css.collapsed}`
-        }
-      >
+    <li
+      className={`${css.activityItemContainer} flex-vertical ${ ifExpanded ? `${css.shrinkContainer}` : ""}`}
+      
+    >
+      <div className={!ifExpanded ? `${css.expanded}` : `${css.collapsed}`}>
         <h2>{activity.type}</h2>
         <h3>{`Date: ${date} | Time: ${time}`}</h3>
         <Button button="Expand" onClick={toggleIfExpanded} />
       </div>
 
-      <div
-        className={
-          ifExpanded
-            ? ` ${css.expanded}`
-            : ` ${css.collapsed}`
-        }
-      >
+      <div className={ifExpanded ? ` ${css.expanded}` : ` ${css.collapsed}`}>
         <ActivityCard
           activity={activity}
           leftButton={{ text: "Collapse", onClick: () => toggleIfExpanded() }}
