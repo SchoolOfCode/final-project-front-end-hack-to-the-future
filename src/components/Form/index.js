@@ -7,6 +7,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import css from "./Form.module.css";
+import { padding } from "@mui/system";
 //import AdapterDateFns from "@mui/lab/AdapterDateFns";
 //import LocalizationProvider from "@mui/lab/LocalizationProvider";
 //import DateTimePicker from "@mui/lab/DateTimePicker";
@@ -78,9 +79,11 @@ export default function Form({ user_id }) {
 
   return (
     <div className={css.formContainer}>
+      <h2>Create an Event</h2>
       <form onSubmit={handleSubmit}>
         <FormControl className={css.formControl}>
           <TextField
+            sx={{ bgcolor: "white" }}
             className={css.Input}
             // sx={{
             //   width: 100%,
@@ -124,6 +127,7 @@ export default function Form({ user_id }) {
           </select>
 
           <TextField
+            sx={{ mt: "1rem", bgcolor: "white" }}
             className={css.input}
             id="activityDescription"
             name="activityDescription"
@@ -132,6 +136,7 @@ export default function Form({ user_id }) {
             required
           />
           <TextField
+            sx={{ mt: "1rem", bgcolor: "white" }}
             className={css.input}
             type="number"
             inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
@@ -151,10 +156,6 @@ export default function Form({ user_id }) {
               <Button type="submit" button={"Create"} />
             </ThemeProvider>
           </div>
-
-          <FormHelperText id="my-helper-text">
-            Please enter the details
-          </FormHelperText>
         </FormControl>
       </form>
     </div>
