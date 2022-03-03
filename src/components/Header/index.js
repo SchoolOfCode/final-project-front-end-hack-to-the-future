@@ -1,10 +1,10 @@
 import React from "react";
-import Button from "../Button/index";
 import NavMenu from "../NavMenu/index";
+import css from "./Header.module.css"
 
 function Header() {
   return (
-    <div>
+    <div className={css.headerContainer}>
       <NavMenu />
     </div>
   );

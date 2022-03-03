@@ -28,9 +28,24 @@ function ActivityCalendar({ user_id }) {
     }
   }, [user_id]);
 
+  function removeActivity(id) {
+    const index = interestedActivities.findIndex(
+      (activity) => activity.id === id
+    );
+    const newActivities = [
+      ...interestedActivities.slice(0, index),
+      ...interestedActivities.slice(index + 1),
+    ];
+    setInterestedActivities(newActivities);
+  }
+
   return (
     <div className="activityCalendar">
-      <Calendar activityEvents={interestedActivities} />
+      <Calendar
+        activityEvents={interestedActivities}
+        user_id={user_id}
+        removeActivity={removeActivity}
+      />
     </div>
   );
 }

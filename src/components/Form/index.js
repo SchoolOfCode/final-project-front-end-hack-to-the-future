@@ -6,6 +6,7 @@ import { FormControl, FormHelperText, TextField } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
 import { Link } from "react-router-dom";
+import css from "./Form.module.css";
 //import AdapterDateFns from "@mui/lab/AdapterDateFns";
 //import LocalizationProvider from "@mui/lab/LocalizationProvider";
 //import DateTimePicker from "@mui/lab/DateTimePicker";
@@ -76,36 +77,30 @@ export default function Form({ user_id }) {
   }, [submittedValues, user_id]);
 
   return (
-    <div>
+    <div className={css.formContainer}>
       <form onSubmit={handleSubmit}>
-        <FormControl>
+        <FormControl className={css.formControl}>
           <TextField
-            sx={{
-              width: 400,
-            }}
+            className={css.Input}
+            // sx={{
+            //   width: 100%,
+            // }}
             id="location"
             name="location"
             label="Location"
             variant="outlined"
             required
           />
-          {/* <DateAndTimePicker
-            value={dateTimeValue}
-            onChange={(newDateValue) => setDateTimeValue(newDateValue)}
-            id="dateTime"
-            name="dateTime"
-            label="Date Time"
-            variant="outlined"
-            required
-          /> */}
 
           <input
+            className={css.input}
             type="datetime-local"
             id="activityTime"
             name="activityTime"
             required
           ></input>
           <select
+            className={css.input}
             id="activityType"
             name="activityType"
             defaultValue="defaultValue"
@@ -128,34 +123,8 @@ export default function Form({ user_id }) {
             <option value="other">Other</option>
           </select>
 
-          {/* Arts and crafts
-Run
-Walk
-Cycle
-Cinema
-Theatre
-Cafe
-Tennis
-Other sport
-Craft
-Gallery/Museum
-Restaurant
-Swim */}
-
-          {/* <TextField
-            sx={{
-              width: 400,
-            }}
-            id="activityType"
-            name="activityType"
-            label="Activity Type"
-            variant="outlined"
-            required
-          /> */}
           <TextField
-            sx={{
-              width: 400,
-            }}
+            className={css.input}
             id="activityDescription"
             name="activityDescription"
             label="Description"
@@ -163,26 +132,25 @@ Swim */}
             required
           />
           <TextField
+            className={css.input}
             type="number"
             inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
-            sx={{
-              width: 400,
-            }}
             id="activityMaxAttendees"
             name="activityMaxAttendees"
             label="Maximum Attendees"
             variant="outlined"
             required
           />
-
-          <ThemeProvider theme={cancel}>
-            <Link to="/">
-              <Button button={"Cancel"} />
-            </Link>
-          </ThemeProvider>
-          <ThemeProvider theme={create}>
-            <Button type="submit" button={"Create"} />
-          </ThemeProvider>
+          <div className={`${css.buttons} flex-horizontal`}>
+            <ThemeProvider theme={cancel}>
+              <Link to="/">
+                <Button button={"Cancel"} />
+              </Link>
+            </ThemeProvider>
+            <ThemeProvider theme={create}>
+              <Button type="submit" button={"Create"} />
+            </ThemeProvider>
+          </div>
 
           <FormHelperText id="my-helper-text">
             Please enter the details

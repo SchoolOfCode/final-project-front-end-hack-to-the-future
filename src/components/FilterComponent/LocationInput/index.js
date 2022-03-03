@@ -4,10 +4,10 @@ import TextField from '@mui/material/TextField';
 
 export default function LocationInput() {
     return (
-        <Box component='form' noValidate autoComplete='off'>
+        <Box component='form' noValidate autoComplete='off' style={{margin: "1rem"}}>
             <TextField
                 sx={{
-                    width: 400,
+                    width: 300,
                 }}
                 id='outlined-basic'
                 label='City'

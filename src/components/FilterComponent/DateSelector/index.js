@@ -10,24 +10,25 @@ export default function DateSelector() {
     const [value, setValue] = React.useState(null);
 
     return (
-        <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme} >
         <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <DatePicker
-                label='Date Picker'
-                value={value}
-                onChange={(newValue) => {
-                    setValue(newValue);
-                }}
-                renderInput={(params) => (
-                    <TextField
-                        sx={{
-                            width: 400,
-                        }}
-                        {...params}
-                    />
-                )}
-            />
+          <DatePicker
+            // style={{ margin: "1rem" }}
+            label="Date Picker"
+            value={value}
+            onChange={(newValue) => {
+              setValue(newValue);
+            }}
+            renderInput={(params) => (
+              <TextField
+                // sx={{
+                //     width: 400,
+                // }}
+                {...params}
+              />
+            )}
+          />
         </LocalizationProvider>
-        </ThemeProvider>
+      </ThemeProvider>
     );
 }
