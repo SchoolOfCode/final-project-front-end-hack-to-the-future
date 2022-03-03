@@ -7,3 +7,9 @@
   width: auto;
   height: 100%;
 }
+
+.buttonText {
+  color: #edf6f9;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
