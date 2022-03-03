@@ -5,7 +5,6 @@ function LoginPage() {
   return (
     <div className={css.container}>
       <IntroductionMain />
-      <Profile />
     </div>
   );
 }
