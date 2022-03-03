@@ -5,14 +5,12 @@ import Toolbar from "@mui/material/Toolbar";
 import DropdownMenu from "./DropdownMenu";
 import { Link } from "react-router-dom";
 import css from "./NavMenu.module.css";
-import logo from "../../logo-removebg-preview.png";
+import logo from "../../images/logo-no-text.png";
 
 export default function NavMenu() {
   return (
-    <Box sx={{ flexGrow: 1,  }}>
-      <AppBar
-        position="static"
-      >
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
         <Toolbar>
           <div className={css.logoContainer}>
             <Link to="/">
