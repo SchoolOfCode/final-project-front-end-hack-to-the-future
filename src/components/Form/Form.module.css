@@ -6,15 +6,17 @@
   background-color: var(--alice-blue);
   max-width: 500px;
 }
-
-.input {
-  width: 100%;
-  margin-top: 1rem;
-}
-
 .formControl {
   width: 90%;
 }
+
+.input {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid rgb(184, 176, 176);
+  border-radius: 0.25rem;
+}
+
 .buttons {
   margin: 1rem;
 }
