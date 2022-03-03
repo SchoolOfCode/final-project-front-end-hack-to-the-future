@@ -4,6 +4,7 @@ import LoginButton from "../LoginPage/LoginButton";
 import { Link } from "react-router-dom";
 import { style } from "@mui/system";
 import { FormatUnderlined } from "@mui/icons-material";
+import css from "./IntroductionMain.module.css";
 
 function IntroductionMain() {
   const [checked, setChecked] = useState(false);
@@ -18,19 +19,24 @@ function IntroductionMain() {
     return canBeSubmitted();
   };
   return (
-    <div>
-      <img src={logo} alt="" />
-      <p>Insert intro to app here</p>
-      <p>
-        I have read the
-        <Link to="/terms-and-conditions" style={{ color: "blue" }}>
-          {" "}
-          T&C's
-        </Link>
-        <input type="checkbox" onClick={handleCheck}></input>
-      </p>
+    <div className={css.container}>
+      <div className={css.introCard}>
+        <img src={logo} alt="" />
+        <p className={`${css.intro} flex-horizontal`}>
+          The only app you need to explore your interests, find events in your
+          local area and make lasting friendships!
+        </p>
+        <p>
+          I have read the
+          <Link to="/terms-and-conditions" style={{ color: "blue" }}>
+            {" "}
+            T&C's
+          </Link>
+          <input type="checkbox" onClick={handleCheck}></input>
+        </p>
 
-      <LoginButton disabled={isDisabled} />
+        <LoginButton disabled={isDisabled} />
+      </div>
     </div>
   );
 }
