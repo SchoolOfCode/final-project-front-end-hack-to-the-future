@@ -21,12 +21,11 @@
   margin: 1rem;
   width: 90%;
   justify-content: space-around;
-
 }
 
 .imageFrame {
-  width: 80%;
-  height: 30%;
+  width: 70%;
+  height: auto;
   border: solid 2px black;
   border-radius: 1rem;
   box-shadow: 0.3rem 0.3rem 0.6rem grey;
@@ -38,8 +37,6 @@
   justify-content: space-around;
   align-items: center;
 }
-
-
 
 .imageFrame img {
   border-radius: 0.8rem;
