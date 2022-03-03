@@ -1,3 +1,5 @@
+import { createTheme } from "@mui/material/styles";
+
 export function converDateTime(dateTime) {
   const [date, time] = dateTime.split("T");
   const hourstime = time.slice(0, 5);
@@ -13,10 +15,32 @@ export function converDateTime(dateTime) {
   } else if (hours >= 0 && hours < 12) {
     hours = hours + hourstime.slice(2) + " am";
   } else {
-    hours = (hours -12) + hourstime.slice(2) + " pm";
+    hours = hours - 12 + hourstime.slice(2) + " pm";
   }
 
   return [date, hours];
-
 }
 
+export const buttonsTheme = {
+  cancel: createTheme({
+    palette: {
+      primary: {
+        main: "#006D77",
+      },
+      secondary: {
+        main: "#E29578",
+      },
+    },
+  }),
+
+  create: createTheme({
+    palette: {
+      primary: {
+        main: "#E29578",
+      },
+      secondary: {
+        main: "#006D77",
+      },
+    },
+  }),
+};

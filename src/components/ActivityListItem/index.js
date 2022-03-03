@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ActivityCard from "../ActivityCard/index";
 import Button from "../Button/index";
-import { converDateTime } from "../../HelperFunctions";
+import { converDateTime, buttonsTheme } from "../../HelperFunctions";
 import css from "./ActivityListItem.module.css";
 
 function ActivityListItem({ activity, user_id }) {
@@ -63,8 +63,8 @@ function ActivityListItem({ activity, user_id }) {
       <div className={ifExpanded ? ` ${css.expanded}` : ` ${css.collapsed}`}>
         <ActivityCard
           activity={activity}
-          leftButton={{ text: "Collapse", onClick: () => toggleIfExpanded() }}
-          rightButton={{ text: "Attend", onClick: () => handleAttendClick() }}
+          leftButton={{ text: "Collapse", onClick: () => toggleIfExpanded(), theme: buttonsTheme.cancel  }}
+          rightButton={{ text: "Attend", onClick: () => handleAttendClick(), theme: buttonsTheme.create }}
         />
       </div>
     </li>

@@ -4,35 +4,36 @@ import Button from "../Button/index";
 //import DateSelector from "../FilterComponent/DateSelector";
 import { FormControl, FormHelperText, TextField } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
-import { createTheme } from "@mui/material/styles";
+//import { createTheme } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import css from "./Form.module.css";
+import {buttonsTheme} from "../../HelperFunctions";
 //import AdapterDateFns from "@mui/lab/AdapterDateFns";
 //import LocalizationProvider from "@mui/lab/LocalizationProvider";
 //import DateTimePicker from "@mui/lab/DateTimePicker";
 
 // Material UI variables to customize the Create & Cancel Buttons
-let cancel = createTheme({
-  palette: {
-    primary: {
-      main: "#006D77",
-    },
-    secondary: {
-      main: "#E29578",
-    },
-  },
-});
+// let cancel = createTheme({
+//   palette: {
+//     primary: {
+//       main: "#006D77",
+//     },
+//     secondary: {
+//       main: "#E29578",
+//     },
+//   },
+// });
 
-let create = createTheme({
-  palette: {
-    primary: {
-      main: "#E29578",
-    },
-    secondary: {
-      main: "#006D77",
-    },
-  },
-});
+// let create = createTheme({
+//   palette: {
+//     primary: {
+//       main: "#E29578",
+//     },
+//     secondary: {
+//       main: "#006D77",
+//     },
+//   },
+// });
 
 // Form card
 export default function Form({ user_id }) {
@@ -142,12 +143,12 @@ export default function Form({ user_id }) {
             required
           />
           <div className={`${css.buttons} flex-horizontal`}>
-            <ThemeProvider theme={cancel}>
+            <ThemeProvider theme={buttonsTheme.cancel}>
               <Link to="/">
                 <Button button={"Cancel"} />
               </Link>
             </ThemeProvider>
-            <ThemeProvider theme={create}>
+            <ThemeProvider theme={buttonsTheme.create}>
               <Button type="submit" button={"Create"} />
             </ThemeProvider>
           </div>

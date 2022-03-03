@@ -3,6 +3,7 @@ import ActivityCard from "../ActivityCard";
 import Kalend, { CalendarView } from "kalend"; // import component
 import "kalend/dist/styles/index.css"; // import styles
 import "./Calendar.css";
+import { buttonsTheme } from "../../HelperFunctions";
 
 function Calendar({ activityEvents, user_id, removeActivity }) {
   const [activityCard, setActivityCard] = useState(null);
@@ -80,10 +81,12 @@ function Calendar({ activityEvents, user_id, removeActivity }) {
           leftButton={{
             text: "Collapse",
             onClick: () => setActivityCard(null),
+            theme: buttonsTheme.cancel,
           }}
           rightButton={{
             text: "Not Attending",
             onClick: () => setButtonClicked(true),
+            theme: buttonsTheme.create,
           }}
         />
       )}
