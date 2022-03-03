@@ -15,6 +15,7 @@ import walkImg from "../../images/Activities/walk.jpg";
 import museumImg from "../../images/Activities/museum.jpg";
 import Button from "../Button";
 import { converDateTime } from "../../HelperFunctions";
+import { ThemeProvider } from "@mui/material/styles";
 
 import css from "./ActivityCard.module.css";
 
@@ -93,10 +94,14 @@ function ActivityCard({ activity, leftButton, rightButton }) {
       </div>
       <div className={`${css.buttonsContainer} flex-horizontal`}>
         {leftButton && (
-          <Button button={leftButton.text} onClick={leftButton.onClick} />
+          <ThemeProvider theme={leftButton.theme}>
+            <Button button={leftButton.text} onClick={leftButton.onClick} />
+          </ThemeProvider>
         )}
         {rightButton && (
-          <Button button={rightButton.text} onClick={rightButton.onClick} />
+          <ThemeProvider theme={rightButton.theme}>
+            <Button button={rightButton.text} onClick={rightButton.onClick} />
+          </ThemeProvider>
         )}
       </div>
     </div>

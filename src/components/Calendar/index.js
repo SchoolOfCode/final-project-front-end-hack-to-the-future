@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import ActivityCard from "../ActivityCard";
 import Kalend, { CalendarView } from "kalend"; // import component
 import "kalend/dist/styles/index.css"; // import styles
-import "./Calendar.css";
+import css from "./Calendar.module.css";
+import { buttonsTheme, convertData } from "../../HelperFunctions";
 
 function Calendar({ activityEvents, user_id, removeActivity }) {
   const [activityCard, setActivityCard] = useState(null);
@@ -36,30 +37,15 @@ function Calendar({ activityEvents, user_id, removeActivity }) {
     if (user_id && buttonClicked) {
       updateParticipants();
     }
+
   }, [buttonClicked, user_id, activityCard, removeActivity]);
 
   function onEventClick(data) {
-    function convertData(activity) {
-      return {
-        activity_id: activity.id,
-        organiser_id: activity.organiser_idganiser_id,
-        max_attendees: activity.max_attendees,
-        date_time: activity.startAt,
-        location_name: activity.location_name,
-        type: activity.type,
-        description: activity.summary,
-        user_name: activity.user_name,
-        email: activity.email,
-        user_id: activity.user_id,
-      };
-    }
-
     setActivityCard(convertData(data));
   }
 
   return (
-    <div className="calendar">
-      This is where the My Activities Calendar component will be!
+    <div className={css.calendar}>
       <Kalend
         // kalendRef={props.kalendRef}
         // onNewEventClick={onNewEventClick}
@@ -75,17 +61,21 @@ function Calendar({ activityEvents, user_id, removeActivity }) {
         // selectedView={props.selectedView}
       />
       {activityCard && (
-        <ActivityCard
-          activity={activityCard}
-          leftButton={{
-            text: "Collapse",
-            onClick: () => setActivityCard(null),
-          }}
-          rightButton={{
-            text: "Not Attending",
-            onClick: () => setButtonClicked(true),
-          }}
-        />
+        <div className={css.activityCardContainer}>
+          <ActivityCard
+            activity={activityCard}
+            leftButton={{
+              text: "Collapse",
+              onClick: () => setActivityCard(null),
+              theme: buttonsTheme.cancel,
+            }}
+            rightButton={{
+              text: "Not Attending",
+              onClick: () => setButtonClicked(true),
+              theme: buttonsTheme.create,
+            }}
+          />
+        </div>
       )}
     </div>
   );
