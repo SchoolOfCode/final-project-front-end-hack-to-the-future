@@ -1,0 +1,23 @@
+.container {
+  background-color: #edf6f9;
+  border-radius: 1rem;
+  width: 70%;
+  padding-bottom: 1em;
+  border: 2px solid black;
+}
+
+.introCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-weight: 600;
+}
+
+.intro {
+  color: black;
+  max-width: 70%;
+}
+.loginButton {
+  background-color: var(--ming);
+}
