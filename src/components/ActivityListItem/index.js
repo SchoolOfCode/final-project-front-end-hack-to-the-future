@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ActivityCard from "../ActivityCard/index";
 import Button from "../Button/index";
 import { converDateTime, buttonsTheme } from "../../HelperFunctions";
+import { ThemeProvider } from "@mui/material/styles";
 import css from "./ActivityListItem.module.css";
 
 function ActivityListItem({ activity, user_id }) {
@@ -57,7 +58,9 @@ function ActivityListItem({ activity, user_id }) {
       <div className={!ifExpanded ? `${css.expanded}` : `${css.collapsed}`}>
         <h2>{activity.type}</h2>
         <h3>{`Date: ${date} | Time: ${time}`}</h3>
-        <Button button="Expand" onClick={toggleIfExpanded} />
+        <ThemeProvider theme={buttonsTheme.cancel}>
+        <Button button="Expand" onClick={toggleIfExpanded}/>
+        </ThemeProvider>
       </div>
 
       <div className={ifExpanded ? ` ${css.expanded}` : ` ${css.collapsed}`}>
