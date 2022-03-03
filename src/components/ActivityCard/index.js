@@ -73,7 +73,7 @@ function ActivityCard({ activity, leftButton, rightButton }) {
       <div className={css.spanned}>
         <span>
           <b>Location: </b>
-          {activity.location}
+          {activity.location_name}
         </span>
         <span>
           {" "}
