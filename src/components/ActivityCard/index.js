@@ -6,6 +6,7 @@ import cafeImg from "../../images/Activities/cafe.jpg";
 import cinemaImg from "../../images/Activities/cinema.jpg";
 import cycleImg from "../../images/Activities/cycle.jpg";
 import otherImg from "../../images/Activities/other.jpg";
+import karaokeImg from "../../images/Activities/karaoke.jpg"
 import restaurantImg from "../../images/Activities/restaurant.jpg";
 import runImg from "../../images/Activities/run.jpg";
 import swimImg from "../../images/Activities/swim.jpg";
@@ -53,6 +54,9 @@ function ActivityCard({ activity, leftButton, rightButton }) {
       break;
     case "tennis":
       image = tennisImg;
+      break;
+      case "theatre":
+      image = theatreImg;
       break;
     case "walk":
       image = walkImg;

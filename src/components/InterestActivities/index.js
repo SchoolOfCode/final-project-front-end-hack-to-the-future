@@ -35,10 +35,10 @@ function InterestActivities({ user_id }) {
 
   return (
     <>
-      <div classname="introText"> <br></br>
+      <h2 classname="introText"> <br></br>
         Here are the activities you swiped right on! <br></br>Expand the card to view
         more info and confirm your attendance 😊
-      </div>
+      </h2>
       <ul className={`${css.itemsContainer} flex-vertical`}>
         {interestedActivities.map((activity, index) => {
           return (

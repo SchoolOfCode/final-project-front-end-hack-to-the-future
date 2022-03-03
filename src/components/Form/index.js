@@ -119,11 +119,13 @@ export default function Form({ user_id }) {
             <option value="cinema">Cinema</option>
             <option value="cycle">Cycle</option>
             <option value="gallery">Gallery</option>
+            <option value="karaoke">Karaoke</option>
             <option value="museum">Museum</option>
             <option value="restaurant">Restaurant</option>
             <option value="run">Run</option>
             <option value="swim">Swim</option>
             <option value="tennis">Tennis</option>
+            <option value="theatre">Theatre</option>
             <option value="walk">Walk</option>
             <option value="other">Other</option>
           </select>

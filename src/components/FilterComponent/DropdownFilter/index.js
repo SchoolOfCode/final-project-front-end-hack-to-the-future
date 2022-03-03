@@ -28,11 +28,13 @@ export default function DropdownFilter() {
           <MenuItem value={"cinema"}>Cinema</MenuItem>
           <MenuItem value={"cycle"}>Cycle</MenuItem>
           <MenuItem value={"gallery"}>Gallery</MenuItem>
+          <MenuItem value={"gallery"}>Karaoke</MenuItem>
           <MenuItem value={"museum"}>Museum</MenuItem>
           <MenuItem value={"restaurant"}>Restaurant</MenuItem>
           <MenuItem value={"run"}>Run</MenuItem>
           <MenuItem value={"swim"}>Swim</MenuItem>
           <MenuItem value={"tennis"}>Tennis</MenuItem>
+          <MenuItem value={"theatre"}>Theatre</MenuItem>
           <MenuItem value={"walk"}>Walk</MenuItem>
           <MenuItem value={"other"}>Other</MenuItem>
         </Select>
