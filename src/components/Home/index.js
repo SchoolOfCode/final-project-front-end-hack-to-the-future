@@ -8,7 +8,7 @@ import css from "./Home.module.css";
 function Home() {
   return (
     <div className={`${css.homeContainer} flex-vertical`}>
-      <div className={css.logoContainer}>
+      <div className={css.logoContainer} data-testid="logo">
         <img src={logo} alt="Apptivity logo" />
       </div>
       <div className={`${css.mainButtons} flex-horizontal`}>
