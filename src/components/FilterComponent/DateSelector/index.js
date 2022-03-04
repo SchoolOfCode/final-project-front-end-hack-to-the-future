@@ -5,12 +5,13 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DatePicker from '@mui/lab/DatePicker';
 import theme from '../../../theme'
 import { ThemeProvider } from '@mui/material/styles'
+import { buttonsTheme } from '../../../HelperFunctions';
 
 export default function DateSelector() {
     const [value, setValue] = React.useState(null);
 
     return (
-      <ThemeProvider theme={theme} >
+      <ThemeProvider theme={buttonsTheme.cancel} >
         <LocalizationProvider dateAdapter={AdapterDateFns}>
           <DatePicker
             // style={{ margin: "1rem" }}

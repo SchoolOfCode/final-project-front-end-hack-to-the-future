@@ -6,9 +6,9 @@
 
 .logoContainer {
   width: auto;
-  height: 50vh;
+  height: 20vh;
   max-height: 300px;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 
 .logoContainer img {
@@ -18,8 +18,9 @@
 
 .mainButtons {
   width: 100%;
+  min-width: 360px;
   max-width: 700px;
   height: 45vw;
   max-height: 320px;
-  margin-top: 8rem;
+  margin-top: 3rem;
 }

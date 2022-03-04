@@ -77,7 +77,7 @@ function ActivityCard({ activity, leftButton, rightButton }) {
         {/* <img src={activityImage} alt="activity representation" /> */}
       </div>
       <h3>{activity.type}</h3>
-      <p>{activity.description}</p>
+      <div className={css.descriptionContainer}>{activity.description}</div>
       <div className={css.spanned}>
         <span>
           <b>Location: </b>
