@@ -2,36 +2,13 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import Button from "../Button/index";
 //import DateSelector from "../FilterComponent/DateSelector";
-import { FormControl, FormHelperText, TextField } from "@mui/material";
+import { FormControl, TextField } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
-import { createTheme } from "@mui/material/styles";
+//import { createTheme } from "@mui/material/styles";
 import { Link } from "react-router-dom";
-//import AdapterDateFns from "@mui/lab/AdapterDateFns";
-//import LocalizationProvider from "@mui/lab/LocalizationProvider";
-//import DateTimePicker from "@mui/lab/DateTimePicker";
-
-// Material UI variables to customize the Create & Cancel Buttons
-let cancel = createTheme({
-  palette: {
-    primary: {
-      main: "#006D77",
-    },
-    secondary: {
-      main: "#E29578",
-    },
-  },
-});
-
-let create = createTheme({
-  palette: {
-    primary: {
-      main: "#E29578",
-    },
-    secondary: {
-      main: "#006D77",
-    },
-  },
-});
+import css from "./Form.module.css";
+import { buttonsTheme } from "../../HelperFunctions";
+//import { padding } from "@mui/system";
 
 // Form card
 export default function Form({ user_id }) {
@@ -76,36 +53,32 @@ export default function Form({ user_id }) {
   }, [submittedValues, user_id]);
 
   return (
-    <div>
+    <div className={css.formContainer}>
+      <h2>Create an Event</h2>
       <form onSubmit={handleSubmit}>
-        <FormControl>
+        <FormControl className={css.formControl}>
           <TextField
-            sx={{
-              width: 400,
-            }}
+            sx={{ bgcolor: "white" }}
+            className={css.Input}
+            // sx={{
+            //   width: 100%,
+            // }}
             id="location"
             name="location"
             label="Location"
             variant="outlined"
             required
           />
-          {/* <DateAndTimePicker
-            value={dateTimeValue}
-            onChange={(newDateValue) => setDateTimeValue(newDateValue)}
-            id="dateTime"
-            name="dateTime"
-            label="Date Time"
-            variant="outlined"
-            required
-          /> */}
 
           <input
+            className={css.input}
             type="datetime-local"
             id="activityTime"
             name="activityTime"
             required
           ></input>
           <select
+            className={css.input}
             id="activityType"
             name="activityType"
             defaultValue="defaultValue"
@@ -119,43 +92,20 @@ export default function Form({ user_id }) {
             <option value="cinema">Cinema</option>
             <option value="cycle">Cycle</option>
             <option value="gallery">Gallery</option>
+            <option value="karaoke">Karaoke</option>
             <option value="museum">Museum</option>
             <option value="restaurant">Restaurant</option>
             <option value="run">Run</option>
             <option value="swim">Swim</option>
             <option value="tennis">Tennis</option>
+            <option value="theatre">Theatre</option>
             <option value="walk">Walk</option>
             <option value="other">Other</option>
           </select>
 
-          {/* Arts and crafts
-Run
-Walk
-Cycle
-Cinema
-Theatre
-Cafe
-Tennis
-Other sport
-Craft
-Gallery/Museum
-Restaurant
-Swim */}
-
-          {/* <TextField
-            sx={{
-              width: 400,
-            }}
-            id="activityType"
-            name="activityType"
-            label="Activity Type"
-            variant="outlined"
-            required
-          /> */}
           <TextField
-            sx={{
-              width: 400,
-            }}
+            sx={{ mt: "1rem", bgcolor: "white" }}
+            className={css.input}
             id="activityDescription"
             name="activityDescription"
             label="Description"
@@ -163,30 +113,26 @@ Swim */}
             required
           />
           <TextField
+            sx={{ mt: "1rem", bgcolor: "white" }}
+            className={css.input}
             type="number"
             inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
-            sx={{
-              width: 400,
-            }}
             id="activityMaxAttendees"
             name="activityMaxAttendees"
             label="Maximum Attendees"
             variant="outlined"
             required
           />
-
-          <ThemeProvider theme={cancel}>
-            <Link to="/">
-              <Button button={"Cancel"} />
-            </Link>
-          </ThemeProvider>
-          <ThemeProvider theme={create}>
-            <Button type="submit" button={"Create"} />
-          </ThemeProvider>
-
-          <FormHelperText id="my-helper-text">
-            Please enter the details
-          </FormHelperText>
+          <div className={`${css.buttons} flex-horizontal`}>
+            <ThemeProvider theme={buttonsTheme.cancel}>
+              <Link to="/">
+                <Button button={"Cancel"} />
+              </Link>
+            </ThemeProvider>
+            <ThemeProvider theme={buttonsTheme.create}>
+              <Button type="submit" button={"Create"} />
+            </ThemeProvider>
+          </div>
         </FormControl>
       </form>
     </div>

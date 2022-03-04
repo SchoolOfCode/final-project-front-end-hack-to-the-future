@@ -6,6 +6,7 @@ import cafeImg from "../../images/Activities/cafe.jpg";
 import cinemaImg from "../../images/Activities/cinema.jpg";
 import cycleImg from "../../images/Activities/cycle.jpg";
 import otherImg from "../../images/Activities/other.jpg";
+import karaokeImg from "../../images/Activities/karaoke.jpg";
 import restaurantImg from "../../images/Activities/restaurant.jpg";
 import runImg from "../../images/Activities/run.jpg";
 import swimImg from "../../images/Activities/swim.jpg";
@@ -13,12 +14,15 @@ import tennisImg from "../../images/Activities/tennis.jpg";
 import theatreImg from "../../images/Activities/theatre.jpg";
 import walkImg from "../../images/Activities/walk.jpg";
 import museumImg from "../../images/Activities/museum.jpg";
+import Button from "../Button";
+import { converDateTime } from "../../HelperFunctions";
+import { ThemeProvider } from "@mui/material/styles";
 
-import "./ActivityCard.css";
+import css from "./ActivityCard.module.css";
 
-function ActivityCard({ activity }) {
-  const [date, time] = activity.date_time.split("T");
-  const hourstime = time.slice(0, 5);
+function ActivityCard({ activity, leftButton, rightButton }) {
+  const [date, time] = converDateTime(activity.date_time);
+
   let image;
   switch (activity.type) {
     case "arts/crafts":
@@ -36,6 +40,9 @@ function ActivityCard({ activity }) {
     case "gallery":
       image = artGalleryImg;
       break;
+    case "karaoke":
+      image = karaokeImg;
+      break;
     case "museum":
       image = museumImg;
       break;
@@ -51,6 +58,9 @@ function ActivityCard({ activity }) {
     case "tennis":
       image = tennisImg;
       break;
+    case "theatre":
+      image = theatreImg;
+      break;
     case "walk":
       image = walkImg;
       break;
@@ -64,17 +74,17 @@ function ActivityCard({ activity }) {
     // do nothing
   }
   return (
-    <div className="card">
-      <div className="imageFrame">
-        <img src={image} alt="activity representation" />
+    <div className={css.card}>
+      <div className={css.imageFrame}>
+        <img src={image} alt={activity.type} />
         {/* <img src={activityImage} alt="activity representation" /> */}
       </div>
       <h3>{activity.type}</h3>
-      <p>{activity.description}</p>
-      <div className="spanned">
+      <div className={css.descriptionContainer}>{activity.description}</div>
+      <div className={css.spanned}>
         <span>
           <b>Location: </b>
-          {activity.location}
+          {activity.location_name}
         </span>
         <span>
           {" "}
@@ -82,15 +92,27 @@ function ActivityCard({ activity }) {
           {activity.max_attendees}
         </span>
       </div>
-      <div className="spanned">
+      <div className={css.spanned}>
         <span>
           <b>Date: </b>
           {date}
         </span>
         <span>
           <b>Time: </b>
-          {hourstime} H
+          {time}
         </span>
+      </div>
+      <div className={`${css.buttonsContainer} flex-horizontal`}>
+        {leftButton && (
+          <ThemeProvider theme={leftButton.theme}>
+            <Button button={leftButton.text} onClick={leftButton.onClick} />
+          </ThemeProvider>
+        )}
+        {rightButton && (
+          <ThemeProvider theme={rightButton.theme}>
+            <Button button={rightButton.text} onClick={rightButton.onClick} />
+          </ThemeProvider>
+        )}
       </div>
     </div>
   );

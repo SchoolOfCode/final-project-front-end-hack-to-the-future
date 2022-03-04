@@ -2,7 +2,7 @@ import React from "react";
 import ActivityCard from "../ActivityCard/index";
 import TinderCard from "react-tinder-card";
 import { useState, useEffect } from "react";
-import "./styles.css";
+import css from "./ViewActivities.module.css";
 import FilterComponent from "../FilterComponent";
 
 export default function ViewActivities({ user_id }) {
@@ -47,7 +47,10 @@ export default function ViewActivities({ user_id }) {
     const updateFavActivities = async () => {
       const requestActivity = {
         method: "PUT",
-        headers: { "Content-Type": "application/json", Authorization: user_id },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: user_id,
+        },
         body: JSON.stringify({
           activity_id: currentSwipedCard.activityId,
           participant_role:
@@ -70,11 +73,13 @@ export default function ViewActivities({ user_id }) {
   }, [currentSwipedCard, user_id]);
 
   return (
-    <div>
+    <div className={css.viewActivitiesContainer}>
       <FilterComponent />
+      <p>Swipe 👉 if interested</p>
+      <p>Swipe 👈 if not interested</p>
       {activities.map((activity, index) => (
         <TinderCard
-          className="swipe"
+          className={css.swipe}
           key={index}
           preventSwipe={["up", "down"]}
           onSwipe={(dir) => Swiped(dir, activity)}

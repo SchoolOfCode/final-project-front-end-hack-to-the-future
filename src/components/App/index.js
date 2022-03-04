@@ -1,14 +1,13 @@
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-
 import Header from "../Header/index";
 import Main from "../Main/index";
-import "./App.css";
 import theme from "../../theme";
 import { ThemeProvider } from "@mui/material/styles";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginPage from "../LoginPage";
 import TsAndCs from "../TsAndCs";
+import css from "./App.module.css";
 //Our app!
 function App() {
   const { isAuthenticated, user } = useAuth0();
@@ -41,7 +40,7 @@ function App() {
   }, [user]);
   return (
     <React.StrictMode>
-      <div className="App">
+      <div className={css.app}>
         <ThemeProvider theme={theme}>
           {isAuthenticated ? (
             <>

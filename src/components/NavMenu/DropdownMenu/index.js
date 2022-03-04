@@ -64,7 +64,6 @@ export default function DropdownMenu() {
         <MenuItem onClick={handleClose}>
           <LogoutButton />
         </MenuItem>{" "}
-        {/*Add log out route */}
       </Menu>
     </div>
   );

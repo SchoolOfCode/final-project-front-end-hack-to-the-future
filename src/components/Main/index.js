@@ -7,9 +7,13 @@ import CreateActivity from "../CreateActivity/index";
 import InterestActivities from "../InterestActivities/index";
 import ActivityCalendar from "../ActivityCalendar/index";
 
+import TsAndCs from "../TsAndCs"
+import css from "./Main.module.css";
+
+
 function Main({ user_id }) {
   return (
-    <main>
+    <main className={css.mainContainer}>
       <Routes>
         <Route path="/" element={<Home user_id={user_id} />} />
         <Route
@@ -28,7 +32,11 @@ function Main({ user_id }) {
           path="/activity-calendar"
           element={<ActivityCalendar user_id={user_id} />}
         />
-      </Routes>
+                <Route
+                  path="/terms-and-conditions"
+                  element={<TsAndCs />}
+                />{" "}
+              </Routes>
     </main>
   );
 }

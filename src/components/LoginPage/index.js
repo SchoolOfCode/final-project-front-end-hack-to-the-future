@@ -1,11 +1,9 @@
 import IntroductionMain from "../IntroductionMain";
-import Profile from "./Profile";
-
+import css from "./LoginPage.module.css";
 function LoginPage() {
   return (
-    <div>
+    <div className={css.container}>
       <IntroductionMain />
-      <Profile />
     </div>
   );
 }

@@ -1,0 +1,12 @@
+.logoContainer {
+  padding: 0.5rem;
+}
+
+.logoContainer:hover {
+  cursor: pointer;
+  background-color: var(--alice-blue);
+}
+
+.logoContainer img {
+  height: 50px;
+}

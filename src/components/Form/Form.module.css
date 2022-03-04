@@ -1,0 +1,27 @@
+.formContainer {
+  width: 80%;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--alice-blue);
+  max-width: 500px;
+}
+.formControl {
+  width: 90%;
+}
+
+.input {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid rgb(184, 176, 176);
+  border-radius: 0.25rem;
+}
+
+.input:focus {
+  outline: none;
+  border: 2px solid var(--midle-blue-green)
+}
+
+.buttons {
+  margin: 1rem;
+}

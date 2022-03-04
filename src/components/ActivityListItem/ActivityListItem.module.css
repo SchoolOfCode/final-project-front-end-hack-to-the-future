@@ -1,0 +1,29 @@
+
+.activityItemContainer {
+  width: 80%;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--alice-blue);
+  max-width: 700px;
+}
+
+.shrinkContainer {
+  width: auto;
+  border-radius: 2.3rem;
+}
+
+.expanded {
+  display: block
+}
+
+.expanded .card {
+  position: fixed;
+  left: 0;
+}
+
+.collapsed {
+ 
+  display: none
+}

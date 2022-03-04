@@ -2,24 +2,21 @@ import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Button from "@mui/material/Button";
 import DropdownMenu from "./DropdownMenu";
 import { Link } from "react-router-dom";
-
-import logo from "../../logo-removebg-preview.png";
+import css from "./NavMenu.module.css";
+import logo from "../../images/logo-no-text.png";
 
 export default function NavMenu() {
   return (
-    <Box sx={{ flexGrow: 1,  }}>
-      <AppBar
-        position="static"
-      >
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
         <Toolbar>
-          <Button color="inherit">
+          <div className={css.logoContainer}>
             <Link to="/">
               <img src={logo} alt="apptivity logo" />
             </Link>
-          </Button>
+          </div>
           <Box sx={{ flexGrow: 1 }}></Box>
           <DropdownMenu />
         </Toolbar>
