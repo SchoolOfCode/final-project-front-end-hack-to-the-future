@@ -1,0 +1,24 @@
+
+.logoLoading{
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation-name: loading;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+p{
+  font-weight: bold;;
+}
+
+@keyframes loading {
+  0% { background-image: url("../../images/Loading/loading0.png");}
+  20% { background-image: url("../../images/Loading/loading1.png");}
+  40% { background-image: url("../../images/Loading/loading2.png");}
+  60% { background-image: url("../../images/Loading/loading3.png");}
+  80% { background-image: url("../../images/Loading/loading4.png");}
+  100% { background-image: url("../../images/Loading/loading5.png");}
+}
