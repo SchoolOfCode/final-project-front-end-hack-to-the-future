@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import ActivityCard from "../ActivityCard";
 import Kalend, { CalendarView } from "kalend"; // import component
 import "kalend/dist/styles/index.css"; // import styles
+
 import css from "./Calendar.module.css";
 import { buttonsTheme, convertData } from "../../HelperFunctions";
+
 
 function Calendar({ activityEvents, user_id, removeActivity }) {
   const [activityCard, setActivityCard] = useState(null);

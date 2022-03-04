@@ -67,6 +67,9 @@ function ActivityCard({ activity, leftButton, rightButton }) {
     case "other":
       image = otherImg;
       break;
+    case "theatre":
+      image = theatreImg;
+      break;
     default:
     // do nothing
   }

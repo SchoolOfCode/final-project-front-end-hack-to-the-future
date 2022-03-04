@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import logo from "../../images/logo.png";
 import LoginButton from "../LoginPage/LoginButton";
+
 import css from "./IntroductionMain.module.css";
+
 
 function IntroductionMain() {
   const [checked, setChecked] = useState(false);

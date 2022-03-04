@@ -6,8 +6,10 @@ import ViewActivities from "../ViewActivities/index";
 import CreateActivity from "../CreateActivity/index";
 import InterestActivities from "../InterestActivities/index";
 import ActivityCalendar from "../ActivityCalendar/index";
+
 import TsAndCs from "../TsAndCs"
 import css from "./Main.module.css";
+
 
 function Main({ user_id }) {
   return (
