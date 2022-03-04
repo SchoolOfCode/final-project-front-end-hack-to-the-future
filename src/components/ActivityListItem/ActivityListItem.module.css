@@ -15,8 +15,12 @@
 }
 
 .expanded {
-
   display: block
+}
+
+.expanded .card {
+  position: fixed;
+  left: 0;
 }
 
 .collapsed {

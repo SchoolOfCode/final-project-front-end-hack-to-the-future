@@ -1,15 +1,14 @@
 .calendar {
   width: 90%;
-  height: 90%;
+  height: 60vh;
   max-height: 60%;
   display: flex;
   max-width: 850px;
   margin: 0 auto;
-  border: solid 1px white;
+  border: 2px solid black;
   border-radius: 1rem;
   justify-content: center;
   align-items: center;
   background: white;
   flex-direction: column;
 }
-

@@ -10,32 +10,6 @@ import css from "./Form.module.css";
 import {buttonsTheme} from "../../HelperFunctions";
 import { padding } from "@mui/system";
 
-//import AdapterDateFns from "@mui/lab/AdapterDateFns";
-//import LocalizationProvider from "@mui/lab/LocalizationProvider";
-//import DateTimePicker from "@mui/lab/DateTimePicker";
-
-// Material UI variables to customize the Create & Cancel Buttons
-// let cancel = createTheme({
-//   palette: {
-//     primary: {
-//       main: "#006D77",
-//     },
-//     secondary: {
-//       main: "#E29578",
-//     },
-//   },
-// });
-
-// let create = createTheme({
-//   palette: {
-//     primary: {
-//       main: "#E29578",
-//     },
-//     secondary: {
-//       main: "#006D77",
-//     },
-//   },
-// });
 
 // Form card
 export default function Form({ user_id }) {

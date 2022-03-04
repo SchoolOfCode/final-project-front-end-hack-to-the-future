@@ -4,7 +4,7 @@ import css from "./ButtonMainAction.module.css";
 
 function ButtonMainAction({ text, path, imagePath }) {
   return (
-    <section className={css.buttonContainer}>
+    <section className={css.buttonMainContainer}>
       <Link to={path}>
         <img src={imagePath} alt={text} className={css.buttonImage} />
         <p className={css.buttonText}>{text}</p>
