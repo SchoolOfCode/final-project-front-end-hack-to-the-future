@@ -15,4 +15,9 @@ describe("testing button component", () => {
     fireEvent.click(actual);
     expect(testProps.onClick).toHaveBeenCalled();
   });
+  test("testing that the button render the button(text) prop passed" , () => {
+    render(<Button {...testProps} />);
+    const actual = screen.getByText(testProps.button);
+    expect(actual).toBeInTheDocument();
+  })
 });
