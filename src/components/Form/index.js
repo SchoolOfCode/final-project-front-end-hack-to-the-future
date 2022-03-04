@@ -2,14 +2,13 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import Button from "../Button/index";
 //import DateSelector from "../FilterComponent/DateSelector";
-import { FormControl, FormHelperText, TextField } from "@mui/material";
+import { FormControl, TextField } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 //import { createTheme } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import css from "./Form.module.css";
-import {buttonsTheme} from "../../HelperFunctions";
-import { padding } from "@mui/system";
-
+import { buttonsTheme } from "../../HelperFunctions";
+//import { padding } from "@mui/system";
 
 // Form card
 export default function Form({ user_id }) {
