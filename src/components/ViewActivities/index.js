@@ -4,6 +4,7 @@ import TinderCard from "react-tinder-card";
 import { useState, useEffect } from "react";
 import css from "./ViewActivities.module.css";
 import FilterComponent from "../FilterComponent";
+import { API_URL } from "../../config/index.js";
 
 export default function ViewActivities({ user_id }) {
   const [activities, setActivity] = useState([]);
@@ -14,16 +15,14 @@ export default function ViewActivities({ user_id }) {
 
   useEffect(() => {
     const getActivities = async () => {
-      const response = await fetch(
-        "https://activity-app-backend.herokuapp.com/activities",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: user_id,
-          },
-        }
-      );
+      console.log("api url in view activities", API_URL);
+      const response = await fetch(`${API_URL}/activities`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: user_id,
+        },
+      });
 
       const data = await response.json();
       setActivity(data.payload);
@@ -59,10 +58,7 @@ export default function ViewActivities({ user_id }) {
               : "uninterested",
         }),
       };
-      const response = await fetch(
-        "https://activity-app-backend.herokuapp.com/participants",
-        requestActivity
-      );
+      const response = await fetch(`${API_URL}/participants`, requestActivity);
       const data = await response.json();
       console.log(data);
     };

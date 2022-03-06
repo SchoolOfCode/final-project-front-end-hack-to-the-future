@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Calendar from "../Calendar/index";
 import { convertActivitiesToEvents } from "../../HelperFunctions";
 import css from "./ActivityCalendar.module.css";
+import { API_URL } from "../../config/index.js";
 
 function ActivityCalendar({ user_id }) {
   const [interestedActivities, setInterestedActivities] = useState([]);
@@ -15,7 +16,7 @@ function ActivityCalendar({ user_id }) {
       };
 
       const response = await fetch(
-        "https://activity-app-backend.herokuapp.com/participants/attending",
+        `${API_URL}/participants/attending`,
         requestParticipants
       );
       const data = await response.json();
@@ -42,7 +43,9 @@ function ActivityCalendar({ user_id }) {
 
   return (
     <div className={css.activityCalendar}>
-      <h2 className={css.activityCalendarTitle}>This Calendar shows your activities</h2>
+      <h2 className={css.activityCalendarTitle}>
+        This Calendar shows your activities
+      </h2>
       <Calendar
         activityEvents={interestedActivities}
         user_id={user_id}
@@ -53,8 +56,6 @@ function ActivityCalendar({ user_id }) {
 }
 
 export default ActivityCalendar;
-
-
 
 // id: 1,
 // startAt: '2021-11-21T18:00:00.000Z',
