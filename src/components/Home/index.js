@@ -10,8 +10,7 @@ function Home() {
   return (
     <div className={`${css.homeContainer} flex-vertical`}>
       <div className={css.logoContainer}>
-        <Loading />
-        {/* <img src={logo} alt="Apptivity logo" /> */}
+        <img src={logo} alt="Apptivity logo" />
       </div>
       <div className={`${css.mainButtons} flex-horizontal`}>
         <ButtonMainAction

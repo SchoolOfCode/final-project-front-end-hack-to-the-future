@@ -3,9 +3,9 @@ import css from "./LoadingComponent.module.css"
 
 function Loading() {
   return (
-    <div>
+    <div className={css.loadingContainer}>
       <div className={css.logoLoading}></div>
-      <p>Loading...</p>
+      <span className={css.loadingText}></span>
     </div>
   )
 }

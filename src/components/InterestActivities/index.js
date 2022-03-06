@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ActivityListItem from "../ActivityListItem/index";
+import Loading from "../LoadingComponent";
 import css from "./InterestActivities.module.css";
 
 function InterestActivities({ user_id }) {
@@ -34,13 +35,13 @@ function InterestActivities({ user_id }) {
   }, [user_id]);
 
   return (
-    <>
-      <h2 classname="introText"> <br></br>
-        Here are the activities you swiped right on! <br></br>Expand the card to view
+    <div className={css.itemsPage}>
+      <h2 className={css.introText}>
+        Here are the activities you swiped right on!<br></br> Expand the card to view
         more info and confirm your attendance 😊
       </h2>
       <ul className={`${css.itemsContainer} flex-vertical`}>
-        {interestedActivities.map((activity, index) => {
+        {interestedActivities.length === 0? <Loading /> : interestedActivities.map((activity, index) => {
           return (
             <ActivityListItem
               activity={activity}
@@ -50,7 +51,7 @@ function InterestActivities({ user_id }) {
           );
         })}
       </ul>
-    </>
+    </div>
   );
 }
 export default InterestActivities;
