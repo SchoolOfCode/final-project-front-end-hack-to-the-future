@@ -1,9 +1,16 @@
 .activityCalendar {
-
   width: 100%;
-  height:100vh;
+  height:120vh;
 }
 
 .activityCalendarTitle {
   margin: 2rem;
+}
+
+@media screen and (min-width:450px) {
+  
+ .activityCalendar {
+   height: 100vh;
+ }
+  
 }
