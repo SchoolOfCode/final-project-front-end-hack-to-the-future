@@ -4,6 +4,7 @@ import viewActivitiesImage from "../../images/view-activities.jpg";
 import React from "react";
 import ButtonMainAction from "../ButtonMainAction/index";
 import css from "./Home.module.css";
+import Loading from "../LoadingComponent";
 
 function Home() {
   return (

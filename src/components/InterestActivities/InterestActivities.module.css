@@ -1,7 +1,16 @@
+.itemsPage {
+  width: 100%;
+  height: auto;
+}
+
 .itemsContainer {
-  width: 100vh;
   padding: 0;
   width: 100%;
   height: auto;
+}
+
+.introText {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
 }
 

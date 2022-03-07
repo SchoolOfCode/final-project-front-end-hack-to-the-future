@@ -4,7 +4,9 @@ import TinderCard from "react-tinder-card";
 import { useState, useEffect } from "react";
 import css from "./ViewActivities.module.css";
 import FilterComponent from "../FilterComponent";
+import Loading from "../LoadingComponent";
 import { API_URL } from "../../config/index.js";
+
 
 export default function ViewActivities({ user_id }) {
   const [activities, setActivity] = useState([]);
@@ -73,7 +75,7 @@ export default function ViewActivities({ user_id }) {
       <FilterComponent />
       <p>Swipe 👉 if interested</p>
       <p>Swipe 👈 if not interested</p>
-      {activities.map((activity, index) => (
+      {activities.length === 0 ? <Loading/> : activities.map((activity, index) => (
         <TinderCard
           className={css.swipe}
           key={index}
