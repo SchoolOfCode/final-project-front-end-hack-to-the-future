@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ActivityListItem from "../ActivityListItem/index";
 import Loading from "../LoadingComponent";
 import css from "./InterestActivities.module.css";
+import { API_URL } from "../../config/index.js";
 
 function InterestActivities({ user_id }) {
   const [interestedActivities, setInterestedActivities] = useState([]);
@@ -20,7 +21,7 @@ function InterestActivities({ user_id }) {
       };
 
       const response = await fetch(
-        "https://activity-app-backend.herokuapp.com/participants/interested",
+        `${API_URL}/participants/interested`,
         requestParticipants
       );
       const data = await response.json();
@@ -39,6 +40,7 @@ function InterestActivities({ user_id }) {
       <h2 className={css.introText}>
         Here are the activities you swiped right on!<br></br> Expand the card to view
         more info and confirm your attendance 😊
+
       </h2>
       <ul className={`${css.itemsContainer} flex-vertical`}>
         {interestedActivities.length === 0? <Loading /> : interestedActivities.map((activity, index) => {

@@ -4,7 +4,11 @@ import Button from "../Button/index";
 import { converDateTime, buttonsTheme } from "../../HelperFunctions";
 import { ThemeProvider } from "@mui/material/styles";
 import css from "./ActivityListItem.module.css";
+<<<<<<< HEAD
 import SuccessFetch from "../SuccessFetch";
+=======
+import { API_URL } from "../../config/index.js";
+>>>>>>> fbdc0505b8d51304468490759737c1021e29bd76
 
 function ActivityListItem({ activity, user_id }) {
   const [ifExpanded, setIfExpanded] = useState(false);
@@ -40,7 +44,7 @@ function ActivityListItem({ activity, user_id }) {
       };
       const response = await fetch(
         // link to be changed
-        "https://activity-app-backend.herokuapp.com/participants",
+        `${API_URL}/participants`,
         requestActivity
       );
       const data = await response.json();
