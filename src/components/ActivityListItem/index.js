@@ -9,7 +9,7 @@ import { API_URL } from "../../config/index.js";
 
 function ActivityListItem({ activity, user_id }) {
   const [ifExpanded, setIfExpanded] = useState(false);
-  const [success, setSuccess] =useState(false);
+  const [success, setSuccess] = useState(null);
   //console.log(success);
   const [attendBtnClicked, setAttendBtnClicked] = useState(false);
 
@@ -46,6 +46,7 @@ function ActivityListItem({ activity, user_id }) {
       );
       const data = await response.json();
       setSuccess(data.success);
+      console.log(data);
     };
 
     if (user_id && attendBtnClicked) {
