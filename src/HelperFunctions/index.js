@@ -49,6 +49,7 @@ export function convertActivitiesToEvents(activity) {
 
   return {
     id: activity.activity_id,
+    activity_id: activity.activity_id,
     startAt: activity.date_time,
     endAt: Add2hours(),
     timezoneStartAt: "Europe/Berlin", // optional
