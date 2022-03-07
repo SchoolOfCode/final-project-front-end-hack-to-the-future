@@ -22,7 +22,7 @@ function ActivityCalendar({ user_id, setSuccess }) {
       const data = await response.json();
       console.log(data);
       setInterestedActivities(
-        data.payload.map((activity) => convertActivitiesToEvents(activity))
+        data.payload.map((activity) => convertActivitiesToEvents(activity, user_id))
       );
     };
     if (user_id) {
@@ -47,21 +47,3 @@ function ActivityCalendar({ user_id, setSuccess }) {
 
 export default ActivityCalendar;
 
-// id: 1,
-// startAt: '2021-11-21T18:00:00.000Z',
-// endAt: '2021-11-21T19:00:00.000Z',
-// timezoneStartAt: 'Europe/Berlin', // optional
-// summary: 'test',
-// color: 'blue',
-// calendarID: 'work'
-
-// "activity_id": 1,
-//  "organiser_id": "1",
-//  "location_name": "Cannon Hill Park, Birmingham",
-//  "max_attendees": 8,
-//  "date_time": "2022-02-25T09:38:38.393Z",
-//  "description": "All abilities welcome to a walk round Cannon Hill Park followed by coffee at the park cafe",
-// "type": "walk",
-// "user_id": "1",
-// "user_name": "Paddington Bear",
-// "email": "paddington@bear.com"
