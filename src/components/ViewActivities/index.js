@@ -27,7 +27,7 @@ export default function ViewActivities({ user_id }) {
     const getActivities = async () => {
       console.log("api url in view activities", API_URL);
       const response = await fetch(
-        `${API_URL}/activities?location=${filterInput.location}`,
+        `${API_URL}/activities?location=${filterInput.location}&type=${filterInput.type}`,
         {
           method: "GET",
           headers: {
