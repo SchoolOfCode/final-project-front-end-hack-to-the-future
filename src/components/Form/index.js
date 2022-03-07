@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import css from "./Form.module.css";
 import { buttonsTheme } from "../../HelperFunctions";
 //import { padding } from "@mui/system";
+import { API_URL } from "../../config/index.js";
 
 // Form card
 export default function Form({ user_id }) {
@@ -38,7 +39,7 @@ export default function Form({ user_id }) {
       };
       const response = await fetch(
         // link to be changed
-        "https://activity-app-backend.herokuapp.com/activities",
+        `${API_URL}/activities`,
         requestBody
       );
       const data = await response.json();
