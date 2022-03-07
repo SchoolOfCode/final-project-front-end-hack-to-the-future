@@ -7,7 +7,7 @@
   background-color: var(--alice-blue);
   border: 2px solid var(--ming);
 
-  z-index: 2;
+  z-index: 4;
 }
 
 .display {

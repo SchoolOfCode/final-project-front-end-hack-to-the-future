@@ -7,7 +7,7 @@ import { API_URL } from "../../config/index.js";
 import css from "./Calendar.module.css";
 import { buttonsTheme, convertData } from "../../HelperFunctions";
 
-function Calendar({ activityEvents, user_id, removeActivity }) {
+function Calendar({ activityEvents, user_id, removeActivity, setSuccess }) {
   const [activityCard, setActivityCard] = useState(null);
   const [buttonClicked, setButtonClicked] = useState(false);
   console.log(activityCard);
@@ -34,12 +34,18 @@ function Calendar({ activityEvents, user_id, removeActivity }) {
       setActivityCard(null);
       removeActivity(activityCard.activity_id);
       setButtonClicked(false);
+      setSuccess({
+        success: data.success,
+        text: data.success
+          ? "Thank you for cancelling your attendance at this activity"
+          : "Something went wrong 😞 please try again",
+      });
     };
 
     if (user_id && buttonClicked) {
       updateParticipants();
     }
-  }, [buttonClicked, user_id, activityCard, removeActivity]);
+  }, [buttonClicked, user_id, activityCard, removeActivity, setSuccess]);
 
   function onEventClick(data) {
     setActivityCard(convertData(data));

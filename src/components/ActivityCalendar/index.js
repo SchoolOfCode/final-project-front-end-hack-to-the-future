@@ -4,7 +4,7 @@ import { convertActivitiesToEvents } from "../../HelperFunctions";
 import css from "./ActivityCalendar.module.css";
 import { API_URL } from "../../config/index.js";
 
-function ActivityCalendar({ user_id }) {
+function ActivityCalendar({ user_id, setSuccess }) {
   const [interestedActivities, setInterestedActivities] = useState([]);
   console.log(interestedActivities);
 
@@ -50,6 +50,7 @@ function ActivityCalendar({ user_id }) {
         activityEvents={interestedActivities}
         user_id={user_id}
         removeActivity={removeActivity}
+        setSuccess={setSuccess}
       />
     </div>
   );
