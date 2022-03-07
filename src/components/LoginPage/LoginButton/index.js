@@ -7,6 +7,7 @@ const LoginButton = ({ disabled }) => {
 
   return (
     <button
+      id="loginButton"
       className={css.loginButton}
       onClick={() => loginWithRedirect()}
       disabled={disabled}
