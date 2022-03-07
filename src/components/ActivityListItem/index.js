@@ -4,13 +4,12 @@ import Button from "../Button/index";
 import { converDateTime, buttonsTheme } from "../../HelperFunctions";
 import { ThemeProvider } from "@mui/material/styles";
 import css from "./ActivityListItem.module.css";
-import SuccessFetch from "../SuccessFetch";
 import { API_URL } from "../../config/index.js";
 
-function ActivityListItem({ activity, user_id }) {
+function ActivityListItem({ activity, user_id, setSuccess }) {
   const [ifExpanded, setIfExpanded] = useState(false);
-  const [success, setSuccess] = useState(null);
-  //console.log(success);
+  // const [success, setSuccess] = useState(null);
+
   const [attendBtnClicked, setAttendBtnClicked] = useState(false);
 
   const [date, time] = converDateTime(activity.date_time);
@@ -45,14 +44,15 @@ function ActivityListItem({ activity, user_id }) {
         requestActivity
       );
       const data = await response.json();
-      setSuccess(data.success);
-      console.log(data);
+      setSuccess({success: data.success, text: data.success
+          ? "Thanks for confirming your attendance 😀"
+          : "Something went wrong 😞 please try again"});
     };
 
     if (user_id && attendBtnClicked) {
       updateParticipants();
     }
-  }, [attendBtnClicked, user_id, activity.activity_id]);
+  }, [attendBtnClicked, user_id, activity.activity_id, setSuccess]);
 
   return (
     <li
@@ -69,11 +69,6 @@ function ActivityListItem({ activity, user_id }) {
       </div>
 
       <div className={ifExpanded ? ` ${css.expanded}` : ` ${css.collapsed}`}>
-        {success ? (
-          <SuccessFetch success={success} setSuccess={setSuccess} />
-        ) : (
-          ""
-        )}
         <ActivityCard
           activity={activity}
           leftButton={{
