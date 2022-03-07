@@ -8,7 +8,6 @@ import { API_URL } from "../../config/index.js";
 
 function ActivityListItem({ activity, user_id, setSuccess }) {
   const [ifExpanded, setIfExpanded] = useState(false);
-  // const [success, setSuccess] = useState(null);
 
   const [attendBtnClicked, setAttendBtnClicked] = useState(false);
 

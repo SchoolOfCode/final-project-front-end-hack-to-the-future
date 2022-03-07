@@ -43,14 +43,19 @@ export default function Form({ user_id, setSuccess }) {
         requestBody
       );
       const data = await response.json();
-      setSuccess(data.success);
+      setSuccess({
+        success: data.success,
+        text: data.success
+          ? "Thanks for creating your activity 🙂"
+          : "Something went wrong 😞 please try again",
+      });
       setSubmittedValues(null);
     };
 
     if (submittedValues && user_id) {
       createActivity();
     }
-  }, [submittedValues, user_id]);
+  }, [submittedValues, user_id, setSuccess]);
 
   return (
     <div className={css.formContainer}>
