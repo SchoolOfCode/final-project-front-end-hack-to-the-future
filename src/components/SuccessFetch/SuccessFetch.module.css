@@ -5,11 +5,13 @@
   width: 20vw;
   height: 20vh;
   background-color: var(--alice-blue);
+  border: 2px solid var(--ming);
+
   z-index: 2;
 }
 
 .display {
-  display:block;
+  display: block;
 }
 
 .noDisplay {

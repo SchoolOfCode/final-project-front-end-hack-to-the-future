@@ -22,9 +22,11 @@ function Success({ success, setSuccess }) {
       }
     >
       {/* <div className={`${css.successContainer} display`} > */}
-
-      <span>"this is oir essage"</span>
-      <p>{success}</p>
+      <p>
+        {success
+          ? "Thanks for confirming your attendance 😀"
+          : "Something went wrong 😞 please try again"}
+      </p>
       <button onClick={() => setSuccess(null)}>Close</button>
     </div>
   );
