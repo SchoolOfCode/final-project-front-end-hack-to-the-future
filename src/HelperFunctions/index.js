@@ -80,6 +80,13 @@ export function convertData(activity) {
   };
 }
 
+export function removeActivity(array, id, setFuntion) {
+  const index = array.findIndex((activity) => activity.activity_id === id);
+  console.log(index);
+  const newActivities = [...array.slice(0, index), ...array.slice(index + 1)];
+  setFuntion(newActivities);
+}
+
 export const buttonsTheme = {
   cancel: createTheme({
     palette: {

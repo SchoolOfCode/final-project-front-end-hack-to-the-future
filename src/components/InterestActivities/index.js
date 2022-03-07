@@ -45,10 +45,13 @@ function InterestActivities({ user_id, setSuccess }) {
         {interestedActivities.length === 0? <Loading /> : interestedActivities.map((activity, index) => {
           return (
             <ActivityListItem
+              setInterestedActivities={setInterestedActivities}
+              interestedActivities={interestedActivities}
               setSuccess={setSuccess}
               activity={activity}
               user_id={user_id}
-              key={index}
+              key={activity.activity_id}
+              index={index}
             />
           );
         })}
