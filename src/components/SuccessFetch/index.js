@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import css from "./SuccessFetch.module.css";
 
-function Success({ success }) {
-  const [displayBlock, setDisplayBlock] = useState(false);
-  console.log(displayBlock);
+function Success({ success, setSuccess }) {
+  // const [displayBlock, setDisplayBlock] = useState(false);
+  // console.log(displayBlock);
   // let text = "";
   // const success = false;
   // success ? setDisplayBlock(true) : setDisplayBlock(false);
@@ -25,7 +25,7 @@ function Success({ success }) {
 
       <span>"this is oir essage"</span>
       <p>{success}</p>
-      {/* <button onClick={() => setDisplayBlock(false)}>Close</button> */}
+      <button onClick={() => setSuccess(null)}>Close</button>
     </div>
   );
 }

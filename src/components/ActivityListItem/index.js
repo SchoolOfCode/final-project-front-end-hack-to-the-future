@@ -69,7 +69,11 @@ function ActivityListItem({ activity, user_id }) {
       </div>
 
       <div className={ifExpanded ? ` ${css.expanded}` : ` ${css.collapsed}`}>
-        {success ? <SuccessFetch success={success} /> : ""}
+        {success ? (
+          <SuccessFetch success={success} setSuccess={setSuccess} />
+        ) : (
+          ""
+        )}
         <ActivityCard
           activity={activity}
           leftButton={{
