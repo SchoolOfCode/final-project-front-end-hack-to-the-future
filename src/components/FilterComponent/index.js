@@ -61,7 +61,9 @@ function FilterComponent({ handleFilterSearch }) {
         <option value="walk">Walk</option>
         <option value="other">Other</option>
       </select>
-      <button onClick={handleClick}>Search Activities</button>
+      <button className="btn" onClick={handleClick}>
+        Search Activities
+      </button>
     </div>
   );
 }

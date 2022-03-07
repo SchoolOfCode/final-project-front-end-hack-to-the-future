@@ -17,6 +17,8 @@ export default function LocationInput({ handleLocationChange }) {
           onChange={(e) => handleLocationChange(e.target.value)}
           sx={{
             width: 300,
+            mt: "1rem",
+            bgcolor: "white",
           }}
           id="outlined-basic"
           label="City"
