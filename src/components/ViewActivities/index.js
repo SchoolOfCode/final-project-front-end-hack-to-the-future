@@ -12,17 +12,27 @@ export default function ViewActivities({ user_id }) {
     direction: null,
     activityId: null,
   });
+  const [filterInput, setFilterInput] = useState({ location: "", type: "" });
+
+  function handleFilterSearch(location, type) {
+    setFilterInput((filterInput) => {
+      return { ...filterInput, location: location, type: type };
+    });
+  }
 
   useEffect(() => {
     const getActivities = async () => {
       console.log("api url in view activities", API_URL);
-      const response = await fetch(`${API_URL}/activities`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: user_id,
-        },
-      });
+      const response = await fetch(
+        `${API_URL}/activities?location=${filterInput.location}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: user_id,
+          },
+        }
+      );
 
       const data = await response.json();
       setActivity(data.payload);
@@ -70,7 +80,7 @@ export default function ViewActivities({ user_id }) {
 
   return (
     <div className={css.viewActivitiesContainer}>
-      <FilterComponent />
+      <FilterComponent handleFilterSearch={handleFilterSearch} />
       <p>Swipe 👉 if interested</p>
       <p>Swipe 👈 if not interested</p>
       {activities.map((activity, index) => (
