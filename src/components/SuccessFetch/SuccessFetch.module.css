@@ -1,0 +1,16 @@
+.successContainer {
+  position: fixed;
+  top: 40%;
+  left: 40%;
+  width: 20vw;
+  height: 20vh;
+  background-color: var(--alice-blue);
+}
+
+.display {
+  display:block;
+}
+
+.noDisplay {
+  display: none;
+}
