@@ -5,6 +5,7 @@
   width: 20vw;
   height: 20vh;
   background-color: var(--alice-blue);
+  z-index: 2;
 }
 
 .display {
