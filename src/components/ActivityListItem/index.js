@@ -4,6 +4,7 @@ import Button from "../Button/index";
 import { converDateTime, buttonsTheme } from "../../HelperFunctions";
 import { ThemeProvider } from "@mui/material/styles";
 import css from "./ActivityListItem.module.css";
+import { API_URL } from "../../config/index.js";
 
 function ActivityListItem({ activity, user_id }) {
   const [ifExpanded, setIfExpanded] = useState(false);
@@ -38,7 +39,7 @@ function ActivityListItem({ activity, user_id }) {
       };
       const response = await fetch(
         // link to be changed
-        "https://activity-app-backend.herokuapp.com/participants",
+        `${API_URL}/participants`,
         requestActivity
       );
       const data = await response.json();
@@ -52,22 +53,31 @@ function ActivityListItem({ activity, user_id }) {
 
   return (
     <li
-      className={`${css.activityItemContainer} flex-vertical ${ ifExpanded ? `${css.shrinkContainer}` : ""}`}
-      
+      className={`${css.activityItemContainer} flex-vertical ${
+        ifExpanded ? `${css.shrinkContainer}` : ""
+      }`}
     >
       <div className={!ifExpanded ? `${css.expanded}` : `${css.collapsed}`}>
         <h2>{activity.type}</h2>
         <h3>{`Date: ${date} | Time: ${time}`}</h3>
         <ThemeProvider theme={buttonsTheme.cancel}>
-        <Button button="Expand" onClick={toggleIfExpanded}/>
+          <Button button="Expand" onClick={toggleIfExpanded} />
         </ThemeProvider>
       </div>
 
       <div className={ifExpanded ? ` ${css.expanded}` : ` ${css.collapsed}`}>
         <ActivityCard
           activity={activity}
-          leftButton={{ text: "Collapse", onClick: () => toggleIfExpanded(), theme: buttonsTheme.cancel  }}
-          rightButton={{ text: "Attend", onClick: () => handleAttendClick(), theme: buttonsTheme.create }}
+          leftButton={{
+            text: "Collapse",
+            onClick: () => toggleIfExpanded(),
+            theme: buttonsTheme.cancel,
+          }}
+          rightButton={{
+            text: "Attend",
+            onClick: () => handleAttendClick(),
+            theme: buttonsTheme.create,
+          }}
         />
       </div>
     </li>

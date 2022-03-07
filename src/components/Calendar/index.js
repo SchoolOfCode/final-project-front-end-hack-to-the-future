@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import ActivityCard from "../ActivityCard";
 import Kalend, { CalendarView } from "kalend"; // import component
 import "kalend/dist/styles/index.css"; // import styles
+import { API_URL } from "../../config/index.js";
 
 import css from "./Calendar.module.css";
 import { buttonsTheme, convertData } from "../../HelperFunctions";
-
 
 function Calendar({ activityEvents, user_id, removeActivity }) {
   const [activityCard, setActivityCard] = useState(null);
@@ -26,7 +26,7 @@ function Calendar({ activityEvents, user_id, removeActivity }) {
       };
       const response = await fetch(
         // link to be changed
-        "https://activity-app-backend.herokuapp.com/participants",
+        `${API_URL}/participants`,
         requestActivity
       );
       const data = await response.json();
@@ -39,7 +39,6 @@ function Calendar({ activityEvents, user_id, removeActivity }) {
     if (user_id && buttonClicked) {
       updateParticipants();
     }
-
   }, [buttonClicked, user_id, activityCard, removeActivity]);
 
   function onEventClick(data) {
