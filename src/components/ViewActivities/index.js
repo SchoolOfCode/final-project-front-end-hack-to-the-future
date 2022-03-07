@@ -14,11 +14,12 @@ export default function ViewActivities({ user_id }) {
   });
   const [filterInput, setFilterInput] = useState({
     location: "",
+    type: "",
   });
 
   function handleFilterSearch(inputs) {
     setFilterInput((filterInput) => {
-      return { ...filterInput, location: inputs.location };
+      return { ...filterInput, ...inputs };
     });
   }
 
