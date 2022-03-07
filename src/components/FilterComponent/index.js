@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import LocationInput from "./LocationInput";
 import DropdownFilter from "./DropdownFilter";
 import DateSelector from "./DateSelector";
 //import { css } from '@emotion/react';
 import css from "./FilterComponent.module.css";
 
-function FilterComponent() {
+function FilterComponent({ handleFilterSearch }) {
+  const [locationInput, setLocationInput] = useState("");
+  const [dropdownInput, setdropdownInput] = useState("");
+
+  function handleLocationChange(location) {
+    setLocationInput(location);
+  }
+  // function handleLocationChange (location) {
+  //   setLocationInput(location)
+  // }
+  function handleClick() {
+    const inputs = {
+      location: locationInput,
+      type: dropdownInput,
+    };
+    handleFilterSearch(inputs);
+  }
+
   return (
     <div
       className={css.filterContainer}
@@ -17,10 +34,10 @@ function FilterComponent() {
       //     padding: '10px',
       // }}
     >
-      <LocationInput />
+      <LocationInput handleLocationChange={handleLocationChange} />
       <DateSelector />
       <DropdownFilter />
-      <button>Search Activities</button>
+      <button onClick={handleClick}>Search Activities</button>
     </div>
   );
 }

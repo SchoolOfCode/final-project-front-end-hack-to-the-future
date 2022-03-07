@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 import { ThemeProvider } from "@mui/material/styles";
 import { buttonsTheme } from "../../../HelperFunctions";
 
-export default function LocationInput() {
+export default function LocationInput({ handleLocationChange }) {
   return (
     <ThemeProvider theme={buttonsTheme.cancel}>
       <Box
@@ -14,6 +14,7 @@ export default function LocationInput() {
         style={{ margin: "1rem" }}
       >
         <TextField
+          onChange={(e) => handleLocationChange(e.target.value)}
           sx={{
             width: 300,
           }}

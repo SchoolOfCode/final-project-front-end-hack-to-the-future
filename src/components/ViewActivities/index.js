@@ -12,7 +12,10 @@ export default function ViewActivities({ user_id }) {
     direction: null,
     activityId: null,
   });
-  const [filterInput, setFilterInput] = useState({ location: "", type: "" });
+  const [filterInput, setFilterInput] = useState({
+    location: "",
+    type: "",
+  });
 
   function handleFilterSearch(location, type) {
     setFilterInput((filterInput) => {
@@ -41,7 +44,7 @@ export default function ViewActivities({ user_id }) {
     if (user_id) {
       getActivities();
     }
-  }, [user_id]);
+  }, [user_id, filterInput]);
 
   const Swiped = (direction, activity) => {
     setCurrentSwipedCard({
