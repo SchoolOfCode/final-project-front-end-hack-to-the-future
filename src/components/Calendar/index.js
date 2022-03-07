@@ -70,6 +70,10 @@ function Calendar({
 
   return (
     <div className={css.calendar}>
+      <div className={css.activitiesColorContainer}>
+        <span className={css.activitiesColor}>🟠 Attending Activities</span>
+        <span className={css.activitiesColor}>🔵 Hosting Activities</span>
+      </div>
       <Kalend
         // kalendRef={props.kalendRef}
         // onNewEventClick={onNewEventClick}

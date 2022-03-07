@@ -21,7 +21,7 @@ export function converDateTime(dateTime) {
   return [date, hours];
 }
 
-export function convertActivitiesToEvents(activity) {
+export function convertActivitiesToEvents(activity ,user_id) {
   function Add2hours() {
     // first to get the hours character
     // convert those character to number
@@ -47,6 +47,8 @@ export function convertActivitiesToEvents(activity) {
     return timeString.slice(0, 11) + newTime.toString() + timeString.slice(13);
   }
 
+  let color = activity.organiser_id === user_id? "blue" : "orange";
+
   return {
     id: activity.activity_id,
     activity_id: activity.activity_id,
@@ -54,7 +56,7 @@ export function convertActivitiesToEvents(activity) {
     endAt: Add2hours(),
     timezoneStartAt: "Europe/Berlin", // optional
     summary: activity.description,
-    color: "red",
+    color: color,
     calendarID: "work",
     location_name: activity.location_name,
     organiser_id: activity.organiser_id,

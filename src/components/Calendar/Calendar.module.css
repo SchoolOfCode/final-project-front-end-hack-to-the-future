@@ -12,3 +12,21 @@
   background: white;
   flex-direction: column;
 }
+
+.activitiesColorContainer {
+  padding: 1rem;
+}
+
+.activitiesColor {
+  font-weight: bold;
+  padding: 0.5rem;
+  display: block;
+}
+
+@media screen and (min-width:450px) {
+  
+  .activitiesColor {
+    display: inline-block;
+  }
+  
+}

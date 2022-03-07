@@ -10,6 +10,7 @@ import { API_URL } from "../../config/index.js";
 
 export default function ViewActivities({ user_id }) {
   const [activities, setActivity] = useState([]);
+  console.log(activities);
   const [currentSwipedCard, setCurrentSwipedCard] = useState({
     direction: null,
     activityId: null,
