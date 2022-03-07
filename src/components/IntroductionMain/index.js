@@ -31,7 +31,7 @@ function IntroductionMain() {
           <input type="checkbox" onClick={handleCheck}></input>
         </p>
 
-        <LoginButton disabled={isDisabled} />
+        <LoginButton disabled={isDisabled}/>
       </div>
     </div>
   );
