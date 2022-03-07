@@ -49,6 +49,7 @@ export function convertActivitiesToEvents(activity) {
 
   return {
     id: activity.activity_id,
+    activity_id: activity.activity_id,
     startAt: activity.date_time,
     endAt: Add2hours(),
     timezoneStartAt: "Europe/Berlin", // optional
@@ -78,6 +79,13 @@ export function convertData(activity) {
     email: activity.email,
     user_id: activity.user_id,
   };
+}
+
+export function removeActivity(array, id, setFuntion) {
+  const index = array.findIndex((activity) => activity.activity_id === id);
+  console.log(index);
+  const newActivities = [...array.slice(0, index), ...array.slice(index + 1)];
+  setFuntion(newActivities);
 }
 
 export const buttonsTheme = {

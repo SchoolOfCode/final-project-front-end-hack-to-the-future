@@ -4,7 +4,7 @@ import Loading from "../LoadingComponent";
 import css from "./InterestActivities.module.css";
 import { API_URL } from "../../config/index.js";
 
-function InterestActivities({ user_id }) {
+function InterestActivities({ user_id, setSuccess }) {
   const [interestedActivities, setInterestedActivities] = useState([]);
   console.log(interestedActivities);
 
@@ -40,15 +40,18 @@ function InterestActivities({ user_id }) {
       <h2 className={css.introText}>
         Here are the activities you swiped right on!<br></br> Expand the card to view
         more info and confirm your attendance 😊
-
       </h2>
       <ul className={`${css.itemsContainer} flex-vertical`}>
         {interestedActivities.length === 0? <Loading /> : interestedActivities.map((activity, index) => {
           return (
             <ActivityListItem
+              setInterestedActivities={setInterestedActivities}
+              interestedActivities={interestedActivities}
+              setSuccess={setSuccess}
               activity={activity}
               user_id={user_id}
-              key={index}
+              key={activity.activity_id}
+              index={index}
             />
           );
         })}

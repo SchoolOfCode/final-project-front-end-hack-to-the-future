@@ -4,7 +4,7 @@ import { convertActivitiesToEvents } from "../../HelperFunctions";
 import css from "./ActivityCalendar.module.css";
 import { API_URL } from "../../config/index.js";
 
-function ActivityCalendar({ user_id }) {
+function ActivityCalendar({ user_id, setSuccess }) {
   const [interestedActivities, setInterestedActivities] = useState([]);
   console.log(interestedActivities);
 
@@ -30,17 +30,6 @@ function ActivityCalendar({ user_id }) {
     }
   }, [user_id]);
 
-  function removeActivity(id) {
-    const index = interestedActivities.findIndex(
-      (activity) => activity.id === id
-    );
-    const newActivities = [
-      ...interestedActivities.slice(0, index),
-      ...interestedActivities.slice(index + 1),
-    ];
-    setInterestedActivities(newActivities);
-  }
-
   return (
     <div className={css.activityCalendar}>
       <h2 className={css.activityCalendarTitle}>
@@ -49,7 +38,8 @@ function ActivityCalendar({ user_id }) {
       <Calendar
         activityEvents={interestedActivities}
         user_id={user_id}
-        removeActivity={removeActivity}
+        setSuccess={setSuccess}
+        setInterestedActivities={setInterestedActivities}
       />
     </div>
   );

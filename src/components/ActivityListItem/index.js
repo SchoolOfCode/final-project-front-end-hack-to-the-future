@@ -5,10 +5,18 @@ import { converDateTime, buttonsTheme } from "../../HelperFunctions";
 import { ThemeProvider } from "@mui/material/styles";
 import css from "./ActivityListItem.module.css";
 import { API_URL } from "../../config/index.js";
+import {removeActivity} from "../../HelperFunctions";
 
-function ActivityListItem({ activity, user_id }) {
+function ActivityListItem({
+  activity,
+  user_id,
+  setSuccess,
+  interestedActivities,
+  setInterestedActivities,
+  index,
+}) {
   const [ifExpanded, setIfExpanded] = useState(false);
-  console.log(ifExpanded);
+
   const [attendBtnClicked, setAttendBtnClicked] = useState(false);
 
   const [date, time] = converDateTime(activity.date_time);
@@ -43,13 +51,25 @@ function ActivityListItem({ activity, user_id }) {
         requestActivity
       );
       const data = await response.json();
-      console.log(data.payload);
+      setSuccess({
+        success: data.success,
+        text: data.success
+          ? "Thanks for confirming your attendance 😀"
+          : "Something went wrong 😞 please try again",
+      });
+      console.log(activity.activity_id);
+      // setInterestedActivities([...interestedActivities.slice(0, index), ...interestedActivities.slice(index + 1)]);
+      removeActivity(
+        interestedActivities,
+        activity.activity_id,
+        setInterestedActivities
+      );
     };
 
     if (user_id && attendBtnClicked) {
       updateParticipants();
     }
-  }, [attendBtnClicked, user_id, activity.activity_id]);
+  }, [attendBtnClicked, user_id, activity, setSuccess,]);
 
   return (
     <li

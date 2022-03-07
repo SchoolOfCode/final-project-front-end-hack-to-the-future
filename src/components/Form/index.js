@@ -12,7 +12,7 @@ import { buttonsTheme } from "../../HelperFunctions";
 import { API_URL } from "../../config/index.js";
 
 // Form card
-export default function Form({ user_id }) {
+export default function Form({ user_id, setSuccess }) {
   // useState to check if submit button has been pressed and trigger request
   const [submittedValues, setSubmittedValues] = useState();
 
@@ -43,15 +43,19 @@ export default function Form({ user_id }) {
         requestBody
       );
       const data = await response.json();
-      console.log(data);
-      alert(data.success ? "Activity created" : "Sorry there was an error");
+      setSuccess({
+        success: data.success,
+        text: data.success
+          ? "Thanks for creating your activity 🙂"
+          : "Something went wrong 😞 please try again",
+      });
       setSubmittedValues(null);
     };
 
     if (submittedValues && user_id) {
       createActivity();
     }
-  }, [submittedValues, user_id]);
+  }, [submittedValues, user_id, setSuccess]);
 
   return (
     <div className={css.formContainer}>
