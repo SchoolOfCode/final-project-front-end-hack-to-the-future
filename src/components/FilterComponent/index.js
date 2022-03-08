@@ -38,6 +38,7 @@ function FilterComponent({ handleFilterSearch }) {
       <DateSelector />
       {/* <DropdownFilter /> */}
       <select
+        data-testid="typeSelect"
         className={css.input}
         id="activityTypeFilter"
         name="activityTypeFilter"
@@ -61,7 +62,11 @@ function FilterComponent({ handleFilterSearch }) {
         <option value="walk">Walk</option>
         <option value="other">Other</option>
       </select>
-      <button className="btn" onClick={handleClick}>
+      <button
+        className="btn"
+        onClick={handleClick}
+        data-testid="filterButton"
+      >
         Apply filters
       </button>
     </div>

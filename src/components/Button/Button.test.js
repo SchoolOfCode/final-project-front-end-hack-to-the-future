@@ -19,5 +19,6 @@ describe("testing button component", () => {
     render(<Button {...testProps} />);
     const actual = screen.getByText(testProps.button);
     expect(actual).toBeInTheDocument();
-  })
+  });
+  
 });

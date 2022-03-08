@@ -8,9 +8,13 @@ function Success({ success, setSuccess }) {
           ? `${css.successContainer} display`
           : `${css.successContainer} noDisplay`
       }
+      data-testid="className"
     >
       <p>{success.text}</p>
-      <button onClick={() => setSuccess({ success: null, text: "" })}>
+      <button
+        onClick={() => setSuccess({ success: null, text: "" })}
+        data-testid="closeButton"
+      >
         Close
       </button>
     </div>
