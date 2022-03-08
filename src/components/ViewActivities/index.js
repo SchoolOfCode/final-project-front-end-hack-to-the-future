@@ -8,10 +8,9 @@ import Loading from "../LoadingComponent";
 import { API_URL } from "../../config/index.js";
 import { Link } from "react-router-dom";
 
-
 export default function ViewActivities({ user_id }) {
   const [activities, setActivity] = useState([]);
-  const [loadingState , setLoadingState] = useState(false);
+  const [loadingState, setLoadingState] = useState(false);
   console.log(activities);
   const [currentSwipedCard, setCurrentSwipedCard] = useState({
     direction: null,
@@ -93,16 +92,28 @@ export default function ViewActivities({ user_id }) {
       <FilterComponent handleFilterSearch={handleFilterSearch} />
       <p>Swipe 👉 if interested</p>
       <p>Swipe 👈 if not interested</p>
-      {loadingState ? <Loading/> : activities.length === 0 ? <p>Sorry there are no more activities to show, How about you <Link to="/create-activity" className={css.link}>create</Link> one! </p> : activities.map((activity, index) => (
-        <TinderCard
-          className={css.swipe}
-          key={index}
-          preventSwipe={["up", "down"]}
-          onSwipe={(dir) => Swiped(dir, activity)}
-        >
-          <ActivityCard activity={activity} />
-        </TinderCard>
-      ))}
+      {loadingState ? (
+        <Loading />
+      ) : activities.length === 0 ? (
+        <p>
+          Sorry there are no more activities to show, How about you{" "}
+          <Link to="/create-activity" className={css.link}>
+            create
+          </Link>{" "}
+          one!{" "}
+        </p>
+      ) : (
+        activities.map((activity, index) => (
+          <TinderCard
+            className={css.swipe}
+            key={index}
+            preventSwipe={["up", "down"]}
+            onSwipe={(dir) => Swiped(dir, activity)}
+          >
+            <ActivityCard activity={activity} />
+          </TinderCard>
+        ))
+      )}
     </div>
   );
 }
