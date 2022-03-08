@@ -16,13 +16,13 @@ function Home() {
         <ButtonMainAction
           className={css.buttonAction}
           imagePath={createActivityImage}
-          text="Create Activity"
+          text="Create an activity"
           path={"/create-activity"}
         />
         <ButtonMainAction
           className={css.buttonAction}
           imagePath={viewActivitiesImage}
-          text="View Activities"
+          text="View activities"
           path={"/view-activities"}
         />
       </div>

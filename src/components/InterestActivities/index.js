@@ -41,10 +41,10 @@ function InterestActivities({ user_id, setSuccess }) {
 
   return (
     <div className={css.itemsPage}>
-      <h2 className={css.introText}>
-        Here are the activities you swiped right on!<br></br> Expand the card to
-        view more info and confirm your attendance 😊
-      </h2>
+      <h3 className={css.introText}>
+        Here are the activities you swiped right on!<br></br> Expand the card to view
+        more info and confirm your attendance 😊
+      </h3>
       <ul className={`${css.itemsContainer} flex-vertical`}>
         {loadingState ? (
           <Loading />

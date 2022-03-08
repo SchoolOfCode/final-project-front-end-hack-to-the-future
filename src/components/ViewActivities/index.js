@@ -89,6 +89,7 @@ export default function ViewActivities({ user_id }) {
 
   return (
     <div className={css.viewActivitiesContainer}>
+      
       <FilterComponent handleFilterSearch={handleFilterSearch} />
       <p>Swipe 👉 if interested</p>
       <p>Swipe 👈 if not interested</p>
