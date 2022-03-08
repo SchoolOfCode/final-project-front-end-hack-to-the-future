@@ -7,7 +7,6 @@ import FilterComponent from "../FilterComponent";
 import Loading from "../LoadingComponent";
 import { API_URL } from "../../config/index.js";
 
-
 export default function ViewActivities({ user_id }) {
   const [activities, setActivity] = useState([]);
   console.log(activities);
@@ -86,19 +85,27 @@ export default function ViewActivities({ user_id }) {
 
   return (
     <div className={css.viewActivitiesContainer}>
+      <p className={css.introText}>
+       TEST Use one or more of the filters below, or just view all the activities on
+        offer!
+      </p>
       <FilterComponent handleFilterSearch={handleFilterSearch} />
       <p>Swipe 👉 if interested</p>
       <p>Swipe 👈 if not interested</p>
-      {activities.length === 0 ? <Loading/> : activities.map((activity, index) => (
-        <TinderCard
-          className={css.swipe}
-          key={index}
-          preventSwipe={["up", "down"]}
-          onSwipe={(dir) => Swiped(dir, activity)}
-        >
-          <ActivityCard activity={activity} />
-        </TinderCard>
-      ))}
+      {activities.length === 0 ? (
+        <Loading />
+      ) : (
+        activities.map((activity, index) => (
+          <TinderCard
+            className={css.swipe}
+            key={index}
+            preventSwipe={["up", "down"]}
+            onSwipe={(dir) => Swiped(dir, activity)}
+          >
+            <ActivityCard activity={activity} />
+          </TinderCard>
+        ))
+      )}
     </div>
   );
 }
