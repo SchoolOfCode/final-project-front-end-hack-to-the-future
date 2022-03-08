@@ -27,6 +27,8 @@
   margin: 1rem;
   padding: 0.5rem;
   border: 2px solid var(--ming);
+  background-color: var(--alice-blue);
+  font-weight: bold;
   border-radius: 0.5rem;
 }
 
