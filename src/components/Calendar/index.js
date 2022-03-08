@@ -71,8 +71,8 @@ function Calendar({
   return (
     <div className={css.calendar}>
       <div className={css.activitiesColorContainer}>
-        <span className={css.activitiesColor}>🟠 Attending Activities</span>
-        <span className={css.activitiesColor}>🔵 Hosting Activities</span>
+        <span className={css.activitiesColor}>🟠 Attending</span>
+        <span className={css.activitiesColor}>🔵 Hosting</span>
       </div>
       <Kalend
         // kalendRef={props.kalendRef}

@@ -59,7 +59,7 @@ export default function Form({ user_id, setSuccess }) {
 
   return (
     <div className={css.formContainer}>
-      <h2>Create an Event</h2>
+      <h2>Create an activity</h2>
       <form onSubmit={handleSubmit}>
         <FormControl className={css.formControl}>
           <TextField
@@ -124,7 +124,7 @@ export default function Form({ user_id, setSuccess }) {
             inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
             id="activityMaxAttendees"
             name="activityMaxAttendees"
-            label="Maximum Attendees"
+            label="Maximum attendees"
             variant="outlined"
             required
           />
