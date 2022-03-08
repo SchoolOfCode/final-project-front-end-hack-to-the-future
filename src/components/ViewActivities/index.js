@@ -85,10 +85,7 @@ export default function ViewActivities({ user_id }) {
 
   return (
     <div className={css.viewActivitiesContainer}>
-      <p className={css.introText}>
-       TEST Use one or more of the filters below, or just view all the activities on
-        offer!
-      </p>
+      
       <FilterComponent handleFilterSearch={handleFilterSearch} />
       <p>Swipe 👉 if interested</p>
       <p>Swipe 👈 if not interested</p>
