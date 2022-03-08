@@ -11,6 +11,7 @@ import { buttonsTheme } from "../../HelperFunctions";
 //import { padding } from "@mui/system";
 import { API_URL } from "../../config/index.js";
 
+
 // Form card
 export default function Form({ user_id, setSuccess }) {
   // useState to check if submit button has been pressed and trigger request
@@ -57,6 +58,8 @@ export default function Form({ user_id, setSuccess }) {
     }
   }, [submittedValues, user_id, setSuccess]);
 
+
+
   return (
     <div className={css.formContainer}>
       <h2>Create an activity</h2>
@@ -80,6 +83,8 @@ export default function Form({ user_id, setSuccess }) {
             type="datetime-local"
             id="activityTime"
             name="activityTime"
+            // limit date input to today onwards only
+            min={new Date().toISOString().slice(0, 16)}
             required
           ></input>
           <select
