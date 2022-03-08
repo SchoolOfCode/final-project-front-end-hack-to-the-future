@@ -69,7 +69,14 @@ function ActivityListItem({
     if (user_id && attendBtnClicked) {
       updateParticipants();
     }
-  }, [attendBtnClicked, user_id, activity, setSuccess]);
+  }, [
+    attendBtnClicked,
+    user_id,
+    activity,
+    setSuccess,
+    interestedActivities,
+    setInterestedActivities,
+  ]);
 
   return (
     <li
