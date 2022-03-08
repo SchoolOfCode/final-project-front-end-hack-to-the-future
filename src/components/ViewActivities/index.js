@@ -52,11 +52,16 @@ export default function ViewActivities({ user_id }) {
     }
   }, [user_id, filterInput]);
 
-  const Swiped = (direction, activity) => {
+  const Swiped = (direction, activity, index) => {
     setCurrentSwipedCard({
       direction: direction,
       activityId: activity.activity_id,
     });
+
+    // if the last card has been swiped, set the list of activities state to an empty array (so we can display the message to create a new one)
+    if (index === 0) {
+      setActivity([]);
+    }
   };
 
   // update favActivities
@@ -89,7 +94,6 @@ export default function ViewActivities({ user_id }) {
 
   return (
     <div className={css.viewActivitiesContainer}>
-      
       <FilterComponent handleFilterSearch={handleFilterSearch} />
       <p>Swipe 👉 if interested</p>
       <p>Swipe 👈 if not interested</p>
@@ -109,7 +113,7 @@ export default function ViewActivities({ user_id }) {
             className={css.swipe}
             key={index}
             preventSwipe={["up", "down"]}
-            onSwipe={(dir) => Swiped(dir, activity)}
+            onSwipe={(dir) => Swiped(dir, activity, index)}
           >
             <ActivityCard activity={activity} />
           </TinderCard>
