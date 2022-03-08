@@ -1,7 +1,7 @@
 .app {
   text-align: center;
-  background: linear-gradient(340.97deg, #006D77 7.81%, rgba(255, 221, 210, 0) 100%), linear-gradient(180deg, rgba(255, 221, 210, 0) 34.22%, #FFDDD2 87.67%), #EDF6F9;
+  /* background lineear gradient moved to body in the main index.module.css file */
+  /* background: linear-gradient(340.97deg, #006D77 7.81%, rgba(255, 221, 210, 0) 100%), linear-gradient(180deg, rgba(255, 221, 210, 0) 34.22%, #FFDDD2 87.67%), #EDF6F9; */
   width: 100%;
   height: auto;
 }
-
