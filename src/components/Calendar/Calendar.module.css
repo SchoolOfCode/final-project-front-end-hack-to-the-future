@@ -1,7 +1,7 @@
 .calendar {
   width: 90%;
-  height: 60vh;
-  max-height: 60%;
+  height: 70vh;
+  max-height: 70%;
   display: flex;
   max-width: 850px;
   margin: 0 auto;
@@ -11,4 +11,22 @@
   align-items: center;
   background: white;
   flex-direction: column;
+}
+
+.activitiesColorContainer {
+  padding: 1rem;
+}
+
+.activitiesColor {
+  font-weight: bold;
+  padding: 0.5rem;
+  display: block;
+}
+
+@media screen and (min-width:450px) {
+  
+  .activitiesColor {
+    display: inline-block;
+  }
+  
 }

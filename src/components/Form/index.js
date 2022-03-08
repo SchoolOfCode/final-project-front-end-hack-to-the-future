@@ -9,9 +9,10 @@ import { Link } from "react-router-dom";
 import css from "./Form.module.css";
 import { buttonsTheme } from "../../HelperFunctions";
 //import { padding } from "@mui/system";
+import { API_URL } from "../../config/index.js";
 
 // Form card
-export default function Form({ user_id }) {
+export default function Form({ user_id, setSuccess }) {
   // useState to check if submit button has been pressed and trigger request
   const [submittedValues, setSubmittedValues] = useState();
 
@@ -38,23 +39,27 @@ export default function Form({ user_id }) {
       };
       const response = await fetch(
         // link to be changed
-        "https://activity-app-backend.herokuapp.com/activities",
+        `${API_URL}/activities`,
         requestBody
       );
       const data = await response.json();
-      console.log(data);
-      alert(data.success ? "Activity created" : "Sorry there was an error");
+      setSuccess({
+        success: data.success,
+        text: data.success
+          ? "Thanks for creating your activity 🙂"
+          : "Something went wrong 😞 please try again",
+      });
       setSubmittedValues(null);
     };
 
     if (submittedValues && user_id) {
       createActivity();
     }
-  }, [submittedValues, user_id]);
+  }, [submittedValues, user_id, setSuccess]);
 
   return (
     <div className={css.formContainer}>
-      <h2>Create an Event</h2>
+      <h2>Create an activity</h2>
       <form onSubmit={handleSubmit}>
         <FormControl className={css.formControl}>
           <TextField
@@ -75,6 +80,8 @@ export default function Form({ user_id }) {
             type="datetime-local"
             id="activityTime"
             name="activityTime"
+            // limit date input to today onwards only
+            min={new Date().toISOString().slice(0, 16)}
             required
           ></input>
           <select
@@ -116,10 +123,10 @@ export default function Form({ user_id }) {
             sx={{ mt: "1rem", bgcolor: "white" }}
             className={css.input}
             type="number"
-            inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
+            inputProps={{ inputMode: "numeric", pattern: "[0-9]*", min: "1" }}
             id="activityMaxAttendees"
             name="activityMaxAttendees"
-            label="Maximum Attendees"
+            label="Maximum attendees"
             variant="outlined"
             required
           />

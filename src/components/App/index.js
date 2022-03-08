@@ -7,10 +7,12 @@ import { ThemeProvider } from "@mui/material/styles";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginPage from "../LoginPage";
 import TsAndCs from "../TsAndCs";
+import LoadingComponent from "../LoadingComponent";
 import css from "./App.module.css";
+import { API_URL } from "../../config/index.js";
 //Our app!
 function App() {
-  const { isAuthenticated, user } = useAuth0();
+  const { isAuthenticated, user, isLoading } = useAuth0();
 
   useEffect(() => {
     //send PUT request to /users with the user's auth0 id
@@ -28,10 +30,7 @@ function App() {
           email: user.email,
         }),
       };
-      const response = await fetch(
-        "https://activity-app-backend.herokuapp.com/users",
-        requestBody
-      );
+      const response = await fetch(`${API_URL}/users`, requestBody);
       const data = await response.json();
       console.log(data);
     }
@@ -47,6 +46,8 @@ function App() {
               <Header />
               <Main user_id={user.sub} />
             </>
+          ) : isLoading ? (
+            <LoadingComponent />
           ) : (
             <>
               <LoginPage />

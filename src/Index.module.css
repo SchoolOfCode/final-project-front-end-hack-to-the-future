@@ -28,7 +28,7 @@ font-family: 'Raleway', sans-serif; */
   font-family: 'Raleway', sans-serif;
 }
 
-h1, h2, h3, h4, {
+h1, h2, h3, h4 {
   font-family: 'Montserrat', sans-serif
 }
 
@@ -45,8 +45,7 @@ a:visited {
 }
 
 body {
-   
-  width:100%;
+  width: 100%;  
   min-width: 360px;
   min-height: 600px; 
   margin: 0;

@@ -14,13 +14,18 @@ export default function DateSelector() {
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <DatePicker
           // style={{ margin: "1rem" }}
-          label="Date Picker"
+          label="Date / time"
           value={value}
           onChange={(newValue) => {
             setValue(newValue);
           }}
           renderInput={(params) => (
             <TextField
+              sx={{
+                width: 300,
+                mt: "1rem",
+                bgcolor: "white",
+              }}
               // sx={{
               //     width: 400,
               // }}
