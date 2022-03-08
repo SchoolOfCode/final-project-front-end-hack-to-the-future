@@ -11,7 +11,6 @@ import { buttonsTheme } from "../../HelperFunctions";
 //import { padding } from "@mui/system";
 import { API_URL } from "../../config/index.js";
 
-
 // Form card
 export default function Form({ user_id, setSuccess }) {
   // useState to check if submit button has been pressed and trigger request
@@ -57,8 +56,6 @@ export default function Form({ user_id, setSuccess }) {
       createActivity();
     }
   }, [submittedValues, user_id, setSuccess]);
-
-
 
   return (
     <div className={css.formContainer}>
@@ -126,7 +123,7 @@ export default function Form({ user_id, setSuccess }) {
             sx={{ mt: "1rem", bgcolor: "white" }}
             className={css.input}
             type="number"
-            inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
+            inputProps={{ inputMode: "numeric", pattern: "[0-9]*", min: "1" }}
             id="activityMaxAttendees"
             name="activityMaxAttendees"
             label="Maximum attendees"
