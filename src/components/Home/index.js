@@ -13,6 +13,7 @@ function Home() {
       </div>
       <div className={`${css.mainButtons} flex-horizontal`}>
         <ButtonMainAction
+          id="buttonLeft"
           className={css.buttonAction}
           imagePath={createActivityImage}
           text="Create an activity"
