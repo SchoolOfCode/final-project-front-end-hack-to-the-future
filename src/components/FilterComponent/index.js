@@ -37,6 +37,8 @@ function FilterComponent({ handleFilterSearch }) {
       <LocationInput handleLocationChange={handleLocationChange} />
       <DateSelector />
       {/* <DropdownFilter /> */}
+      <div className={`${css.inputContainer} flex-vertical`}>
+
       <select
         className={css.input}
         id="activityTypeFilter"
@@ -61,9 +63,10 @@ function FilterComponent({ handleFilterSearch }) {
         <option value="walk">Walk</option>
         <option value="other">Other</option>
       </select>
-      <button className="btn" onClick={handleClick}>
+      <button className={css.btn} onClick={handleClick}>
         Apply filters
       </button>
+      </div>
     </div>
   );
 }
