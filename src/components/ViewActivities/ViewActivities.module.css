@@ -22,3 +22,16 @@
 .link:hover {
   color: white;
 }
+
+.interestedLink {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid black;
+  background-color: var(--alice-blue);
+  box-shadow: 2px 2px 3px darkgray; 
+}
+
+.interestedLink:hover {
+  background-color: var(--silk);
+}
+

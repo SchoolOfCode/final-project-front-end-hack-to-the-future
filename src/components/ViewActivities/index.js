@@ -89,7 +89,6 @@ export default function ViewActivities({ user_id }) {
 
   return (
     <div className={css.viewActivitiesContainer}>
-      
       <FilterComponent handleFilterSearch={handleFilterSearch} />
       <p>Swipe 👉 if interested</p>
       <p>Swipe 👈 if not interested</p>
@@ -115,6 +114,9 @@ export default function ViewActivities({ user_id }) {
           </TinderCard>
         ))
       )}
+      <Link to="/interest-activities" className={css.interestedLink}>
+        View the activities that you swiped right on!
+      </Link>
     </div>
   );
 }
