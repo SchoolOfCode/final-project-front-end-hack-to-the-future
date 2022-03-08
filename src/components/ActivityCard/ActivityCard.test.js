@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 
 import ActivityCard from "./";
 import { buttonsTheme } from "../../HelperFunctions/index.js";
+import { converDateTime } from "../../HelperFunctions";
 
 const testProps = {
   activity: {
@@ -63,6 +64,28 @@ describe("ActivityCard", () => {
   test("renders the max attendees", () => {
     render(<ActivityCard {...testProps} />);
     const actual = screen.getByText(testProps.activity.max_attendees);
+    expect(actual).toBeInTheDocument();
+  });
+
+  test("renders the image", () => {
+    render(<ActivityCard {...testProps} />);
+    const actual = screen.getByTestId("card-image");
+    expect(actual).toBeInTheDocument();
+  });
+
+  test("renders the date", () => {
+    render(<ActivityCard {...testProps} />);
+    const actual = screen.getByText(
+      converDateTime(testProps.activity.date_time)[0]
+    );
+    expect(actual).toBeInTheDocument();
+  });
+
+  test("renders the time", () => {
+    render(<ActivityCard {...testProps} />);
+    const actual = screen.getByText(
+      converDateTime(testProps.activity.date_time)[1]
+    );
     expect(actual).toBeInTheDocument();
   });
 });
