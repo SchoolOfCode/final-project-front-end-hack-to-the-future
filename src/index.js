@@ -11,8 +11,8 @@ import { Auth0Provider } from "@auth0/auth0-react";
 ReactDOM.render(
   <React.StrictMode>
     <Auth0Provider
-      domain={AUTH0_DOMAIN}
-      clientId={AUTH0_CLIENT}
+      domain = { AUTH0_DOMAIN }
+      clientId = { AUTH0_CLIENT }
       redirectUri={window.location.origin}
     >
       <BrowserRouter>

@@ -5,7 +5,7 @@ import { converDateTime, buttonsTheme } from "../../HelperFunctions";
 import { ThemeProvider } from "@mui/material/styles";
 import css from "./ActivityListItem.module.css";
 import { API_URL } from "../../config/index.js";
-import {removeActivity} from "../../HelperFunctions";
+import { removeActivity } from "../../HelperFunctions";
 
 function ActivityListItem({
   activity,
@@ -69,7 +69,14 @@ function ActivityListItem({
     if (user_id && attendBtnClicked) {
       updateParticipants();
     }
-  }, [attendBtnClicked, user_id, activity, setSuccess,]);
+  }, [
+    attendBtnClicked,
+    user_id,
+    activity,
+    setSuccess,
+    interestedActivities,
+    setInterestedActivities,
+  ]);
 
   return (
     <li
@@ -78,7 +85,7 @@ function ActivityListItem({
       }`}
     >
       <div className={!ifExpanded ? `${css.expanded}` : `${css.collapsed}`}>
-        <h2>{activity.type}</h2>
+        <h2>{activity.type[0].toUpperCase() + activity.type.substring(1)}</h2>
         <h3>{`Date: ${date} | Time: ${time}`}</h3>
         <ThemeProvider theme={buttonsTheme.cancel}>
           <Button button="Expand" onClick={toggleIfExpanded} />

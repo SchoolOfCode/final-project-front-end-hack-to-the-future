@@ -21,7 +21,7 @@ export function converDateTime(dateTime) {
   return [date, hours];
 }
 
-export function convertActivitiesToEvents(activity ,user_id) {
+export function convertActivitiesToEvents(activity, user_id) {
   function Add2hours() {
     // first to get the hours character
     // convert those character to number
@@ -47,7 +47,7 @@ export function convertActivitiesToEvents(activity ,user_id) {
     return timeString.slice(0, 11) + newTime.toString() + timeString.slice(13);
   }
 
-  let color = activity.organiser_id === user_id? "blue" : "orange";
+  let color = activity.organiser_id === user_id ? "blue" : "orange";
 
   return {
     id: activity.activity_id,
@@ -55,16 +55,20 @@ export function convertActivitiesToEvents(activity ,user_id) {
     startAt: activity.date_time,
     endAt: Add2hours(),
     timezoneStartAt: "Europe/Berlin", // optional
-    summary: activity.description,
+    summary: activity.type[0].toUpperCase() + activity.type.substring(1),
     color: color,
     calendarID: "work",
-    location_name: activity.location_name,
+    location_name:
+      activity.location_name[0].toUpperCase() +
+      activity.location_name.substring(1),
     organiser_id: activity.organiser_id,
     max_attendees: activity.max_attendees,
     type: activity.type,
     user_id: activity.user_id,
     user_name: activity.user_name,
     email: activity.email,
+    description:
+      activity.description[0].toUpperCase() + activity.description.substring(1),
   };
 }
 
@@ -76,7 +80,7 @@ export function convertData(activity) {
     date_time: activity.startAt,
     location_name: activity.location_name,
     type: activity.type,
-    description: activity.summary,
+    description: activity.description,
     user_name: activity.user_name,
     email: activity.email,
     user_id: activity.user_id,

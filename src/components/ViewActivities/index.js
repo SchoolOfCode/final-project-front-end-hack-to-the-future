@@ -6,10 +6,11 @@ import css from "./ViewActivities.module.css";
 import FilterComponent from "../FilterComponent";
 import Loading from "../LoadingComponent";
 import { API_URL } from "../../config/index.js";
-
+import { Link } from "react-router-dom";
 
 export default function ViewActivities({ user_id }) {
   const [activities, setActivity] = useState([]);
+  const [loadingState, setLoadingState] = useState(false);
   console.log(activities);
   const [currentSwipedCard, setCurrentSwipedCard] = useState({
     direction: null,
@@ -28,6 +29,7 @@ export default function ViewActivities({ user_id }) {
 
   useEffect(() => {
     const getActivities = async () => {
+      setLoadingState(true);
       console.log("api url in view activities", API_URL);
       const response = await fetch(
         `${API_URL}/activities?location=${filterInput.location}&type=${filterInput.type}`,
@@ -42,6 +44,7 @@ export default function ViewActivities({ user_id }) {
 
       const data = await response.json();
       setActivity(data.payload);
+      setLoadingState(false);
     };
 
     if (user_id) {
@@ -49,11 +52,16 @@ export default function ViewActivities({ user_id }) {
     }
   }, [user_id, filterInput]);
 
-  const Swiped = (direction, activity) => {
+  const Swiped = (direction, activity, index) => {
     setCurrentSwipedCard({
       direction: direction,
       activityId: activity.activity_id,
     });
+
+    // if the last card has been swiped, set the list of activities state to an empty array (so we can display the message to create a new one)
+    if (index === 0) {
+      setActivity([]);
+    }
   };
 
   // update favActivities
@@ -89,16 +97,31 @@ export default function ViewActivities({ user_id }) {
       <FilterComponent handleFilterSearch={handleFilterSearch} />
       <p>Swipe 👉 if interested</p>
       <p>Swipe 👈 if not interested</p>
-      {activities.length === 0 ? <Loading/> : activities.map((activity, index) => (
-        <TinderCard
-          className={css.swipe}
-          key={index}
-          preventSwipe={["up", "down"]}
-          onSwipe={(dir) => Swiped(dir, activity)}
-        >
-          <ActivityCard activity={activity} />
-        </TinderCard>
-      ))}
+      {loadingState ? (
+        <Loading />
+      ) : activities.length === 0 ? (
+        <p>
+          Sorry there are no more activities to show, How about you{" "}
+          <Link to="/create-activity" className={css.link}>
+            create
+          </Link>{" "}
+          one!{" "}
+        </p>
+      ) : (
+        activities.map((activity, index) => (
+          <TinderCard
+            className={css.swipe}
+            key={index}
+            preventSwipe={["up", "down"]}
+            onSwipe={(dir) => Swiped(dir, activity, index)}
+          >
+            <ActivityCard activity={activity} />
+          </TinderCard>
+        ))
+      )}
+      <Link to="/interest-activities" className={css.interestedLink}>
+        View the activities that you swiped right on!
+      </Link>
     </div>
   );
 }

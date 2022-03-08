@@ -32,9 +32,9 @@ function ActivityCalendar({ user_id, setSuccess }) {
 
   return (
     <div className={css.activityCalendar}>
-      <h2 className={css.activityCalendarTitle}>
-        This Calendar shows your activities
-      </h2>
+      <h3 className={css.activityCalendarTitle}>
+        This calendar shows any activities that you are attending, or that you have created and will be hosting
+      </h3>
       <Calendar
         activityEvents={interestedActivities}
         user_id={user_id}

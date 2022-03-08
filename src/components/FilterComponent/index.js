@@ -62,7 +62,7 @@ function FilterComponent({ handleFilterSearch }) {
         <option value="other">Other</option>
       </select>
       <button className="btn" onClick={handleClick}>
-        Search Activities
+        Apply filters
       </button>
     </div>
   );
