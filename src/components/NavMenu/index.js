@@ -14,7 +14,7 @@ export default function NavMenu() {
         <Toolbar>
           <div className={css.logoContainer}>
             <Link to="/">
-              <img src={logo} alt="apptivity logo" />
+              <img src={logo} alt="apptivity logo" data-testid="nav-logo" />
             </Link>
           </div>
           <Box sx={{ flexGrow: 1 }}></Box>
