@@ -1,4 +1,3 @@
-
 .viewActivitiesContainer {
   width: 100%;
   height: 100vh;
@@ -13,4 +12,13 @@
   display: flex;
   justify-content: center;
   z-index: 1;
+}
+
+.link {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: white;
 }

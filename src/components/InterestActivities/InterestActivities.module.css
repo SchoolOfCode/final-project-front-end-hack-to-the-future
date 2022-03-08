@@ -14,3 +14,11 @@
   margin-bottom: 2rem;
 }
 
+.link {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: white;
+}
