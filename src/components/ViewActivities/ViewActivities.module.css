@@ -14,3 +14,9 @@
   justify-content: center;
   z-index: 1;
 }
+
+.link {
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
