@@ -80,6 +80,8 @@ export default function Form({ user_id, setSuccess }) {
             type="datetime-local"
             id="activityTime"
             name="activityTime"
+            // limit date input to today onwards only
+            min={new Date().toISOString().slice(0, 16)}
             required
           ></input>
           <select
@@ -121,7 +123,7 @@ export default function Form({ user_id, setSuccess }) {
             sx={{ mt: "1rem", bgcolor: "white" }}
             className={css.input}
             type="number"
-            inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
+            inputProps={{ inputMode: "numeric", pattern: "[0-9]*", min: "1" }}
             id="activityMaxAttendees"
             name="activityMaxAttendees"
             label="Maximum attendees"
