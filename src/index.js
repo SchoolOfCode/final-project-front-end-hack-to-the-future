@@ -4,14 +4,15 @@ import "./Index.module.css"
 import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-
+import { AUTH0_DOMAIN } from "./config";
+import { AUTH0_CLIENT } from "./config";
 import { Auth0Provider } from "@auth0/auth0-react";
 
 ReactDOM.render(
   <React.StrictMode>
     <Auth0Provider
-      domain="apptivity.eu.auth0.com"
-      clientId="cfxIFbAsFAb0J5tHqzEQkzV0TMGyuunS"
+      domain = { AUTH0_DOMAIN }
+      clientId = { AUTH0_CLIENT }
       redirectUri={window.location.origin}
     >
       <BrowserRouter>

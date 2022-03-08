@@ -1,0 +1,24 @@
+.successContainer {
+  position: fixed;
+  top: 40%;
+  left: 40%;
+  width: 25vw;
+  max-width: 150px;
+  height: 20vh;
+  max-height: 150px;
+  background-color: var(--alice-blue);
+  border: 2px solid var(--ming);
+  z-index: 4;
+}
+
+.successContainer p {
+  width: 100%;
+}
+
+.display {
+  display: block;
+}
+
+.noDisplay {
+  display: none;
+}

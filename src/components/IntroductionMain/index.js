@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import logo from "../../images/logo.png";
 import LoginButton from "../LoginPage/LoginButton";
-import { Link } from "react-router-dom";
-import { style } from "@mui/system";
-import { FormatUnderlined } from "@mui/icons-material";
+
 import css from "./IntroductionMain.module.css";
+
 
 function IntroductionMain() {
   const [checked, setChecked] = useState(false);

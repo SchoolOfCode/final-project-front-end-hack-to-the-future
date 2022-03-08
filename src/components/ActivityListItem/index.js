@@ -4,10 +4,19 @@ import Button from "../Button/index";
 import { converDateTime, buttonsTheme } from "../../HelperFunctions";
 import { ThemeProvider } from "@mui/material/styles";
 import css from "./ActivityListItem.module.css";
+import { API_URL } from "../../config/index.js";
+import { removeActivity } from "../../HelperFunctions";
 
-function ActivityListItem({ activity, user_id }) {
+function ActivityListItem({
+  activity,
+  user_id,
+  setSuccess,
+  interestedActivities,
+  setInterestedActivities,
+  index,
+}) {
   const [ifExpanded, setIfExpanded] = useState(false);
-  console.log(ifExpanded);
+
   const [attendBtnClicked, setAttendBtnClicked] = useState(false);
 
   const [date, time] = converDateTime(activity.date_time);
@@ -38,36 +47,64 @@ function ActivityListItem({ activity, user_id }) {
       };
       const response = await fetch(
         // link to be changed
-        "https://activity-app-backend.herokuapp.com/participants",
+        `${API_URL}/participants`,
         requestActivity
       );
       const data = await response.json();
-      console.log(data.payload);
+      setSuccess({
+        success: data.success,
+        text: data.success
+          ? "Thanks for confirming your attendance 😀"
+          : "Something went wrong 😞 please try again",
+      });
+      console.log(activity.activity_id);
+      // setInterestedActivities([...interestedActivities.slice(0, index), ...interestedActivities.slice(index + 1)]);
+      removeActivity(
+        interestedActivities,
+        activity.activity_id,
+        setInterestedActivities
+      );
     };
 
     if (user_id && attendBtnClicked) {
       updateParticipants();
     }
-  }, [attendBtnClicked, user_id, activity.activity_id]);
+  }, [
+    attendBtnClicked,
+    user_id,
+    activity,
+    setSuccess,
+    interestedActivities,
+    setInterestedActivities,
+  ]);
 
   return (
     <li
-      className={`${css.activityItemContainer} flex-vertical ${ ifExpanded ? `${css.shrinkContainer}` : ""}`}
-      
+      className={`${css.activityItemContainer} flex-vertical ${
+        ifExpanded ? `${css.shrinkContainer}` : ""
+      }`}
     >
       <div className={!ifExpanded ? `${css.expanded}` : `${css.collapsed}`}>
-        <h2>{activity.type}</h2>
+        <h2>{activity.type[0].toUpperCase() + activity.type.substring(1)}</h2>
         <h3>{`Date: ${date} | Time: ${time}`}</h3>
         <ThemeProvider theme={buttonsTheme.cancel}>
-        <Button button="Expand" onClick={toggleIfExpanded}/>
+          <Button button="Expand" onClick={toggleIfExpanded} />
         </ThemeProvider>
       </div>
 
       <div className={ifExpanded ? ` ${css.expanded}` : ` ${css.collapsed}`}>
         <ActivityCard
           activity={activity}
-          leftButton={{ text: "Collapse", onClick: () => toggleIfExpanded(), theme: buttonsTheme.cancel  }}
-          rightButton={{ text: "Attend", onClick: () => handleAttendClick(), theme: buttonsTheme.create }}
+          leftButton={{
+            text: "Collapse",
+            onClick: () => toggleIfExpanded(),
+            theme: buttonsTheme.cancel,
+          }}
+          rightButton={{
+            text: "Attend",
+            onClick: () => handleAttendClick(),
+            theme: buttonsTheme.create,
+          }}
         />
       </div>
     </li>

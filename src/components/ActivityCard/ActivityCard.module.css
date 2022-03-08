@@ -5,16 +5,25 @@
   justify-content: space-around;
   align-items: center;
   background-color: var(--alice-blue);
-  height: 45vh;
-  width: 100%;
+  height: 60vh;
+  /* width: 95%; */
   max-width: 400px;
   padding: 1rem;
   border: 2px solid black;
-
   background-size: cover;
   background-position: center;
   border-radius: 2rem;
   box-shadow: 1px 1px 2px 5px rgba(228, 207, 207, 0.3);
+}
+
+.type {
+  margin: 0.5rem;
+}
+
+
+.description {
+  width: 100%;
+  height: 60%;
 }
 
 .buttonsContainer {
@@ -22,6 +31,7 @@
   width: 90%;
   justify-content: space-around;
 }
+
 
 .imageFrame {
   width: 85%;
@@ -33,9 +43,12 @@
 }
 
 .spanned {
-  width: 90%;
+  margin-top: 0.5rem;
+  width: 100%;
+  height: 60%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -46,13 +59,22 @@
 }
 
 .descriptionContainer {
-  width: 100%;
-  height: 30%;
+  width: 80%;
+  height: 40%;
+  min-height: 40px;
   overflow-y: auto;
 }
 
 @media screen and (min-width:400px ) {
   
+  /* .card {
+    height: 65vh;
+  } */
+
+  .description {
+    height: 55%;
+  }
+
   .imageFrame {
     height: 30%;
   }
@@ -60,12 +82,4 @@
 }
 
 
-
-@media screen and (min-width:800px) {
-  
-  .imageFrame {
-    height: 40%;
-  }
-  
-}
 

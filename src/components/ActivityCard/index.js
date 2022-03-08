@@ -76,28 +76,35 @@ function ActivityCard({ activity, leftButton, rightButton }) {
         <img src={image} alt={activity.type} />
         {/* <img src={activityImage} alt="activity representation" /> */}
       </div>
-      <h3>{activity.type}</h3>
-      <div className={css.descriptionContainer}>{activity.description}</div>
-      <div className={css.spanned}>
-        <span>
-          <b>Location: </b>
-          {activity.location_name}
-        </span>
-        <span>
-          {" "}
-          <b>Max attendees: </b>
-          {activity.max_attendees}
-        </span>
-      </div>
-      <div className={css.spanned}>
-        <span>
-          <b>Date: </b>
-          {date}
-        </span>
-        <span>
-          <b>Time: </b>
-          {time}
-        </span>
+      <h3 className={css.type}>
+        {activity.type[0].toUpperCase() + activity.type.substring(1)}
+      </h3>
+      <div className={`${css.description} flex-vertical`}>
+        <div className={css.descriptionContainer}>
+          {activity.description[0].toUpperCase() +
+            activity.description.substring(1)}
+        </div>
+        <div className={css.spanned}>
+          <span className={css.locationDescription}>
+            <b>Location: </b>
+            {activity.location_name[0].toUpperCase() +
+              activity.location_name.substring(1)}
+          </span>
+          <span>
+            {" "}
+            <b>Max attendees: </b>
+            {activity.max_attendees}
+          </span>
+
+          <span>
+            <b>Date: </b>
+            {date}
+          </span>
+          <span>
+            <b>Time: </b>
+            {time}
+          </span>
+        </div>
       </div>
       <div className={`${css.buttonsContainer} flex-horizontal`}>
         {leftButton && (
