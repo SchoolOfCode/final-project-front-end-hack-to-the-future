@@ -1,5 +1,6 @@
 
-describe("The Home Page", () => {
+Cypress._.times(1, () => {
+describe("Acces the home page and press and test the 2 mains buttons 5 times", () => {
   it("successfully loads & click the main buttons", () => {
     cy.visit("/"); // change URL to match your dev URL
     cy.get('input').click();
@@ -10,4 +11,5 @@ describe("The Home Page", () => {
     cy.get('a[href*="create-activity"]').click();
     cy.url().should("include", "/create-activity");
   });
+});
 });
