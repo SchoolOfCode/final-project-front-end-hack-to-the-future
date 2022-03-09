@@ -19,6 +19,7 @@ export default function ViewActivities({ user_id }) {
   const [filterInput, setFilterInput] = useState({
     location: "",
     type: "",
+    date: "",
   });
 
   function handleFilterSearch(inputs) {
@@ -32,7 +33,7 @@ export default function ViewActivities({ user_id }) {
       setLoadingState(true);
       console.log("api url in view activities", API_URL);
       const response = await fetch(
-        `${API_URL}/activities?location=${filterInput.location}&type=${filterInput.type}`,
+        `${API_URL}/activities?location=${filterInput.location}&type=${filterInput.type}&date=${filterInput.date}`,
         {
           method: "GET",
           headers: {

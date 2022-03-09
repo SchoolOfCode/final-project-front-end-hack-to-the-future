@@ -19,13 +19,13 @@ function FilterComponent({ handleFilterSearch }) {
 
   function handleDateChange(date) {
     setDateInput(date);
-    console.log("dateInput", dateInput);
   }
 
   function handleClick() {
     const inputs = {
       location: locationInput,
       type: dropdownInput,
+      date: dateInput,
     };
     handleFilterSearch(inputs);
   }
