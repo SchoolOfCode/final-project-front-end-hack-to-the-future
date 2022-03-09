@@ -68,7 +68,7 @@ function ActivityCard({ activity, leftButton, rightButton }) {
       image = otherImg;
       break;
     default:
-    // do nothing
+    image = otherImg;
   }
   return (
     <div className={css.card}>
