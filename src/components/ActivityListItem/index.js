@@ -96,8 +96,16 @@ function ActivityListItem({
         ifExpanded ? `${css.shrinkContainer}` : ""
       }`}
     >
-      <div className={!ifExpanded ? `${css.expanded}` : `${css.collapsed}`}>
-        <button onClick={handleClickWaste}>🗑</button>
+      <div
+        className={
+          !ifExpanded
+            ? `${css.expanded}`
+            : `${css.textContainer} ${css.collapsed} `
+        }
+      >
+        <button className={css.wasteButton} onClick={handleClickWaste}>
+          🗑
+        </button>
         <h2>{activity.type[0].toUpperCase() + activity.type.substring(1)}</h2>
         <h3>{`Date: ${date} | Time: ${time}`}</h3>
         <ThemeProvider theme={buttonsTheme.cancel}>

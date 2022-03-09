@@ -1,4 +1,3 @@
-
 .activityItemContainer {
   width: 80%;
   border: 2px solid black;
@@ -16,6 +15,7 @@
 
 .expanded {
   display: block;
+  width: 100%;
 }
 
 .expanded .card {
@@ -24,6 +24,22 @@
 }
 
 .collapsed {
- 
-  display: none
+  display: none;
+}
+
+.wasteButton {
+  display: flex;
+  align-self: flex-end;
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  padding: 0.5rem;
+}
+.wasteButton:hover {
+  cursor: pointer;
+}
+
+.textContainer {
+  width: 100%;
 }
