@@ -1,6 +1,5 @@
 import React from "react";
 import css from "./TsAndCs.module.css";
-import { Link } from "react-router-dom";
 
 function TsAndCs() {
   return (
@@ -18,13 +17,12 @@ function TsAndCs() {
             {" "}
             ▪️ As with meeting up in person with anyone you've met online,
             always follow some basic safety guidelines. Some tips can be found
-            <Link
-              to="https://www.wikihow.com/Safely-Meet-a-Person-You-Met-Online"
+            <a href={"https://www.wikihow.com/Safely-Meet-a-Person-You-Met-Online"}
               style={{ color: "blue" }}
             >
               {" "}
               here
-            </Link>{" "}
+            </a>{" "}
           </li>
         </ul>
       </p>

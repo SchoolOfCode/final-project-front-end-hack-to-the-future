@@ -43,24 +43,24 @@ export default function DropdownMenu() {
           "aria-labelledby": "menu-button",
         }}
       >
-        <MenuItem onClick={handleClose}>
-          <Link to="/">Home</Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link to="/view-activities">View Activities</Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link to="/create-activity">Create an Activity</Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link to="/interest-activities">Interest List</Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link to="/activity-calendar">Activity Calendar</Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link to="/terms-and-conditions">Terms and Conditions</Link>
-        </MenuItem>
+        <Link to="/">
+          <MenuItem onClick={handleClose}>Home</MenuItem>
+        </Link>
+        <Link to="/view-activities">
+          <MenuItem onClick={handleClose}>View Activities</MenuItem>
+        </Link>
+        <Link to="/create-activity">
+          <MenuItem onClick={handleClose}>Create an Activity</MenuItem>
+        </Link>
+        <Link to="/interest-activities">
+          <MenuItem onClick={handleClose}>Interest List</MenuItem>
+        </Link>
+        <Link to="/activity-calendar">
+          <MenuItem onClick={handleClose}>Activity Calendar</MenuItem>
+        </Link>
+        <Link to="/terms-and-conditions">
+          <MenuItem onClick={handleClose}>Terms and Conditions</MenuItem>
+        </Link>
         <MenuItem onClick={handleClose}>
           <LogoutButton />
         </MenuItem>{" "}
