@@ -14,7 +14,7 @@ export default function DateSelector() {
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <DatePicker
           // style={{ margin: "1rem" }}
-          label="Date / time"
+          label="Date"
           value={value}
           onChange={(newValue) => {
             setValue(newValue);
