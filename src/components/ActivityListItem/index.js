@@ -16,10 +16,17 @@ function ActivityListItem({
   index,
 }) {
   const [ifExpanded, setIfExpanded] = useState(false);
-
+  const [role, setRole] = useState("");
   const [attendBtnClicked, setAttendBtnClicked] = useState(false);
 
   const [date, time] = converDateTime(activity.date_time);
+
+  function handleClickWaste() {
+    if (!attendBtnClicked) {
+      setRole("uninterested");
+      setAttendBtnClicked(true);
+    }
+  }
 
   function toggleIfExpanded() {
     setIfExpanded(!ifExpanded);
@@ -28,6 +35,7 @@ function ActivityListItem({
 
   function handleAttendClick() {
     if (!attendBtnClicked) {
+      setRole("attending");
       setAttendBtnClicked(true);
     }
   }
@@ -42,7 +50,7 @@ function ActivityListItem({
         },
         body: JSON.stringify({
           activity_id: activity.activity_id,
-          participant_role: "attending",
+          participant_role: `${role}`,
         }),
       };
       const response = await fetch(
@@ -53,9 +61,12 @@ function ActivityListItem({
       const data = await response.json();
       setSuccess({
         success: data.success,
-        text: data.success
-          ? "Thanks for confirming your attendance 😀"
-          : "Something went wrong 😞 please try again",
+        text:
+          data.success && data.payload[0].participant_role === "uninterested"
+            ? "This activity has been removed from your list"
+            : data.success && data.payload[0].participant_role === "attending"
+            ? "Thanks for confirming your attendance 😀"
+            : "Something went wrong 😞 please try again",
       });
       console.log(activity.activity_id);
       // setInterestedActivities([...interestedActivities.slice(0, index), ...interestedActivities.slice(index + 1)]);
@@ -66,7 +77,7 @@ function ActivityListItem({
       );
     };
 
-    if (user_id && attendBtnClicked) {
+    if (user_id && attendBtnClicked && role) {
       updateParticipants();
     }
   }, [
@@ -76,6 +87,7 @@ function ActivityListItem({
     setSuccess,
     interestedActivities,
     setInterestedActivities,
+    role,
   ]);
 
   return (
@@ -85,6 +97,7 @@ function ActivityListItem({
       }`}
     >
       <div className={!ifExpanded ? `${css.expanded}` : `${css.collapsed}`}>
+        <button onClick={handleClickWaste}>🗑</button>
         <h2>{activity.type[0].toUpperCase() + activity.type.substring(1)}</h2>
         <h3>{`Date: ${date} | Time: ${time}`}</h3>
         <ThemeProvider theme={buttonsTheme.cancel}>
