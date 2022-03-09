@@ -6,7 +6,7 @@ import DatePicker from "@mui/lab/DatePicker";
 import { ThemeProvider } from "@mui/material/styles";
 import { buttonsTheme } from "../../../HelperFunctions";
 
-export default function DateSelector() {
+export default function DateSelector({ handleDateChange }) {
   const [value, setValue] = React.useState(null);
 
   return (
@@ -18,6 +18,8 @@ export default function DateSelector() {
           value={value}
           onChange={(newValue) => {
             setValue(newValue);
+            const date = new Date(newValue);
+            handleDateChange(date.toISOString().slice(0, 10)); // send date in YYYY-MM-DD format
           }}
           renderInput={(params) => (
             <TextField
