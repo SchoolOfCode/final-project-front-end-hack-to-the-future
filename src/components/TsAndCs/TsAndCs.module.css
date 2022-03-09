@@ -1,6 +1,12 @@
 .container {
   width: 100%;
+  font-weight: normal;
 }
-.bullets {
+.leftAlign {
   text-align: left;
+  margin: 0 4rem 0 4rem;
+}
+
+.tC {
+  text-decoration: underline;
 }
