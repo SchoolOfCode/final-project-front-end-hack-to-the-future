@@ -29,7 +29,7 @@ function IntroductionMain() {
         </p>
         <p>
           I have read the
-          <span onClick={() => setTCVisible(true)} style={{ color: "blue" }}>
+          <span className={css.tclink} onClick={() => setTCVisible(true)} >
             {" "}
             Ts+Cs
           </span>
