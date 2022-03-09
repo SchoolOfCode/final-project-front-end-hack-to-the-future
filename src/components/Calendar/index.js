@@ -16,7 +16,6 @@ function Calendar({
 }) {
   const [activityCard, setActivityCard] = useState(null);
   const [buttonClicked, setButtonClicked] = useState(false);
-  console.log(activityEvents);
   useEffect(() => {
     const updateParticipants = async () => {
       const requestActivity = {
@@ -36,7 +35,7 @@ function Calendar({
         requestActivity
       );
       const data = await response.json();
-      console.log(data.payload);
+
       setActivityCard(null);
       removeActivity(
         activityEvents,

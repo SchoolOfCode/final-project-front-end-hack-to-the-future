@@ -30,7 +30,6 @@ function ActivityListItem({
 
   function toggleIfExpanded() {
     setIfExpanded(!ifExpanded);
-    console.log("clicked");
   }
 
   function handleAttendClick() {
@@ -68,7 +67,6 @@ function ActivityListItem({
             ? "Thanks for confirming your attendance 😀"
             : "Something went wrong 😞 please try again",
       });
-      console.log(activity.activity_id);
       // setInterestedActivities([...interestedActivities.slice(0, index), ...interestedActivities.slice(index + 1)]);
       removeActivity(
         interestedActivities,

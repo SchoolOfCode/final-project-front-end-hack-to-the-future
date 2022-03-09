@@ -14,14 +14,12 @@ function Show() {
         const response = await fetch(`${API_URL}/users`);
         const data = await response.json();
         if (data.success === true) {
-          console.log(data);
           setUsers(data.payload);
           setError("");
         } else {
           setError("Fetch didn't work :(");
         }
       } catch (err) {
-        console.log(err);
         setError(err.message);
       }
     }

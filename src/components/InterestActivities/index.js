@@ -8,9 +8,6 @@ import { Link } from "react-router-dom";
 function InterestActivities({ user_id, setSuccess }) {
   const [interestedActivities, setInterestedActivities] = useState([]);
   const [loadingState, setLoadingState] = useState(false);
-  console.log(interestedActivities);
-
-  console.log(`this is user ID ${user_id}`);
 
   useEffect(() => {
     const getParticipants = async () => {
@@ -29,12 +26,10 @@ function InterestActivities({ user_id, setSuccess }) {
       );
       const data = await response.json();
       setInterestedActivities(data.payload);
-      console.log(data.payload);
       setLoadingState(false);
     };
 
     if (user_id) {
-      console.log("getParticipants");
       getParticipants();
     }
   }, [user_id]);
@@ -42,8 +37,8 @@ function InterestActivities({ user_id, setSuccess }) {
   return (
     <div className={css.itemsPage}>
       <h3 className={css.introText}>
-        Here are the activities you swiped right on!<br></br> Expand the card to view
-        more info and confirm your attendance 😊
+        Here are the activities you swiped right on!<br></br> Expand the card to
+        view more info and confirm your attendance 😊
       </h3>
       <ul className={`${css.itemsContainer} flex-vertical`}>
         {loadingState ? (
