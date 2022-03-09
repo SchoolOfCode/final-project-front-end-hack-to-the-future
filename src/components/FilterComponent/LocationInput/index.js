@@ -7,12 +7,7 @@ import { buttonsTheme } from "../../../HelperFunctions";
 export default function LocationInput({ handleLocationChange }) {
   return (
     <ThemeProvider theme={buttonsTheme.cancel}>
-      <Box
-        component="form"
-        noValidate
-        autoComplete="off"
-        style={{ margin: "1rem" }}
-      >
+      <Box noValidate autoComplete="off" style={{ margin: "1rem" }}>
         <TextField
           onChange={(e) => handleLocationChange(e.target.value)}
           sx={{

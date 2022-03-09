@@ -6,7 +6,7 @@ import DatePicker from "@mui/lab/DatePicker";
 import { ThemeProvider } from "@mui/material/styles";
 import { buttonsTheme } from "../../../HelperFunctions";
 
-export default function DateSelector() {
+export default function DateSelector({ handleDateChange }) {
   const [value, setValue] = React.useState(null);
 
   return (
@@ -14,10 +14,13 @@ export default function DateSelector() {
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <DatePicker
           // style={{ margin: "1rem" }}
-          label="Date / time"
+          label="Date"
           value={value}
+          type="datetime-local"
+          minDate={new Date()}
           onChange={(newValue) => {
             setValue(newValue);
+            handleDateChange(newValue); // send date in YYYY-MM-DD format
           }}
           renderInput={(params) => (
             <TextField

@@ -1,14 +1,29 @@
-
 /* font-family: 'Montserrat', sans-serif;
 font-family: 'Raleway', sans-serif; */
 
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  background: linear-gradient(
+      340.97deg,
+      #006d77 7.81%,
+      rgba(255, 221, 210, 0) 100%
+    ),
+    linear-gradient(180deg, rgba(255, 221, 210, 0) 34.22%, #ffddd2 87.67%),
+    #edf6f9;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 :root {
- --ming : #006D77;
- --midle-blue-green : #83C5BE;
- --alice-blue : #EDF6F9;
- --silk : #FFDDD2;
- --dark-salmon : #E29578;     
+  --ming: #006d77;
+  --midle-blue-green: #83c5be;
+  --alice-blue: #edf6f9;
+  --silk: #ffddd2;
+  --dark-salmon: #e29578;
 }
 
 :global(.flex-horizontal) {
@@ -25,11 +40,14 @@ font-family: 'Raleway', sans-serif; */
 }
 
 * {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
-h1, h2, h3, h4 {
-  font-family: 'Montserrat', sans-serif
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", sans-serif;
 }
 
 li {
@@ -45,9 +63,9 @@ a:visited {
 }
 
 body {
-  width: 100%;  
+  width: 100%;
   min-width: 360px;
-  min-height: 600px; 
+  min-height: 600px;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
