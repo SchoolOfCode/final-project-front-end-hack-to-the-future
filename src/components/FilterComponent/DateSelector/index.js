@@ -18,8 +18,7 @@ export default function DateSelector({ handleDateChange }) {
           value={value}
           onChange={(newValue) => {
             setValue(newValue);
-            const date = new Date(newValue);
-            handleDateChange(date.toISOString().slice(0, 10)); // send date in YYYY-MM-DD format
+            handleDateChange(newValue); // send date in YYYY-MM-DD format
           }}
           renderInput={(params) => (
             <TextField

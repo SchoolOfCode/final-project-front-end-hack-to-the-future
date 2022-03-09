@@ -22,12 +22,18 @@ function FilterComponent({ handleFilterSearch }) {
   }
 
   function handleClick() {
-    const inputs = {
-      location: locationInput,
-      type: dropdownInput,
-      date: dateInput,
-    };
-    handleFilterSearch(inputs);
+    try {
+      const date = new Date(dateInput);
+      const formattedDate = date.toISOString().slice(0, 10);
+      const inputs = {
+        location: locationInput,
+        type: dropdownInput,
+        date: formattedDate,
+      };
+      handleFilterSearch(inputs);
+    } catch {
+      alert("invalid date");
+    }
   }
 
   return (
