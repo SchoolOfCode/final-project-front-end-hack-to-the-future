@@ -4,7 +4,6 @@ import LoginButton from "../LoginPage/LoginButton";
 
 import css from "./IntroductionMain.module.css";
 
-
 function IntroductionMain() {
   const [checked, setChecked] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
@@ -28,10 +27,17 @@ function IntroductionMain() {
         <p>
           I have read the
           <span style={{ color: "blue" }}> T&C's</span>
-          <input type="checkbox" onClick={handleCheck}></input>
+          <input
+            type="checkbox"
+            onClick={handleCheck}
+            data-testid="checkbox"
+          ></input>
         </p>
 
-        <LoginButton disabled={isDisabled} />
+        <LoginButton
+          disabled={isDisabled}
+          data-testid="loginDisabled"
+        ></LoginButton>
       </div>
     </div>
   );
