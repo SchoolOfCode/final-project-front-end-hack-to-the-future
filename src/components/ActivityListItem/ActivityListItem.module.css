@@ -8,6 +8,24 @@
   max-width: 700px;
 }
 
+.tooltiptext {
+  top: 0px;
+  left: 20px;
+  visibility: hidden;
+  font-size: 1rem;
+  width: 200px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-align: center;
+  padding: 0.3rem;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+
 .shrinkContainer {
   width: auto;
   border-radius: 2.3rem;
@@ -36,6 +54,11 @@
   font-size: 30px;
   padding: 0.5rem;
 }
+
+.wasteButton:hover .tooltiptext {
+  visibility: visible;
+}
+
 .wasteButton:hover {
   cursor: pointer;
 }
