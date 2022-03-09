@@ -20,6 +20,8 @@ function TsAndCs() {
           follow some basic safety guidelines. Some tips can be found
           <a
             href={"https://www.wikihow.com/Safely-Meet-a-Person-You-Met-Online"}
+            target="_blank"
+            rel="noreferrer"
             style={{ color: "blue" }}
           >
             {" "}
