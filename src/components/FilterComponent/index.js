@@ -23,8 +23,11 @@ function FilterComponent({ handleFilterSearch }) {
 
   function handleClick() {
     try {
-      const date = new Date(dateInput);
-      const formattedDate = date.toISOString().slice(0, 10);
+      let formattedDate = "";
+      if (dateInput !== "") {
+        const date = new Date(dateInput);
+        formattedDate = date.toISOString().slice(0, 10);
+      }
       const inputs = {
         location: locationInput,
         type: dropdownInput,
