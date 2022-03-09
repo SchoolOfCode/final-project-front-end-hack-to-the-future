@@ -105,7 +105,7 @@ function ActivityListItem({
       >
         <button className={css.wasteButton} onClick={handleClickWaste}>
           🗑
-          <span className={css.tooltiptext}>Remove from Interest-List</span>
+          <span className={css.tooltiptext}>Remove from list</span>
         </button>
         <h2>{activity.type[0].toUpperCase() + activity.type.substring(1)}</h2>
         <h3>{`Date: ${date} | Time: ${time}`}</h3>
