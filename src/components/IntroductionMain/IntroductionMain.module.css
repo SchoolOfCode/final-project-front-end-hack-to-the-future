@@ -21,3 +21,8 @@
 .loginButton {
   background-color: var(--ming);
 }
+
+.tclink {
+  color: blue;
+  cursor: pointer;
+}
