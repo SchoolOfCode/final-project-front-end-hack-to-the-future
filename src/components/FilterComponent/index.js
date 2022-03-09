@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import LocationInput from "./LocationInput";
-//import DropdownFilter from "./DropdownFilter";
 import DateSelector from "./DateSelector";
-//import { css } from '@emotion/react';
 import css from "./FilterComponent.module.css";
 
 function FilterComponent({ handleFilterSearch }) {
@@ -52,7 +50,6 @@ function FilterComponent({ handleFilterSearch }) {
     >
       <LocationInput handleLocationChange={handleLocationChange} />
       <DateSelector handleDateChange={handleDateChange} />
-      {/* <DropdownFilter /> */}
       <div className={`${css.inputContainer} flex-vertical`}>
         <select
           className={css.input}
