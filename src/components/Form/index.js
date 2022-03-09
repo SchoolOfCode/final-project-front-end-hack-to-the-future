@@ -59,7 +59,7 @@ export default function Form({ user_id, setSuccess }) {
 
   return (
     <div className={css.formContainer}>
-      <h2>Create an activity</h2>
+      <h2 data-testid="heading">Create an activity</h2>
       <form onSubmit={handleSubmit}>
         <FormControl className={css.formControl}>
           <TextField
@@ -80,6 +80,7 @@ export default function Form({ user_id, setSuccess }) {
             type="datetime-local"
             id="activityTime"
             name="activityTime"
+            data-testid="req"
             // limit date input to today onwards only
             min={new Date().toISOString().slice(0, 16)}
             required
