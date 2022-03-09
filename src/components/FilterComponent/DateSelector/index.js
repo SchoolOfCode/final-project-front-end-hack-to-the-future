@@ -56,7 +56,7 @@ export default function DateSelector({ handleDateChange }) {
         id="dateFilter"
         name="dateFilter"
         // limit date input to today onwards only
-        min={new Date().toISOString().slice(0, 16)}
+        min={new Date().toISOString().slice(0, 10)}
         onChange={(e) => handleDateChange(e.target.value)}
       ></input>
     </div>
