@@ -16,6 +16,8 @@ export default function DateSelector({ handleDateChange }) {
           // style={{ margin: "1rem" }}
           label="Date"
           value={value}
+          type="datetime-local"
+          minDate={new Date()}
           onChange={(newValue) => {
             setValue(newValue);
             handleDateChange(newValue); // send date in YYYY-MM-DD format
