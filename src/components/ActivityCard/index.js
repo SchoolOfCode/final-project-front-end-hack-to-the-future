@@ -71,7 +71,7 @@ function ActivityCard({ activity, leftButton, rightButton }) {
     // do nothing
   }
   return (
-    <div className={css.card} id="card">
+    <div className={`${css.card} cardActivity`} >
       <div className={css.imageFrame}>
         <img src={image} alt={activity.type} />
         {/* <img src={activityImage} alt="activity representation" /> */}
