@@ -32,6 +32,6 @@
   border-radius: 0.5rem;
 }
 
-.btn:focus {
+.btn:hover {
   cursor: pointer;
 }
