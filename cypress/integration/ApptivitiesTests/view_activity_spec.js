@@ -1,3 +1,4 @@
+Cypress._.times(1, () => {
 describe("Access the view-activity page and swipe activities until no more activities", () => {
   it("successfully swipe an activity and see the message no more cards", () => {
     cy.visit("/"); 
@@ -9,8 +10,10 @@ describe("Access the view-activity page and swipe activities until no more activ
       .trigger("mousedown", { which: 1 })
       .trigger("mousemove", { clientX: 0, clientY: 600 })
       .trigger("mouseup", { force: true });
-    cy.contains(
-      "Sorry there are no more activities to show, How about you"
-    ).should("be.visible");
+    cy.get(".cardActivity").last().should("be.visible");
+    // cy.contains(
+    //   "Sorry there are no more activities to show, How about you"
+    // ).should("be.visible");
   });
+});
 });
