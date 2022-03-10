@@ -97,7 +97,10 @@ function Calendar({
               theme: buttonsTheme.cancel,
             }}
             rightButton={{
-              text: "Not Attending",
+              text:
+                activityCard.organiser_id === user_id
+                  ? "Cancel Hosting"
+                  : "Not Attending",
               onClick: () => setButtonClicked(true),
               theme: buttonsTheme.create,
             }}
