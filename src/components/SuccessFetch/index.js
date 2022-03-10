@@ -10,7 +10,7 @@ function Success({ success, setSuccess }) {
       }
     >
       <p>{success.text}</p>
-      <button onClick={() => setSuccess({ success: null, text: "" })}>
+      <button onClick={() => setSuccess({ success: null, text: "" })} className={css.closeAlertButton}>
         Close
       </button>
     </div>
