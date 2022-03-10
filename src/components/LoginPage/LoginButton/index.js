@@ -8,8 +8,13 @@ const LoginButton = ({ disabled }) => {
   return (
     <button
       className={css.loginButton}
-      onClick={() => loginWithRedirect()}
-      disabled={disabled}
+      onClick={() => {
+        if (disabled) {
+          alert("Please agree to terms and conditions");
+        } else {
+          loginWithRedirect();
+        }
+      }}
     >
       Log In
     </button>
