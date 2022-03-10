@@ -16,6 +16,14 @@
   box-shadow: 1px 1px 2px 5px rgba(228, 207, 207, 0.3);
 }
 
+.blueShadow {
+  box-shadow: 1px 1px 5px 5px rgba(0, 116, 186, 1);
+}
+
+.orangeShadow {
+  box-shadow: 1px 1px 5px 5px rgba(255, 103, 35, 1);
+}
+
 .type {
   margin: 0.5rem;
 }

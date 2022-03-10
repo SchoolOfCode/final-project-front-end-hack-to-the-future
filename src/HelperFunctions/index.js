@@ -84,6 +84,7 @@ export function convertData(activity) {
     user_name: activity.user_name,
     email: activity.email,
     user_id: activity.user_id,
+    shadow: activity.color
   };
 }
 
