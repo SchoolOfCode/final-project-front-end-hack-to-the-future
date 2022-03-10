@@ -75,7 +75,7 @@ export function convertActivitiesToEvents(activity, user_id) {
 export function convertData(activity) {
   return {
     activity_id: activity.id,
-    organiser_id: activity.organiser_idganiser_id,
+    organiser_id: activity.organiser_id,
     max_attendees: activity.max_attendees,
     date_time: activity.startAt,
     location_name: activity.location_name,
