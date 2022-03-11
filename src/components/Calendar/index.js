@@ -16,7 +16,6 @@ function Calendar({
 }) {
   const [activityCard, setActivityCard] = useState(null);
   const [buttonClicked, setButtonClicked] = useState(false);
-  console.log(activityEvents);
   useEffect(() => {
     const updateParticipants = async () => {
       const requestActivity = {
@@ -36,7 +35,7 @@ function Calendar({
         requestActivity
       );
       const data = await response.json();
-      console.log(data.payload);
+
       setActivityCard(null);
       removeActivity(
         activityEvents,
@@ -46,9 +45,11 @@ function Calendar({
       setButtonClicked(false);
       setSuccess({
         success: data.success,
-        text: data.success
-          ? "Thank you for cancelling your attendance at this activity"
-          : "Something went wrong 😞 please try again",
+        text: !data.success
+          ? "Something went wrong 😞 please try again"
+          : activityCard.organiser_id === user_id
+          ? "Sorry you can't host this activity anymore 😥"
+          : "Sorry you can't attend this activity anymore 😥",
       });
     };
 
@@ -98,7 +99,10 @@ function Calendar({
               theme: buttonsTheme.cancel,
             }}
             rightButton={{
-              text: "Not Attending",
+              text:
+                activityCard.organiser_id === user_id
+                  ? "Cancel Hosting"
+                  : "Not Attending",
               onClick: () => setButtonClicked(true),
               theme: buttonsTheme.create,
             }}

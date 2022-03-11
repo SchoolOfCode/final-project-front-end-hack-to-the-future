@@ -31,10 +31,8 @@ function App() {
         }),
       };
       const response = await fetch(`${API_URL}/users`, requestBody);
-      const data = await response.json();
-      console.log(data);
+      await response.json();
     }
-    console.log("user object", user);
     if (user) authenticateUser();
   }, [user]);
   return (

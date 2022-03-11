@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 export default function ViewActivities({ user_id }) {
   const [activities, setActivity] = useState([]);
   const [loadingState, setLoadingState] = useState(false);
-  console.log(activities);
   const [currentSwipedCard, setCurrentSwipedCard] = useState({
     direction: null,
     activityId: null,
@@ -19,6 +18,7 @@ export default function ViewActivities({ user_id }) {
   const [filterInput, setFilterInput] = useState({
     location: "",
     type: "",
+    date: "",
   });
 
   function handleFilterSearch(inputs) {
@@ -30,9 +30,8 @@ export default function ViewActivities({ user_id }) {
   useEffect(() => {
     const getActivities = async () => {
       setLoadingState(true);
-      console.log("api url in view activities", API_URL);
       const response = await fetch(
-        `${API_URL}/activities?location=${filterInput.location}&type=${filterInput.type}`,
+        `${API_URL}/activities?location=${filterInput.location}&type=${filterInput.type}&date=${filterInput.date}`,
         {
           method: "GET",
           headers: {
@@ -83,8 +82,7 @@ export default function ViewActivities({ user_id }) {
         }),
       };
       const response = await fetch(`${API_URL}/participants`, requestActivity);
-      const data = await response.json();
-      console.log(data);
+      await response.json();
     };
 
     if (currentSwipedCard.activityId) {

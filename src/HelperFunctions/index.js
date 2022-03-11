@@ -75,7 +75,7 @@ export function convertActivitiesToEvents(activity, user_id) {
 export function convertData(activity) {
   return {
     activity_id: activity.id,
-    organiser_id: activity.organiser_idganiser_id,
+    organiser_id: activity.organiser_id,
     max_attendees: activity.max_attendees,
     date_time: activity.startAt,
     location_name: activity.location_name,
@@ -84,12 +84,12 @@ export function convertData(activity) {
     user_name: activity.user_name,
     email: activity.email,
     user_id: activity.user_id,
+    shadow: activity.color
   };
 }
 
 export function removeActivity(array, id, setFuntion) {
   const index = array.findIndex((activity) => activity.activity_id === id);
-  console.log(index);
   const newActivities = [...array.slice(0, index), ...array.slice(index + 1)];
   setFuntion(newActivities);
 }
