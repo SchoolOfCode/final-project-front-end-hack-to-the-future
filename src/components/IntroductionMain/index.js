@@ -29,13 +29,14 @@ function IntroductionMain() {
         </p>
         <p>
           I have read the
-          <span className={css.tclink} onClick={() => setTCVisible(true)} >
+          <span className={css.tclink} onClick={() => setTCVisible(true)}>
             {" "}
             Ts+Cs
           </span>
           <input type="checkbox" onClick={handleCheck}></input>
         </p>
         {tcVisible && <TsAndCs />}
+
         <LoginButton disabled={isDisabled} />
       </div>
     </div>

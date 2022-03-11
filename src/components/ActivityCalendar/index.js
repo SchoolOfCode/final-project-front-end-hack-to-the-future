@@ -6,7 +6,6 @@ import { API_URL } from "../../config/index.js";
 
 function ActivityCalendar({ user_id, setSuccess }) {
   const [interestedActivities, setInterestedActivities] = useState([]);
-  console.log(interestedActivities);
 
   useEffect(() => {
     const getParticipants = async () => {
@@ -20,9 +19,10 @@ function ActivityCalendar({ user_id, setSuccess }) {
         requestParticipants
       );
       const data = await response.json();
-      console.log(data);
       setInterestedActivities(
-        data.payload.map((activity) => convertActivitiesToEvents(activity, user_id))
+        data.payload.map((activity) =>
+          convertActivitiesToEvents(activity, user_id)
+        )
       );
     };
     if (user_id) {
@@ -33,7 +33,8 @@ function ActivityCalendar({ user_id, setSuccess }) {
   return (
     <div className={css.activityCalendar}>
       <h3 className={css.activityCalendarTitle}>
-        This calendar shows any activities that you are attending, or that you have created and will be hosting
+        This calendar shows any activities that you are attending, or that you
+        have created and will be hosting
       </h3>
       <Calendar
         activityEvents={interestedActivities}
@@ -46,4 +47,3 @@ function ActivityCalendar({ user_id, setSuccess }) {
 }
 
 export default ActivityCalendar;
-

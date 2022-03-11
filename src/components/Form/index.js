@@ -46,7 +46,7 @@ export default function Form({ user_id, setSuccess }) {
       setSuccess({
         success: data.success,
         text: data.success
-          ? "Thanks for creating your activity 🙂"
+          ? "Thanks for hosting an activity 🙂 Head to your Activities Calendar to view it!"
           : "Something went wrong 😞 please try again",
       });
       setSubmittedValues(null);

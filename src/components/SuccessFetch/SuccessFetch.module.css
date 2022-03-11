@@ -1,11 +1,11 @@
 .successContainer {
   position: fixed;
   top: 40%;
-  left: 40%;
+  left: 38%;
   width: 25vw;
   max-width: 150px;
-  height: 20vh;
-  max-height: 150px;
+  height: auto;
+  /* max-height: 180px; */
   background-color: var(--alice-blue);
   border: 2px solid var(--ming);
   z-index: 4;
@@ -22,3 +22,32 @@
 .noDisplay {
   display: none;
 }
+
+.closeAlertButton {
+  margin: 0.5rem;
+}
+
+
+@media screen and (min-width:400px ) {
+  .successContainer {
+    left: 40%;
+  }
+}  
+
+@media screen and (min-width:800px ) {
+  .successContainer {
+    left: 42%;
+  }
+}  
+
+@media screen and (min-width:1000px ) {
+  .successContainer {
+    left: 44%;
+  }
+}  
+
+@media screen and (min-width:1600px ) {
+  .successContainer {
+    left: 46%;
+  }
+}  

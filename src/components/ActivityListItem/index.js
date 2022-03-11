@@ -30,7 +30,6 @@ function ActivityListItem({
 
   function toggleIfExpanded() {
     setIfExpanded(!ifExpanded);
-    console.log("clicked");
   }
 
   function handleAttendClick() {
@@ -65,10 +64,9 @@ function ActivityListItem({
           data.success && data.payload[0].participant_role === "uninterested"
             ? "This activity has been removed from your list"
             : data.success && data.payload[0].participant_role === "attending"
-            ? "Thanks for confirming your attendance 😀"
+            ? "Thanks for confirming your attendance to this activity 😀 Head to your Activities Calendar to view it!"
             : "Something went wrong 😞 please try again",
       });
-      console.log(activity.activity_id);
       // setInterestedActivities([...interestedActivities.slice(0, index), ...interestedActivities.slice(index + 1)]);
       removeActivity(
         interestedActivities,
