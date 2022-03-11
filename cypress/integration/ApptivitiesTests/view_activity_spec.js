@@ -1,4 +1,4 @@
-Cypress._.times(3, () => {
+Cypress._.times(2, () => {
 describe("Access the view-activity page and swipe activities n times ", () => {
   it("successfully swipe an activity and make it disaper", () => {
     cy.visit("/");

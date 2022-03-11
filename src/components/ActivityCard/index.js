@@ -75,7 +75,7 @@ function ActivityCard({ activity, leftButton, rightButton }) {
 
   return (
 
-    <div className={ activity.shadow? activity.shadow === 'blue'? `${css.card} ${css.blueShadow}` : `${css.card} ${css.orangeShadow}` : `${css.card}`} >
+    <div className={ activity.shadow? activity.shadow === 'blue'? `${css.card} ${css.blueShadow}` : `${css.card} ${css.orangeShadow}` : `${css.card} cardActivity`} >
       <div className={css.imageFrame}>
         <img src={image} alt={activity.type} />
         {/* <img src={activityImage} alt="activity representation" /> */}
