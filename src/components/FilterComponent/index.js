@@ -40,13 +40,6 @@ function FilterComponent({ handleFilterSearch }) {
   return (
     <div
       className={css.filterContainer}
-      // style={{
-      //     display: 'grid',
-      //     gridTemplateColumns: 'repeat(3, 1fr)',
-      //     gridGap: '1rem',
-      //     margin: '20px',
-      //     padding: '10px',
-      // }}
     >
       <LocationInput handleLocationChange={handleLocationChange} />
       <DateSelector handleDateChange={handleDateChange} />
