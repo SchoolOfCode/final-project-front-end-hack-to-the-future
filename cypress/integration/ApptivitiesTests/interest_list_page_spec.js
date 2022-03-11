@@ -1,8 +1,8 @@
 
 
-Cypress._.times(1, () => {
-describe("Access the view-activity page and swipe activities until no more activities", () => {
-  it("successfully swipe an activity and see the message no more cards", () => {
+Cypress._.times(5, () => {
+describe("Access the Interest-List page and open and collapse random activities ", () => {
+  it("successfully open an activity card, show the information and close it back", () => {
 
     let randonNumber = Math.floor(Math.random() * 9);
 
@@ -20,6 +20,6 @@ describe("Access the view-activity page and swipe activities until no more activ
       .click();
     cy.get("ul>li").eq(randonNumber).contains("Location:")
       .should('not.be.visible');
-});
-});
+    });
+  });
 });

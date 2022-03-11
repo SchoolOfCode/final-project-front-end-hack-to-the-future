@@ -1,5 +1,5 @@
 
-Cypress._.times(1, () => {
+Cypress._.times(2, () => {
 describe("Acces the home page and press and test the 2 mains buttons 5 times", () => {
   it("successfully loads & click the main buttons", () => {
     cy.visit("/"); // change URL to match your dev URL
