@@ -9,7 +9,7 @@ function Success({ success, setSuccess }) {
           : `${css.successContainer} noDisplay`
       }
     >
-      <p>{success.text}</p>
+      <p id="successText">{success.text}</p>
       <button onClick={() => setSuccess({ success: null, text: "" })} className={css.closeAlertButton}>
         Close
       </button>

@@ -37,7 +37,7 @@ function IntroductionMain() {
         </p>
         {tcVisible && <TsAndCs />}
 
-        <LoginButton disabled={isDisabled} />
+        <LoginButton disabled={isDisabled}/>
       </div>
     </div>
   );

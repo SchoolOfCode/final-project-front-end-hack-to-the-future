@@ -7,6 +7,7 @@ const LoginButton = ({ disabled }) => {
 
   return (
     <button
+      id="loginButton"
       className={css.loginButton}
       onClick={() => {
         if (disabled) {

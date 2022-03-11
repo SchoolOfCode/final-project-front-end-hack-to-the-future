@@ -108,7 +108,7 @@ function ActivityListItem({
         <h2>{activity.type[0].toUpperCase() + activity.type.substring(1)}</h2>
         <h3>{`Date: ${date} | Time: ${time}`}</h3>
         <ThemeProvider theme={buttonsTheme.cancel}>
-          <Button button="Expand" onClick={toggleIfExpanded} />
+          <Button button="Expand" onClick={toggleIfExpanded}/>
         </ThemeProvider>
       </div>
 
