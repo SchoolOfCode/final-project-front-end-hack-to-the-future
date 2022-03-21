@@ -1,10 +1,13 @@
-a# In the Loop
 
-Description
+# Apptivity
+
+
+Apptivity is an application that aims to connect like-minded individuals and encourage social interaction through informal activities. Users can choose to swipe right and attend activities they are interested in or create their own activity to host in their local area.
 
 ## Table of Contents
 
 - [What is this?](#what-is-this?)
+- [What problem does it solve?](#what-problem-does-it-solve?)
 - [What did I learn?](#what-did-I-learn?)
 - [Tech Stack](#tech-stack)
 - [Design and Development Process](#process)
@@ -14,6 +17,12 @@ Description
 - [Original Project Brief](#original-project-brief)
 
 ## What is this? <a name="what-is-this?"></a>
+
+This project was started for the School of Code National Bootcamp's Final Project. Our team of 4 had 4 weeks to design, build, deploy, and demo a full-stack app.
+
+## What problem does it solve? <a name="what-problem-does-it-solve?"></a>
+
+The pandemic has impacted relationships and social interaction globally and the current social and meet apps are costly and littered with corporate events.
 
 ## What did we learn during the project month? <a name="what-did-I-learn?"></a>
 
