@@ -1,87 +1,80 @@
-# The Front End Project Example
+# In the Loop
 
-Hellooo
+Description
 
-Some starter code to get you up and running quickly.
+## Table of Contents
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/cwissy/examples_front-end-project-week)
+- [What is this?](#what-is-this?)
+- [What did I learn?](#what-did-I-learn?)
+- [Project Next Steps](#project-next-steps)
+- [Project Status](#project-status)
+- [Setup to Run Locally](#setup)
+- [Original Project Brief](#original-project-brief)
 
-## For Deploying
+## What is this? <a name="what-is-this?"></a>
 
-Make sure to set the `REACT_APP_API_URL` to be the url of your api. If you're deploying as part of the full project example, it will be from the [project week back end](https://github.com/cwissy/examples_back-end-project-week).
+## What did I learn during the project week? <a name="what-did-I-learn?"></a>
 
-## Guide
+## Project Next Steps <a name="project-next-steps"></a>
 
-[You can find the guide in this Google Doc](https://docs.google.com/document/d/1-8q034OBs1GMuMSMYuUYrpAEg37zh8qBMCOBcJoQamk/edit?usp=sharing)
+### Refactoring Goals
 
+### Goals for New Features
 
-## Getting Started with Create React App
+## Project Status <a name="project-status"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Setup to Run Locally <a name="setup"></a>
 
-## Available Scripts
+**To clone the repo:**
 
-In the project directory, you can run:
+```
+git clone git@github.com:cdmclellan7/in-the-loop.git
+cd in-the-loop
+```
 
-### `npm start`
+**To run the frontend:**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+First change frontend/src/config.js by commenting out line one and uncommenting line two like this:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+//export const baseBackendURL = "https://in-the-loop-backend.herokuapp.com";
+export const baseBackendURL = "http://localhost:3001"; //dev URL
 
-### `npm test`
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Then run the frontend.
 
-### `npm run build`
+```
+cd frontend
+npm i
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+And go to http://localhost:3000
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**To setup the database tables with starter data:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+First create a .env file in /backend and add your database connection string
 
-### `npm run eject`
+```
+DATABASE_URL=your-URL
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Then create and populate the tables.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+cd backend
+npm run db-create-and-populate-all-tables
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**To run the backend:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+cd backend
+npm i
+npm run dev
+```
 
-## Learn More
+And go to http://localhost:3001
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Original Project Brief <a name="original-project-brief"></a>
