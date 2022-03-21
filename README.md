@@ -33,6 +33,9 @@ Our learning focus was on testing and CI/CD. For the frontend we wrote tests usi
 
 The team used a Miro Board to brainstorm initial app ideas. We used dot voting to narrow down our choices and Disney Ideation to define our MVP.
 
+![Dot Voting](/readme_images/dot_voting.JPG)
+![Disney Ideation](/readme_images/disney_ideation.JPG)
+
 ### UX/UI Planning
 
 We took a user-centric approach to design by first creating user personas, user stories, and a user flow diagram.
