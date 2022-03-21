@@ -1,4 +1,4 @@
-# In the Loop
+a# In the Loop
 
 Description
 
@@ -6,6 +6,7 @@ Description
 
 - [What is this?](#what-is-this?)
 - [What did I learn?](#what-did-I-learn?)
+- [Tech Stack](#tech-stack)
 - [Project Next Steps](#project-next-steps)
 - [Project Status](#project-status)
 - [Setup to Run Locally](#setup)
@@ -14,6 +15,14 @@ Description
 ## What is this? <a name="what-is-this?"></a>
 
 ## What did I learn during the project week? <a name="what-did-I-learn?"></a>
+
+## Tech Stack <a name="tech-stack"></a>
+
+Our tech stack is a React frontend deployed to Netlify.
+And a Node/Express REST API deployed to Heroku with a Postgres database.
+We chose this stack because we all had some foundational knowledge and skills, so we knew we could build a polished MVP.
+
+Our learning focus was on testing and CI/CD. For the frontend we wrote tests using Cypress, Jest, and the React Testing Library. On the backend we wrote tests with Postman, Jest, and Supertest. We also made a CI/CD pipeline with GitHub Actions to automatically run integration tests and deploy the backend code to Heroku.
 
 ## Project Next Steps <a name="project-next-steps"></a>
 
