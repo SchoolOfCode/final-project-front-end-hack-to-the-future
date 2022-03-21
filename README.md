@@ -28,53 +28,48 @@ Description
 **To clone the repo:**
 
 ```
-git clone git@github.com:cdmclellan7/in-the-loop.git
-cd in-the-loop
+git clone git@github.com:SchoolOfCode/final-project-front-end-hack-to-the-future.git
+cd final-project-front-end-hack-to-the-future
+```
+
+**Create an .env file**
+
+Create an .env file in the root folder with the following environment variables:
+
+```
+REACT_APP_API_URL=<backend url>
+REACT_APP_AUTH0_DOMAIN=<your Auth0 domain>
+REACT_APP_AUTH0_CLIENT_ID=<your Auth0 client ID>
 ```
 
 **To run the frontend:**
 
-First change frontend/src/config.js by commenting out line one and uncommenting line two like this:
-
 ```
-//export const baseBackendURL = "https://in-the-loop-backend.herokuapp.com";
-export const baseBackendURL = "http://localhost:3001"; //dev URL
-
-```
-
-Then run the frontend.
-
-```
-cd frontend
 npm i
 npm start
 ```
 
 And go to http://localhost:3000
 
-**To setup the database tables with starter data:**
+**To run tests:**
 
-First create a .env file in /backend and add your database connection string
-
-```
-DATABASE_URL=your-URL
-```
-
-Then create and populate the tables.
+Go to the testing branch and install dependencies if needed
 
 ```
-cd backend
-npm run db-create-and-populate-all-tables
-```
-
-**To run the backend:**
-
-```
-cd backend
+git checkout dev-cypress
 npm i
-npm run dev
 ```
 
-And go to http://localhost:3001
+To run Jest unit tests:
+
+```
+npm test
+```
+
+To run Cypress tests:
+
+```
+npm run cypress:open
+```
 
 ## Original Project Brief <a name="original-project-brief"></a>
