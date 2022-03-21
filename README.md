@@ -8,7 +8,7 @@ Apptivity is an application that aims to connect like-minded individuals and enc
 
 - [What is this?](#what-is-this?)
 - [What problem does it solve?](#what-problem-does-it-solve?)
-- [What did I learn?](#what-did-I-learn?)
+- [What did we learn?](#what-did-we-learn?)
 - [Tech Stack](#tech-stack)
 - [Design and Development Process](#process)
 - [Project Next Steps](#project-next-steps)
@@ -24,7 +24,7 @@ This project was started for the School of Code National Bootcamp's Final Projec
 
 The pandemic has impacted relationships and social interaction globally and the current social and meet apps are costly and littered with corporate events.
 
-## What did we learn during the project month? <a name="what-did-I-learn?"></a>
+## What did we learn during the project month? <a name="what-did-we-learn?"></a>
 
 - ### Agile Methodology
   As our first large project working as a team, we wanted to learn and implement Agile methodology into our development process. Focusing on a good collaborated interaction development process between pair programming, task branching, code reviews, adaptable code development, continuous integration, and regular release cadences.  
@@ -123,6 +123,7 @@ To help us figure out which React components we needed and how they could be reu
 
 
 ## Project Status <a name="project-status"></a>
+Our frontend is deployed through Netlify here: https://apptivity-app.netlify.app/ 
 
 ## Setup to Run Locally <a name="setup"></a>
 
