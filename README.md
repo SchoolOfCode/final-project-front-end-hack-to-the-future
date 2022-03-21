@@ -30,14 +30,23 @@ The pandemic has impacted relationships and social interaction globally and the 
   As our first large project working as a team, we wanted to learn and implement Agile methodology into our development process. Focusing on a good collaborated interaction development process between pair programming, task branching, code reviews, adaptable code development, continuous integration, and regular release cadences.  
 
 - ### Github Branching
-  For every repository we created 2 branches, deployment branch, and development branch. Also we disigned a pattern program for every new feature, or new code that we implemented, since creating a new branch, making code reviews, mergin to the development branch, and finally to the main branch.  
+  For every repository, we created 2 branches, the deployment branch, and a development branch. Also, we designed a pattern program for every new feature, or new code that we implemented, since creating a new branch, making code reviews, merging to the development branch, and finally to the main branch.   
 
 - ### Testing
+  Since we started the project, testing was one of the main goals for everybody that we wanted to improve, so we push our self to learn more about this subject and implement a full testing journey into the whole application; back-end with, Postman, Jest, Supertest and building a CI/CD pipeline using Github Actions; and in the front-end with, Jest-react-test library and end-to-end automated Cypress tests for the whole user experience.  
 
-  - #### Supertest
-  - #### React-Jest-test
-  - #### Cypress
-  
+  - ### Supertest
+
+  - ### CI/CD Github Actions
+
+  - ### React-Jest-test
+
+  ![Rect components-test](src\images\react-test.png)
+
+  - ### Cypress
+
+  ![Cypress ent-to-end test](src\images\cypress-test.gif)
+    
 
 ## Tech Stack <a name="tech-stack"></a>
 
