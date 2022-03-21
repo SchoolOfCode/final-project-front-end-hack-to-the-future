@@ -1,6 +1,6 @@
 # Apptivity
 
-Apptivity is an application that aims to connect like-minded individuals and encourage social interaction through informal activities. Users can choose to swipe right and attend activities they are interested in, or create their own activity to host in their local area.
+Apptivity is an application that aims to connect like-minded individuals and encourage social interaction through informal activities. Users can choose to swipe right and attend activities they are interested in or create their own activity to host in their local area.
 
 ## Table of Contents
 
