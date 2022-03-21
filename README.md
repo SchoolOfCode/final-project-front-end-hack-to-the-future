@@ -14,7 +14,20 @@ Description
 
 ## What is this? <a name="what-is-this?"></a>
 
-## What did I learn during the project week? <a name="what-did-I-learn?"></a>
+## What did we learn during the project month? <a name="what-did-I-learn?"></a>
+
+- ### Agile Methodology
+  As our first large project working as a team, we wanted to learn and implement Agile methodology into our development process. Focusing on a good collaborated interaction development process between pair programming, task branching, code reviews, adaptable code development, continuous integration, and regular release cadences.  
+
+- ### Github Branching
+  For every repository we created 2 branches, deployment branch, and development branch. Also we disigned a pattern program for every new feature, or new code that we implemented, since creating a new branch, making code reviews, mergin to the development branch, and finally to the main branch.  
+
+- ### Testing
+
+  - #### Supertest
+  - #### React-Jest-test
+  - #### Cypress
+  
 
 ## Tech Stack <a name="tech-stack"></a>
 
