@@ -7,6 +7,7 @@ Description
 - [What is this?](#what-is-this?)
 - [What did I learn?](#what-did-I-learn?)
 - [Tech Stack](#tech-stack)
+- [Design and Development Process](#process)
 - [Project Next Steps](#project-next-steps)
 - [Project Status](#project-status)
 - [Setup to Run Locally](#setup)
@@ -23,6 +24,41 @@ And a Node/Express REST API deployed to Heroku with a Postgres database.
 We chose this stack because we all had some foundational knowledge and skills, so we knew we could build a polished MVP.
 
 Our learning focus was on testing and CI/CD. For the frontend we wrote tests using Cypress, Jest, and the React Testing Library. On the backend we wrote tests with Postman, Jest, and Supertest. We also made a CI/CD pipeline with GitHub Actions to automatically run integration tests and deploy the backend code to Heroku.
+
+## Design and Development Process <a name="process"></a>
+
+### Brainstorming
+
+The team used a Miro Board to brainstorm initial app ideas. We used dot voting to narrow down our choices and Disney Ideation to define our MVP.
+
+### UX/UI Planning
+
+We took a user-centric approach to design by first creating user personas, user stories, and a user flow diagram.
+
+#### User Personas
+
+![User Persona 1](/readme_images/persona1.JPG)
+![User Persona 2](/readme_images/persona2.JPG)
+![User Persona 3](/readme_images/persona3.JPG)
+
+#### User Stories
+
+- As Bob, I want an easy way to find small group activities so that I can meet new people in my city.
+- As Bob, I want to see events that are based around my interests so that I can have things in common with the people I meet.
+- As Sally, I want to host activities without much admin so that I can quickly organise and plan meetups.
+- As Sally, I want to see activities that are based outside so that I can attend in person meetups that interest me.
+- As Mohammed, I want to find meetups for men that are also trying to stay active so that I can keep fit and chat about our shared experiences.
+- As Mohammed, I want to see how many people are planning to attend the meetup so that I can go to gatherings that will be well attended.
+
+#### User Flow Diagram
+
+### Design
+
+We created low-fidelity wireframs in Draw.io, and then medium and high-fidelity wireframes in Figma. We also made a concise style guide with app logo, color scheme, and font styles.
+
+### React Component Planning
+
+To help us figure out which React components we needed and how they could be reused, we created this tree diagram.
 
 ## Project Next Steps <a name="project-next-steps"></a>
 
