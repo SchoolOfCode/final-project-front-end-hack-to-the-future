@@ -63,6 +63,18 @@ We took a user-centric approach to design by first creating user personas, user 
 
 We created low-fidelity wireframs in Draw.io, and then medium and high-fidelity wireframes in Figma. We also made a concise style guide with app logo, color scheme, and font styles.
 
+#### Low-fidelity Wireframe
+
+![Low-fidelity Wireframe](/readme_images/low_fidelity_wireframe.png)
+
+#### Mid-fidelity Wireframe
+
+![Mid-fidelity Wireframe](/readme_images/mid_fidelity_wireframe.JPG)
+
+#### High-fidelity Wireframe
+
+![High-fidelity Wireframe](/readme_images/hi_fidelity_wireframe.JPG)
+
 ### React Component Planning
 
 To help us figure out which React components we needed and how they could be reused, we created this tree diagram.
