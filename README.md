@@ -26,9 +26,22 @@ Our learning focus was on testing and CI/CD. For the frontend we wrote tests usi
 
 ## Project Next Steps <a name="project-next-steps"></a>
 
-### Refactoring Goals
+### Short-term: Email notifications for users
+- Activity sign-up / creation confirmations to attendees and hosts
+- Upcoming activity reminders
 
-### Goals for New Features
+
+### Medium-term: User profiles
+- Personalised
+- Option to view other users / be viewed
+- Activity hosts can view attendees for their activity
+
+
+### Long-term: Chat feature
+- Hosts can make activity 'announcements' that get sent to all confirmed attendees
+- Group chat for individual activities
+- Safety and security measures
+
 
 ## Project Status <a name="project-status"></a>
 
