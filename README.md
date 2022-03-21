@@ -174,3 +174,8 @@ npm run cypress:open
 ```
 
 ## Original Project Brief <a name="original-project-brief"></a>
+The following brief was set by the School of Code, to be completed in the final four weeks of our 16 week bootcamp:
+
+"We would like your final project to be centred on a user or a problem, so that you can apply all of the principles we've visited on the course to engineer a solution in a user-driven methodology.
+
+Our requirements are that you focus the idea and development on a real-world problem and put users at the centre of your project."
