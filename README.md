@@ -19,6 +19,8 @@ Description
 
 ## Tech Stack <a name="tech-stack"></a>
 
+![Tech Stack Diagram](/readme_images/tech_stack.jpg)
+
 Our tech stack is a React frontend deployed to Netlify.
 And a Node/Express REST API deployed to Heroku with a Postgres database.
 We chose this stack because we all had some foundational knowledge and skills, so we knew we could build a polished MVP.
@@ -52,6 +54,8 @@ We took a user-centric approach to design by first creating user personas, user 
 
 #### User Flow Diagram
 
+![User Flow Diagram](/readme_images/user_flowchart.jpg)
+
 ### Design
 
 We created low-fidelity wireframs in Draw.io, and then medium and high-fidelity wireframes in Figma. We also made a concise style guide with app logo, color scheme, and font styles.
@@ -59,6 +63,8 @@ We created low-fidelity wireframs in Draw.io, and then medium and high-fidelity 
 ### React Component Planning
 
 To help us figure out which React components we needed and how they could be reused, we created this tree diagram.
+
+![React Component Tree](/readme_images/react_component_tree.jpg)
 
 ## Project Next Steps <a name="project-next-steps"></a>
 
