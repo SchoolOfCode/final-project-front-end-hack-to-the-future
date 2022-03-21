@@ -1,87 +1,182 @@
-# The Front End Project Example
 
-Hellooo
-
-Some starter code to get you up and running quickly.
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/cwissy/examples_front-end-project-week)
-
-## For Deploying
-
-Make sure to set the `REACT_APP_API_URL` to be the url of your api. If you're deploying as part of the full project example, it will be from the [project week back end](https://github.com/cwissy/examples_back-end-project-week).
-
-## Guide
-
-[You can find the guide in this Google Doc](https://docs.google.com/document/d/1-8q034OBs1GMuMSMYuUYrpAEg37zh8qBMCOBcJoQamk/edit?usp=sharing)
+# Apptivity
 
 
-## Getting Started with Create React App
+Apptivity is an application that aims to connect like-minded individuals and encourage social interaction through informal activities. Users can choose to swipe right and attend activities they are interested in or create their own activity to host in their local area.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [What is this?](#what-is-this?)
+- [What problem does it solve?](#what-problem-does-it-solve?)
+- [What did we learn?](#what-did-we-learn?)
+- [Tech Stack](#tech-stack)
+- [Design and Development Process](#process)
+- [Project Next Steps](#project-next-steps)
+- [Project Status](#project-status)
+- [Setup to Run Locally](#setup)
+- [Original Project Brief](#original-project-brief)
 
-In the project directory, you can run:
+## What is this? <a name="what-is-this?"></a>
 
-### `npm start`
+This project was started for the School of Code National Bootcamp's Final Project. Our team of 4 had 4 weeks to design, build, deploy, and demo a full-stack app.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## What problem does it solve? <a name="what-problem-does-it-solve?"></a>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The pandemic has impacted relationships and social interaction globally and the current social and meet apps are costly and littered with corporate events.
 
-### `npm test`
+## What did we learn during the project month? <a name="what-did-we-learn?"></a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ### Agile Methodology
+  As our first large project working as a team, we wanted to learn and implement Agile methodology into our development process. Focusing on a good collaborated interaction development process between pair programming, task branching, code reviews, adaptable code development, continuous integration, and regular release cadences.  
 
-### `npm run build`
+- ### Github Branching
+  For every repository we created 2 branches, deployment branch, and development branch. Also we disigned a pattern program for every new feature, or new code that we implemented, since creating a new branch, making code reviews, mergin to the development branch, and finally to the main branch.  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ### Testing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - #### Supertest
+  - #### React-Jest-test
+  - #### Cypress
+  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tech Stack <a name="tech-stack"></a>
 
-### `npm run eject`
+![Tech Stack Diagram](/readme_images/tech_stack.jpg)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Our tech stack is a React frontend deployed to Netlify.
+And a Node/Express REST API deployed to Heroku with a Postgres database.
+We chose this stack because we all had some foundational knowledge and skills, so we knew we could build a polished MVP.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Our learning focus was on testing and CI/CD. For the frontend we wrote tests using Cypress, Jest, and the React Testing Library. On the backend we wrote tests with Postman, Jest, and Supertest. We also made a CI/CD pipeline with GitHub Actions to automatically run integration tests and deploy the backend code to Heroku.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Design and Development Process <a name="process"></a>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Brainstorming
 
-## Learn More
+The team used a Miro Board to brainstorm initial app ideas. We used dot voting to narrow down our choices and Disney Ideation to define our MVP.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Dot Voting](/readme_images/dot_voting.JPG)
+![Disney Ideation](/readme_images/disney_ideation.JPG)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### UX/UI Planning
 
-### Code Splitting
+We took a user-centric approach to design by first creating user personas, user stories, and a user flow diagram.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### User Personas
 
-### Analyzing the Bundle Size
+![User Persona 1](/readme_images/persona1.JPG)
+![User Persona 2](/readme_images/persona2.JPG)
+![User Persona 3](/readme_images/persona3.JPG)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### User Stories
 
-### Making a Progressive Web App
+- As Bob, I want an easy way to find small group activities so that I can meet new people in my city.
+- As Bob, I want to see events that are based around my interests so that I can have things in common with the people I meet.
+- As Sally, I want to host activities without much admin so that I can quickly organise and plan meetups.
+- As Sally, I want to see activities that are based outside so that I can attend in person meetups that interest me.
+- As Mohammed, I want to find meetups for men that are also trying to stay active so that I can keep fit and chat about our shared experiences.
+- As Mohammed, I want to see how many people are planning to attend the meetup so that I can go to gatherings that will be well attended.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### User Flow Diagram
 
-### Advanced Configuration
+![User Flow Diagram](/readme_images/user_flowchart.jpg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Design
 
-### Deployment
+We created low-fidelity wireframs in Draw.io, and then medium and high-fidelity wireframes in Figma. We also made a concise style guide with app logo, color scheme, and font styles.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### Low-fidelity Wireframe
 
-### `npm run build` fails to minify
+![Low-fidelity Wireframe](/readme_images/low_fidelity_wireframe.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Mid-fidelity Wireframe
+
+![Mid-fidelity Wireframe](/readme_images/mid_fidelity_wireframe.JPG)
+
+#### High-fidelity Wireframe
+
+![High-fidelity Wireframe](/readme_images/hi_fidelity_wireframe.JPG)
+
+### React Component Planning
+
+To help us figure out which React components we needed and how they could be reused, we created this tree diagram.
+
+![React Component Tree](/readme_images/react_component_tree.jpg)
+
+## Project Next Steps <a name="project-next-steps"></a>
+
+### Short-term: Email notifications for users
+- Activity sign-up / creation confirmations to attendees and hosts
+- Upcoming activity reminders
+
+
+### Medium-term: User profiles
+- Personalised
+- Option to view other users / be viewed
+- Activity hosts can view attendees for their activity
+
+
+### Long-term: Chat feature
+- Hosts can make activity 'announcements' that get sent to all confirmed attendees
+- Group chat for individual activities
+- Safety and security measures
+
+
+## Project Status <a name="project-status"></a>
+Our frontend is deployed through Netlify here: https://apptivity-app.netlify.app/ 
+
+## Setup to Run Locally <a name="setup"></a>
+
+**To clone the repo:**
+
+```
+git clone git@github.com:SchoolOfCode/final-project-front-end-hack-to-the-future.git
+cd final-project-front-end-hack-to-the-future
+```
+
+**Create an .env file**
+
+Create an .env file in the root folder with the following environment variables:
+
+```
+REACT_APP_API_URL=<backend url>
+REACT_APP_AUTH0_DOMAIN=<your Auth0 domain>
+REACT_APP_AUTH0_CLIENT_ID=<your Auth0 client ID>
+```
+
+**To run the frontend:**
+
+```
+npm i
+npm start
+```
+
+And go to http://localhost:3000
+
+**To run tests:**
+
+Go to the testing branch and install dependencies if needed
+
+```
+git checkout dev-cypress
+npm i
+```
+
+To run Jest unit tests:
+
+```
+npm test
+```
+
+To run Cypress tests:
+
+```
+npm run cypress:open
+```
+
+## Original Project Brief <a name="original-project-brief"></a>
+The following brief was set by the School of Code, to be completed in the final four weeks of our 16 week bootcamp:
+
+"We would like your final project to be centred on a user or a problem, so that you can apply all of the principles we've visited on the course to engineer a solution in a user-driven methodology.
+
+Our requirements are that you focus the idea and development on a real-world problem and put users at the centre of your project."
