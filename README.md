@@ -39,13 +39,15 @@ The pandemic has impacted relationships and social interaction globally and the 
 
   - ### CI/CD Github Actions
 
+  ![Back-end testing CI/CD pipeline](readme_images\pipeline.png)
+
   - ### React-Jest-test
 
-  ![Rect components-test](src\images\react-test.png)
+  ![Rect components-test](readme_images\react-test.png)
 
   - ### Cypress
 
-  ![Cypress ent-to-end test](src\images\cypress-test.gif)
+  ![Cypress ent-to-end test](readme_images\cypress-test.gif)
     
 
 ## Tech Stack <a name="tech-stack"></a>
